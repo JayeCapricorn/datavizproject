@@ -1,7 +1,12 @@
 <script>
 	import * as d3 from 'd3';
 	import {onMount} from 'svelte';
+	import Testline from '../components/testline.svelte';
+	import {gt_volcano, gt_earthquakes, gt_drought, gt_floods, gt_landslide, gt_storm,
+	        hn_drought, hn_earthquakes, hn_floods, hn_storm, 
+		elsl_drought, elsl_earthquakes, elsl_floods, elsl_landslide, elsl_storm, elsl_volcano} from '../data/distributiondata.js';
 	export let data;
+	export let menu; 
 	
     let hazards = ["Flood", "Storm", "Drought", "Landslide", "Earthquake", "Volcanic activity"];
 	let coloroptions = {"Earthquake": "#E3963E", "Flood" : "#3D85C6", "Storm": "teal", "Volcanic activity": "#E97451", "Drought": "gray", "Landslide": "#6F4E37"};
@@ -14,6 +19,12 @@
 	let height = 2000;
 	
 	let margin = {top: 10, right: 50, bottom: 150, left: 50};
+	let margin6 = { top: 10, bottom: 40, left: 870, right: 50 };
+	let margin5 = { top: 10, bottom: 40, left: 710, right: 100 };
+	let margin4 = { top: 10, bottom: 40, left: 570, right: 360 };
+	let margin3 = { top: 10, bottom: 40, left: 410, right: 480 };
+	let margin2 = { top: 10, bottom: 40, left: 260, right: 500 };
+	let margin1 = { top: 10, bottom: 40, left: 120, right: 650 };
 
     $: xScale = d3.scaleBand()
 			.domain(hazards)
@@ -64,6 +75,27 @@
 						}}}
 					on:mouseout={(event) => { hovered = -1; }} />
 	{/each}
+
+	{#if menu === 1}
+	<Testline data={gt_volcano} margin={margin6} color="#E97451"/>
+	<Testline data={gt_earthquakes} margin={margin5} color="#E3963E"/>
+	<Testline data={gt_landslide} margin={margin4} color="#6F4E37"/>
+	<Testline data={gt_drought} margin={margin3} color="gray"/>
+	<Testline data={gt_storm} margin={margin2} color="teal"/>
+	<Testline data={gt_floods} margin={margin1} color="#3D85C6"/>
+	{:else if menu === 2}
+	<Testline data={hn_earthquakes} margin={margin5} color="#E3963E"/>
+	<Testline data={hn_drought} margin={margin3} color="gray"/>
+	<Testline data={hn_storm} margin={margin2} color="teal"/>
+	<Testline data={hn_floods} margin={margin1} color="#3D85C6"/>
+	{:else if menu === 3}
+	<Testline data={elsl_volcano} margin={margin6} color="#E97451"/>
+	<Testline data={elsl_earthquakes} margin={margin5} color="#E3963E"/>
+	<Testline data={elsl_landslide} margin={margin4} color="#6F4E37"/>
+	<Testline data={elsl_drought} margin={margin3} color="gray"/>
+	<Testline data={elsl_storm} margin={margin2} color="teal"/>
+	<Testline data={elsl_floods} margin={margin1} color="#3D85C6"/>
+	{/if}
 	
 	<g transform="translate(0, {margin.bottom-130})"
 		 bind:this={xAxis} />

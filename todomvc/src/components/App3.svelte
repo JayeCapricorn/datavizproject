@@ -37,11 +37,11 @@
 	<h2 style="margin-top: 15px">Timeline of Significant Natural Disasters</h2>
 
 	{#if menu === 1}
-    <Testtimeline4 data={gt_data}/>
+    <Testtimeline4 data={gt_data} menu={menu}/>
 	{:else if menu === 2}
-	<Testtimeline4 data={hn_data}/>
+	<Testtimeline4 data={hn_data} menu={menu}/>
 	{:else if menu === 3}
-	<Testtimeline4 data={elsl_data}/>
+	<Testtimeline4 data={elsl_data} menu={menu}/>
 	{:else}
 	<h1>
 		Page Not Found
