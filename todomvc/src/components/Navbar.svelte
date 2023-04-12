@@ -28,6 +28,12 @@
         <li class="mr-6">
           <a class="text-gray-500 hover:text-blue-800" href="/">Timeline</a>
         </li>
+        <li class="mr-6">
+          <a class="text-gray-500 hover:text-blue-800" href="/frontpage">Maps</a>
+        </li>
+        <li class="mr-6">
+          <a class="text-gray-500 hover:text-blue-800" href="/frontpage">Analysis</a>
+        </li>
     </ul>
 </main>
 
