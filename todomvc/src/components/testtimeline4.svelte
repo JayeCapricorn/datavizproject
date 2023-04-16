@@ -142,17 +142,17 @@ style="left: {recorded_mouse_position.x + 40}px; top: {recorded_mouse_position.y
 		.tooltip-hidden {
 		visibility: hidden;
 		font-family: "Nunito", sans-serif;
-		width: 200px;
+		width: 140px;
 		position: absolute;
 	}
 
 	.tooltip-visible {
-		font: 15px sans-serif;
+		font: 14px sans-serif;
 		font-family: "Nunito", sans-serif;
 		visibility: visible;
 		background-color: #f0dba8;
 		border-radius: 10px;
-		width: 150px;
+		width: 140px;
 		color: black;
 		position: absolute;
 		padding: 10px;
@@ -165,7 +165,7 @@ style="left: {recorded_mouse_position.x + 40}px; top: {recorded_mouse_position.y
 		visibility: visible;
 		background-color: #f0c4a8;
 		border-radius: 10px;
-		width: 100px;
+		width: 80px;
 		color: black;
 		position: absolute;
 		padding: 10px;

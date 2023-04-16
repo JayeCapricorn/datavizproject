@@ -18,7 +18,17 @@
 
 </script>
 
-<div class="flex justify-center items-center">
+<div class="dropdownmenu">
+<label for="countries">Choose country:</label>
+
+<select name="countries" bind:value={menu}>
+	<option value={1}>Guatemala</option>
+	<option value={2}>Honduras</option>
+	<option value={3}>El Salvador</option>
+</select>
+</div>
+
+<!-- <div class="flex justify-center items-center">
 <ul class="flex">
 	<li class="mr-6">
 	  <a class="text-blue-500 hover:text-blue-800" href="/" on:click|preventDefault={() => (menu = 1)}>Guatemala</a>
@@ -30,7 +40,7 @@
 	  <a class="text-blue-500 hover:text-blue-800" href="/" on:click|preventDefault={() => (menu = 3)}>El Salvador</a>
 	</li>
   </ul>
-</div>
+</div> -->
 
 
 <section class="graph">
@@ -49,11 +59,36 @@
 	{/if}
 </section>
 
-<svelte:head>
+<!-- <svelte:head>
 	<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"/>
-</svelte:head>
+</svelte:head> -->
 
   <style>
+	 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap");
+    /* :root {
+        --color-bg: #ffffff;
+        --color-outline: #c2c2c2;
+        --color-shadow: hsl(0, 0%, 0%, 0.1);
+        --color-text: #3f4252;
+        --color-bg-1: hsla(0, 0%, 0%, 0.2);
+        --color-shadow-1: hsl(0, 0%, 96%);
+    } */
+    /* *,
+    *::before,
+    *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    } */
+
+	select {
+       font-family: "Nunito", sans-serif;
+   }
+
+   .dropdownmenu {
+	font-family: "Nunito", sans-serif;
+	text-align: center;
+   }
 
 	* {
   box-sizing: border-box;
@@ -68,7 +103,12 @@
         font-size: 15px;
         font-weight: 300;
         line-height: 1.5;
+		font-family: "Nunito", sans-serif;
     }
+
+	/* li {
+    	display: inline;
+  	} */
 
 
   </style>
