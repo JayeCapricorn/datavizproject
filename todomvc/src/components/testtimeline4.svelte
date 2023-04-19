@@ -2,6 +2,8 @@
 	import * as d3 from 'd3';
 	import {onMount} from 'svelte';
 	import Testline from '../components/testline.svelte';
+	import Eventline from './eventline.svelte';
+	import Legend from './legend.svelte';
 	import {gt_volcano, gt_earthquakes, gt_drought, gt_floods, gt_landslide, gt_storm,
 	        hn_drought, hn_earthquakes, hn_floods, hn_storm, 
 		elsl_drought, elsl_earthquakes, elsl_floods, elsl_landslide, elsl_storm, elsl_volcano} from '../data/distributiondata.js';
@@ -59,6 +61,10 @@
 	
 </script>
 
+<svg width="500" height="90" font-family="Nunito" font-size="10px" fill-opacity=0.5>
+	<Legend margin={margin}/>
+</svg>
+
 <svg {width} {height}>
 	{#each data as d, i}
 		<circle
@@ -74,6 +80,10 @@
 							y: event.pageY
 						}}}
 					on:mouseout={(event) => { hovered = -1; }} />
+
+		{#if d.hasOwnProperty('Description')}
+		<Eventline x1={margin.left - 40} x2={xScale(d.DisasterType) + 80} y1={yScale(d.Year)} y2={yScale(d.Year)}/>
+			{/if}
 	{/each}
 
 	{#if menu === 1}
@@ -123,7 +133,7 @@ style="left: {recorded_mouse_position.x + 40}px; top: {recorded_mouse_position.y
     {#if d.hasOwnProperty('Description')}
 	<div
 	class="window"
-	style="left: {xScale(d.DisasterType) + 125}px; top: {yScale(d.Year) + 40}px"	
+	style="left: {90}px; top: {yScale(d.Year) + 90}px"	
 	>
 	{d.Description}
 	</div>

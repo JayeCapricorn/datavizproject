@@ -44,7 +44,14 @@
 
 
 <section class="graph">
-	<h2 style="margin-top: 15px">Timeline of Significant Natural Disasters</h2>
+	<h2 style="margin-top: 10px; margin-left: 290px;">Natural Hazards Timeline</h2>
+  <h3>In 2017, Guatemala ranked fourth in the world for risk of being seriously impacted by a natural disaster. 
+    Residents of El Salvador are also no strangers to hurricanes, tropical storms, and earthquakes- 
+    <br> 88% of El Salvador is at risk of severe impact from natural disasters, with 95% of El Salvador's population at some risk of being
+    affected by these damaging weather events. Due to a large majority of 
+    <br> the country being impoverished, in 2021, the Inter-American Development Bank approved a continent loan of $400 million to aid the country in dealing with the 
+    effects of natural disasters. 
+  </h3>
 
 	{#if menu === 1}
     <Testtimeline4 data={gt_data} menu={menu}/>
@@ -87,7 +94,8 @@
 
    .dropdownmenu {
 	font-family: "Nunito", sans-serif;
-	text-align: center;
+  margin-left: 900px;
+	/* text-align: center; */
    }
 
 	* {
@@ -96,13 +104,18 @@
 
 	.graph {
         display: inline-block;
-        margin-left: 150px;
+        margin-left: 180px;
     }
 
 	h2 {
-        font-size: 15px;
+        font-size: 20px;
         font-weight: 300;
         line-height: 1.5;
+		font-family: "Nunito", sans-serif;
+    }
+
+    h3 {
+        font-size: 10px;
 		font-family: "Nunito", sans-serif;
     }
 

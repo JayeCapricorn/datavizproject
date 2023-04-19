@@ -55,7 +55,7 @@
                     y1={yScale(data[i][0])}
                     y2={yScale(data[i + 1][0])}
                     stroke={color}
-                    stroke-width="2"
+                    stroke-width="1"
                 />
             {/if}
         {/each}

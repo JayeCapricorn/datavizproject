@@ -81,7 +81,7 @@
        font-family: "Nunito", sans-serif;
        font-weight: 300;
        line-height: 2;
-       font-size: 24px;
+       font-size: 15px;
        color: var(--color-text);
        margin-top: 10px;
        margin-left: 100px;
