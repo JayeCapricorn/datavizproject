@@ -34,22 +34,8 @@
   
       window.addEventListener("resize", handleResize);
   
-      // function hideLabelLayers() {
-      //   const labelLayerIds = map
-      //     .getStyle()
-      //     .layers.filter(
-      //       (layer) =>
-      //         layer.type === "symbol" && /label|text|place/.test(layer.id)
-      //     )
-      //     .map((layer) => layer.id);
-  
-      //   for (const layerId of labelLayerIds) {
-      //     map.setLayoutProperty(layerId, "visibility", "none");
-      //   }
-      // }
-  
       map.on("load", () => {
-        map.addSource('lines1', {
+        map.addSource('lines1', { // usa
           'type': 'geojson',
           'data': {
             'type': 'Feature',
@@ -91,7 +77,7 @@
               }
             }
           });
-          map.addSource('lines4', {
+          map.addSource('lines4', { // mexico
           'type': 'geojson',
           'data': {
             'type': 'Feature',
@@ -133,7 +119,7 @@
               }
             }
           });
-          map.addSource('lines7', {
+          map.addSource('lines7', { // canada
           'type': 'geojson',
           'data': {
             'type': 'Feature',
@@ -175,7 +161,7 @@
               }
             }
           });
-          map.addSource('lines10', {
+          map.addSource('lines10', { // uk
           'type': 'geojson',
           'data': {
             'type': 'Feature',
@@ -217,7 +203,7 @@
               }
             }
           });
-          map.addSource('lines13', {
+          map.addSource('lines13', { // germany
           'type': 'geojson',
           'data': {
             'type': 'Feature',
@@ -259,7 +245,7 @@
               }
             }
           });
-          map.addSource('lines16', {
+          map.addSource('lines16', { // france
           'type': 'geojson',
           'data': {
             'type': 'Feature',
@@ -301,8 +287,92 @@
               }
             }
           });
+          map.addSource('lines19', { // spain
+          'type': 'geojson',
+          'data': {
+            'type': 'Feature',
+            'properties': {},
+            'geometry': {
+                'type': 'LineString',
+                'coordinates': [
+                  [-86.2419, 15.2000],
+                  [-3.7492, 40.4637]
+                ]
+              }
+            }
+          });
+          map.addSource('lines20', {
+          'type': 'geojson',
+          'data': {
+            'type': 'Feature',
+            'properties': {},
+            'geometry': {
+                'type': 'LineString',
+                'coordinates': [
+                  [-88.8965, 13.7942],
+                  [-3.7492, 40.4637]
+                ]
+              }
+            }
+          });
+          map.addSource('lines21', {
+          'type': 'geojson',
+          'data': {
+            'type': 'Feature',
+            'properties': {},
+            'geometry': {
+                'type': 'LineString',
+                'coordinates': [
+                  [-90.2308, 15.7835],
+                  [-3.7492, 40.4637]
+                ]
+              }
+            }
+          });
+          map.addSource('lines22', { // russia
+          'type': 'geojson',
+          'data': {
+            'type': 'Feature',
+            'properties': {},
+            'geometry': {
+                'type': 'LineString',
+                'coordinates': [
+                  [-86.2419, 15.2000],
+                  [-105.3188, 61.5240]
+                ]
+              }
+            }
+          });
+          map.addSource('lines23', {
+          'type': 'geojson',
+          'data': {
+            'type': 'Feature',
+            'properties': {},
+            'geometry': {
+                'type': 'LineString',
+                'coordinates': [
+                  [-88.8965, 13.7942],
+                  [-105.3188, 61.5240]
+                ]
+              }
+            }
+          });
+          map.addSource('lines24', {
+          'type': 'geojson',
+          'data': {
+            'type': 'Feature',
+            'properties': {},
+            'geometry': {
+                'type': 'LineString',
+                'coordinates': [
+                  [-90.2308, 15.7835],
+                  [-105.3188, 61.5240]
+                ]
+              }
+            }
+          });
 
-          map.addLayer({
+          map.addLayer({ // usa
             'id': 'lines1',
             'type': 'line',
             'source': 'lines1',
@@ -332,7 +402,7 @@
             }
           });
 
-          map.addLayer({
+          map.addLayer({ // mexico
             'id': 'lines4',
             'type': 'line',
             'source': 'lines4',
@@ -362,7 +432,7 @@
             }
           });
 
-          map.addLayer({
+          map.addLayer({ // canada
             'id': 'lines7',
             'type': 'line',
             'source': 'lines7',
@@ -392,7 +462,7 @@
             }
           });
 
-          map.addLayer({
+          map.addLayer({ // uk
             'id': 'lines10',
             'type': 'line',
             'source': 'lines10',
@@ -422,7 +492,7 @@
             }
           });
 
-          map.addLayer({
+          map.addLayer({ // germany
             'id': 'lines13',
             'type': 'line',
             'source': 'lines13',
@@ -452,7 +522,7 @@
             }
           });
 
-          map.addLayer({
+          map.addLayer({ // france
             'id': 'lines16',
             'type': 'line',
             'source': 'lines16',
@@ -482,7 +552,66 @@
             }
           });
 
-        // hideLabelLayers();
+          map.addLayer({ // spain
+            'id': 'lines19',
+            'type': 'line',
+            'source': 'lines19',
+            'paint': {
+              'line-width': 2,
+              'line-color': '#e55e5e' // honduras
+            }
+          });
+
+          map.addLayer({
+            'id': 'lines20',
+            'type': 'line',
+            'source': 'lines20',
+            'paint': {
+              'line-width': 2,
+              'line-color': '#fbb03b' // el salvador
+            }
+          });
+
+          map.addLayer({
+            'id': 'lines21',
+            'type': 'line',
+            'source': 'lines21',
+            'paint': {
+              'line-width': 2,
+              'line-color': '#3bb2d0' // guatemala
+            }
+          });
+
+          map.addLayer({ // russia
+            'id': 'lines22',
+            'type': 'line',
+            'source': 'lines22',
+            'paint': {
+              'line-width': 1,
+              'line-color': '#e55e5e' // honduras
+            }
+          });
+
+          map.addLayer({
+            'id': 'lines23',
+            'type': 'line',
+            'source': 'lines23',
+            'paint': {
+              'line-width': 1,
+              'line-color': '#fbb03b' // el salvador
+            }
+          });
+
+          map.addLayer({
+            'id': 'lines24',
+            'type': 'line',
+            'source': 'lines24',
+            'paint': {
+              'line-width': 1,
+              'line-color': '#3bb2d0' // guatemala
+            }
+          });
+
         updateBounds();
         map.on("zoom", updateBounds);
         map.on("drag", updateBounds);
