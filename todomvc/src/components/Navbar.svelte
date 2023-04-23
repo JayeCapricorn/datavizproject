@@ -10,18 +10,14 @@
         <li>
           <a href="/timeline">Timeline</a>
         </li>
-        <li>
+        <!-- <li>
           <a href="/">Maps</a>
         </li>
         <li>
           <a href="/">Analysis</a>
-        </li>
+        </li> -->
     </ul>
 </main>
-
-<!-- <svelte:head>
-	<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"/>
-</svelte:head> -->
 
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap");
