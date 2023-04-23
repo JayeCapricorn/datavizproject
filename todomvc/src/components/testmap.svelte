@@ -28,7 +28,7 @@
         container,
         style: "mapbox://styles/mapbox/light-v11",
         center: [-85.6024, 12.7690],
-        zoom: zoomLevel,
+        zoom: 5,
         attributionControl: true, // removes attribution from the bottom of the map
       });
   
@@ -49,6 +49,439 @@
       // }
   
       map.on("load", () => {
+        map.addSource('lines1', {
+          'type': 'geojson',
+          'data': {
+            'type': 'Feature',
+            'properties': {},
+            'geometry': {
+                'type': 'LineString',
+                'coordinates': [
+                  [-86.2419, 15.2000],
+                  [-95.7129, 37.0902]
+                ]
+              }
+            }
+          });
+          map.addSource('lines2', {
+          'type': 'geojson',
+          'data': {
+            'type': 'Feature',
+            'properties': {},
+            'geometry': {
+                'type': 'LineString',
+                'coordinates': [
+                  [-88.8965, 13.7942],
+                  [-95.7129, 37.0902]
+                ]
+              }
+            }
+          });
+          map.addSource('lines3', {
+          'type': 'geojson',
+          'data': {
+            'type': 'Feature',
+            'properties': {},
+            'geometry': {
+                'type': 'LineString',
+                'coordinates': [
+                  [-90.2308, 15.7835],
+                  [-95.7129, 37.0902]
+                ]
+              }
+            }
+          });
+          map.addSource('lines4', {
+          'type': 'geojson',
+          'data': {
+            'type': 'Feature',
+            'properties': {},
+            'geometry': {
+                'type': 'LineString',
+                'coordinates': [
+                  [-86.2419, 15.2000],
+                  [-102.5528, 23.6345]
+                ]
+              }
+            }
+          });
+          map.addSource('lines5', {
+          'type': 'geojson',
+          'data': {
+            'type': 'Feature',
+            'properties': {},
+            'geometry': {
+                'type': 'LineString',
+                'coordinates': [
+                  [-88.8965, 13.7942],
+                  [-102.5528, 23.6345]
+                ]
+              }
+            }
+          });
+          map.addSource('lines6', {
+          'type': 'geojson',
+          'data': {
+            'type': 'Feature',
+            'properties': {},
+            'geometry': {
+                'type': 'LineString',
+                'coordinates': [
+                  [-90.2308, 15.7835],
+                  [-102.5528, 23.6345]
+                ]
+              }
+            }
+          });
+          map.addSource('lines7', {
+          'type': 'geojson',
+          'data': {
+            'type': 'Feature',
+            'properties': {},
+            'geometry': {
+                'type': 'LineString',
+                'coordinates': [
+                  [-86.2419, 15.2000],
+                  [-106.3468, 56.1304]
+                ]
+              }
+            }
+          });
+          map.addSource('lines8', {
+          'type': 'geojson',
+          'data': {
+            'type': 'Feature',
+            'properties': {},
+            'geometry': {
+                'type': 'LineString',
+                'coordinates': [
+                  [-88.8965, 13.7942],
+                  [-106.3468, 56.1304]
+                ]
+              }
+            }
+          });
+          map.addSource('lines9', {
+          'type': 'geojson',
+          'data': {
+            'type': 'Feature',
+            'properties': {},
+            'geometry': {
+                'type': 'LineString',
+                'coordinates': [
+                  [-90.2308, 15.7835],
+                  [-106.3468, 56.1304]
+                ]
+              }
+            }
+          });
+          map.addSource('lines10', {
+          'type': 'geojson',
+          'data': {
+            'type': 'Feature',
+            'properties': {},
+            'geometry': {
+                'type': 'LineString',
+                'coordinates': [
+                  [-86.2419, 15.2000],
+                  [-3.4360, 55.3781]
+                ]
+              }
+            }
+          });
+          map.addSource('lines11', {
+          'type': 'geojson',
+          'data': {
+            'type': 'Feature',
+            'properties': {},
+            'geometry': {
+                'type': 'LineString',
+                'coordinates': [
+                  [-88.8965, 13.7942],
+                  [-3.4360, 55.3781]
+                ]
+              }
+            }
+          });
+          map.addSource('lines12', {
+          'type': 'geojson',
+          'data': {
+            'type': 'Feature',
+            'properties': {},
+            'geometry': {
+                'type': 'LineString',
+                'coordinates': [
+                  [-90.2308, 15.7835],
+                  [-3.4360, 55.3781]
+                ]
+              }
+            }
+          });
+          map.addSource('lines13', {
+          'type': 'geojson',
+          'data': {
+            'type': 'Feature',
+            'properties': {},
+            'geometry': {
+                'type': 'LineString',
+                'coordinates': [
+                  [-86.2419, 15.2000],
+                  [10.4515, 51.1657]
+                ]
+              }
+            }
+          });
+          map.addSource('lines14', {
+          'type': 'geojson',
+          'data': {
+            'type': 'Feature',
+            'properties': {},
+            'geometry': {
+                'type': 'LineString',
+                'coordinates': [
+                  [-88.8965, 13.7942],
+                  [10.4515, 51.1657]
+                ]
+              }
+            }
+          });
+          map.addSource('lines15', {
+          'type': 'geojson',
+          'data': {
+            'type': 'Feature',
+            'properties': {},
+            'geometry': {
+                'type': 'LineString',
+                'coordinates': [
+                  [-90.2308, 15.7835],
+                  [10.4515, 51.1657]
+                ]
+              }
+            }
+          });
+          map.addSource('lines16', {
+          'type': 'geojson',
+          'data': {
+            'type': 'Feature',
+            'properties': {},
+            'geometry': {
+                'type': 'LineString',
+                'coordinates': [
+                  [-86.2419, 15.2000],
+                  [2.2137, 46.2276]
+                ]
+              }
+            }
+          });
+          map.addSource('lines17', {
+          'type': 'geojson',
+          'data': {
+            'type': 'Feature',
+            'properties': {},
+            'geometry': {
+                'type': 'LineString',
+                'coordinates': [
+                  [-88.8965, 13.7942],
+                  [2.2137, 46.2276]
+                ]
+              }
+            }
+          });
+          map.addSource('lines18', {
+          'type': 'geojson',
+          'data': {
+            'type': 'Feature',
+            'properties': {},
+            'geometry': {
+                'type': 'LineString',
+                'coordinates': [
+                  [-90.2308, 15.7835],
+                  [2.2137, 46.2276]
+                ]
+              }
+            }
+          });
+
+          map.addLayer({
+            'id': 'lines1',
+            'type': 'line',
+            'source': 'lines1',
+            'paint': {
+              'line-width': 6,
+              'line-color': '#e55e5e' // honduras
+            }
+          });
+
+          map.addLayer({
+            'id': 'lines2',
+            'type': 'line',
+            'source': 'lines2',
+            'paint': {
+              'line-width': 6,
+              'line-color': '#fbb03b' // el salvador
+            }
+          });
+
+          map.addLayer({
+            'id': 'lines3',
+            'type': 'line',
+            'source': 'lines3',
+            'paint': {
+              'line-width': 6,
+              'line-color': '#3bb2d0' // guatemala
+            }
+          });
+
+          map.addLayer({
+            'id': 'lines4',
+            'type': 'line',
+            'source': 'lines4',
+            'paint': {
+              'line-width': 3,
+              'line-color': '#e55e5e' // honduras
+            }
+          });
+
+          map.addLayer({
+            'id': 'lines5',
+            'type': 'line',
+            'source': 'lines5',
+            'paint': {
+              'line-width': 3,
+              'line-color': '#fbb03b' // el salvador
+            }
+          });
+
+          map.addLayer({
+            'id': 'lines6',
+            'type': 'line',
+            'source': 'lines6',
+            'paint': {
+              'line-width': 3,
+              'line-color': '#3bb2d0' // guatemala
+            }
+          });
+
+          map.addLayer({
+            'id': 'lines7',
+            'type': 'line',
+            'source': 'lines7',
+            'paint': {
+              'line-width': 1,
+              'line-color': '#e55e5e' // honduras
+            }
+          });
+
+          map.addLayer({
+            'id': 'lines8',
+            'type': 'line',
+            'source': 'lines8',
+            'paint': {
+              'line-width': 1,
+              'line-color': '#fbb03b' // el salvador
+            }
+          });
+
+          map.addLayer({
+            'id': 'lines9',
+            'type': 'line',
+            'source': 'lines9',
+            'paint': {
+              'line-width': 1,
+              'line-color': '#3bb2d0' // guatemala
+            }
+          });
+
+          map.addLayer({
+            'id': 'lines10',
+            'type': 'line',
+            'source': 'lines10',
+            'paint': {
+              'line-width': 1,
+              'line-color': '#e55e5e' // honduras
+            }
+          });
+
+          map.addLayer({
+            'id': 'lines11',
+            'type': 'line',
+            'source': 'lines11',
+            'paint': {
+              'line-width': 1,
+              'line-color': '#fbb03b' // el salvador
+            }
+          });
+
+          map.addLayer({
+            'id': 'lines12',
+            'type': 'line',
+            'source': 'lines12',
+            'paint': {
+              'line-width': 1,
+              'line-color': '#3bb2d0' // guatemala
+            }
+          });
+
+          map.addLayer({
+            'id': 'lines13',
+            'type': 'line',
+            'source': 'lines13',
+            'paint': {
+              'line-width': 3,
+              'line-color': '#e55e5e' // honduras
+            }
+          });
+
+          map.addLayer({
+            'id': 'lines14',
+            'type': 'line',
+            'source': 'lines14',
+            'paint': {
+              'line-width': 3,
+              'line-color': '#fbb03b' // el salvador
+            }
+          });
+
+          map.addLayer({
+            'id': 'lines15',
+            'type': 'line',
+            'source': 'lines15',
+            'paint': {
+              'line-width': 3,
+              'line-color': '#3bb2d0' // guatemala
+            }
+          });
+
+          map.addLayer({
+            'id': 'lines16',
+            'type': 'line',
+            'source': 'lines16',
+            'paint': {
+              'line-width': 1,
+              'line-color': '#e55e5e' // honduras
+            }
+          });
+
+          map.addLayer({
+            'id': 'lines17',
+            'type': 'line',
+            'source': 'lines17',
+            'paint': {
+              'line-width': 1,
+              'line-color': '#fbb03b' // el salvador
+            }
+          });
+
+          map.addLayer({
+            'id': 'lines18',
+            'type': 'line',
+            'source': 'lines18',
+            'paint': {
+              'line-width': 1,
+              'line-color': '#3bb2d0' // guatemala
+            }
+          });
+
         // hideLabelLayers();
         updateBounds();
         map.on("zoom", updateBounds);
