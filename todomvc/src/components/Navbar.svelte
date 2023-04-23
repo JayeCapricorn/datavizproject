@@ -1,21 +1,3 @@
-<!-- <script>
-
-</script>
-
-<div class="container-fluid">
-  <nav class="navbar navbar-inverse navbar-default" >
-   <div class="container-fluid">
-
-       <ul class="nav navbar-nav navbar-right">
-         <li><a href="/frontpage">Frontpage</a></li>
-         <li><a href="/">Timeline</a></li>
-       </ul>
-     </div>
-   </div>
-
-<style>
-
-</style> -->
 <script>
 
 </script>
@@ -23,16 +5,16 @@
 <main>
     <ul>
         <li>
-          <a href="/frontpage">Frontpage</a>
+          <a href="/">Frontpage</a>
         </li>
         <li>
-          <a href="/">Timeline</a>
+          <a href="/timeline">Timeline</a>
         </li>
         <li>
-          <a href="/frontpage">Maps</a>
+          <a href="/">Maps</a>
         </li>
         <li>
-          <a href="/frontpage">Analysis</a>
+          <a href="/">Analysis</a>
         </li>
     </ul>
 </main>
