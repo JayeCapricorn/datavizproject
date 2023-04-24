@@ -72,7 +72,7 @@
 					r={d.TotalAffected === '' ? 5 : sizeScale(d.TotalAffected)}
                     cy={yScale(d.Year)}
 					height={yScale(1900)-yScale(d.Year)}
-					fill={i === hovered ? "purple": d.hasOwnProperty('Description') ? "black" : d3.color(coloroptions[d.DisasterType])}
+					fill={i === hovered ? "purple": d3.color(coloroptions[d.DisasterType])}
 					on:mouseover={(event) => 
 					{ hovered = i; 
 					  recorded_mouse_position = {

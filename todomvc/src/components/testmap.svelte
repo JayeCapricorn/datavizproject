@@ -27,8 +27,8 @@
       map = new mapboxgl.Map({
         container,
         style: "mapbox://styles/mapbox/light-v11",
-        center: [-85.6024, 12.7690],
-        zoom: 5,
+        center: [-102.5528, 23.6345],
+        zoom: 3,
         attributionControl: true, // removes attribution from the bottom of the map
       });
   
@@ -377,7 +377,7 @@
             'type': 'line',
             'source': 'lines1',
             'paint': {
-              'line-width': 6,
+              'line-width': 9,
               'line-color': '#e55e5e' // honduras
             }
           });
@@ -387,7 +387,7 @@
             'type': 'line',
             'source': 'lines2',
             'paint': {
-              'line-width': 6,
+              'line-width': 9,
               'line-color': '#fbb03b' // el salvador
             }
           });
@@ -397,7 +397,7 @@
             'type': 'line',
             'source': 'lines3',
             'paint': {
-              'line-width': 6,
+              'line-width': 9,
               'line-color': '#3bb2d0' // guatemala
             }
           });
