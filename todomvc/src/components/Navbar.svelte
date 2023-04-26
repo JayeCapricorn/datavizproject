@@ -10,12 +10,9 @@
         <li>
           <a href="/timeline">Timeline</a>
         </li>
-        <!-- <li>
-          <a href="/">Maps</a>
-        </li>
         <li>
-          <a href="/">Analysis</a>
-        </li> -->
+          <a href="/analysis">Analysis</a>
+        </li> 
     </ul>
 </main>
 
