@@ -2,7 +2,8 @@
     export let index;
 
     let isVisible = true;
-    let imgurl = "/src/assets/bgimage.PNG";
+    let imgurl = "/images/bgimage.PNG";
+    // let imgurl = "/src/assets/bgimage.PNG";
     // let testurls = {0: "/src/assets/test.PNG", 
     //                 1: "/src/assets/economic.PNG", 
     //                 2: "/src/assets/people.PNG", 3: "/src/assets/deaths.PNG"};

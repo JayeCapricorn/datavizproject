@@ -23,12 +23,15 @@
 
   <div class="foreground" slot="foreground" >
     <section> Disasters have had a significant socioeconomic impact on Central American countries. 
-      <img src="/src/assets/test.PNG" />
+      <img src="/images/test.PNG" />
+      <!-- <img src="/src/assets/test.PNG" /> -->
     </section>
     <section> </section>
     <section>
-        <img src="/src/assets/image.png" class="img2"/>
-        <img src="/src/assets/imgtest.PNG" class="img3"/>
+      <img src="/images/image.png" class="img2"/>
+        <img src="/images/imgtest.PNG" class="img3"/>
+        <!-- <img src="/src/assets/image.png" class="img2"/>
+        <img src="/src/assets/imgtest.PNG" class="img3"/> -->
     </section>
     <section> </section>
     <!-- <section> </section> -->
