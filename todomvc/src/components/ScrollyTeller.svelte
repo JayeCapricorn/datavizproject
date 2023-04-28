@@ -22,19 +22,20 @@
   </div>
 
   <div class="foreground" slot="foreground" >
-    <section> Disasters have had a significant socioeconomic impact on Central American countries. 
-      <img src="/images/test.PNG" />
-      <!-- <img src="/src/assets/test.PNG" /> -->
+    <section> Migration rates in Central America have changed and peaked in certain years.
+      <img src="/images/test2.PNG" style="width: 50%"/>
     </section>
-    <section> </section>
+    <section>Natural disasters have caused thousands of deaths per year in Central American countries. 
+      <img src="/images/test3.png" style="width: 50%"/>
+    </section>
+    <section> At the same time, natural disasters have resulted in significant economic damages. 
+      <img src="/images/test4.png" style="width: 50%"/>
+    </section>
     <section>
-      <img src="/images/image.png" class="img2"/>
-        <img src="/images/imgtest.PNG" class="img3"/>
-        <!-- <img src="/src/assets/image.png" class="img2"/>
-        <img src="/src/assets/imgtest.PNG" class="img3"/> -->
+      <!-- <img src="/images/image.png" class="img2"/>
+        <img src="/images/imgtest.PNG" class="img3"/> -->
     </section>
     <section> </section>
-    <!-- <section> </section> -->
   </div>
 
 </Scroller>

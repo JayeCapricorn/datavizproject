@@ -1,14 +1,14 @@
 <script>
     export let index;
 
-    let isVisible = true;
+    let isVisible;
     let imgurl = "/images/bgimage.PNG";
     // let imgurl = "/src/assets/bgimage.PNG";
     // let testurls = {0: "/src/assets/test.PNG", 
     //                 1: "/src/assets/economic.PNG", 
     //                 2: "/src/assets/people.PNG", 3: "/src/assets/deaths.PNG"};
 
-    $: if (index >= 1) {
+    $: if (index > 2) {
         isVisible = true;
     } else {
         isVisible = false;
