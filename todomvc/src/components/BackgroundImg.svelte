@@ -17,10 +17,30 @@
 
 <main class:visible={isVisible}>
     <!-- <img src={testurls[index]} alt="background image" class="center"/> -->
+    {#if index === 4}
+    <img src="/images/image.png" class="img2"/>
+    <img src="/images/imgtest.PNG" class="img3"/>
     <img src={imgurl} alt="background image" class="center"/>
+    {:else}
+    <img src={imgurl} alt="background image" class="center"/>
+    {/if}
 </main>
 
 <style>
+     .img2 {
+        z-index: 3;
+        position: absolute; 
+        left: 150px;
+        width: 20%
+    }
+    .img3 {
+        z-index: 3;
+        position: absolute; 
+        right: 200px;
+        top: 80px;
+        width: 20%
+    }
+
     .center {
         display: block;
         margin-left: auto;

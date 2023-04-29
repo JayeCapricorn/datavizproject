@@ -18,24 +18,32 @@
   <div class="background" slot="background"
   bind:clientWidth={width}
     bind:clientHeight={height}>
-    <BackgroundImg {index}/>
+    <!-- <BackgroundImg {index}/> -->
   </div>
 
   <div class="foreground" slot="foreground" >
-    <section> Migration rates in Central America have changed and peaked in certain years.
-      <img src="/images/test2.PNG" style="width: 50%"/>
-    </section>
     <section>Natural disasters have caused thousands of deaths per year in Central American countries. 
-      <img src="/images/test3.png" style="width: 50%"/>
+      <img src="/images/test3.png" style="width: 60%"/>
     </section>
     <section> At the same time, natural disasters have resulted in significant economic damages. 
-      <img src="/images/test4.png" style="width: 50%"/>
+      <img src="/images/test4.png" style="width: 60%"/>
     </section>
-    <section>
-      <!-- <img src="/images/image.png" class="img2"/>
-        <img src="/images/imgtest.PNG" class="img3"/> -->
+    <!-- <section> Migration rates in Central America have peaked in certain years such as 1980.
+      <img src="/images/test2.PNG" style="width: 50%"/>
+    </section> -->
+    <section> The number of disasters appears to have a correlation with Central American net migration. How could this happen?
+      <img src="/images/test5.PNG" style="width: 60%"/>
     </section>
-    <section> </section>
+    <section> Disasters affect economic variables such as the consumer and wholesale price index.
+      <img src="/images/test6.png" style="width: 90%"/>
+    </section>
+    <section> Disasters also worsen food insecurity for residents.
+      <img src="/images/test7.PNG" style="width: 60%"/>
+    </section>
+    <!-- <section>
+      <img src="/images/image.png" class="img2"/>
+        <img src="/images/imgtest.PNG" class="img3"/>
+    </section> -->
   </div>
 
 </Scroller>
