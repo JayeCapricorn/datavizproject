@@ -23,39 +23,42 @@
 
   <div class="foreground" slot="foreground" >
     <section> 
-        <h3>Influence of Natural Hazard</h3>
-        <p>Natural disasters have caused thousands of deaths per year in Central American countries. </p>
-      <img src="/images/test3.png" style="width: 60%; display:block; margin: 20px"/>
+      <h4>Influence of Natural Hazard</h4>
+      <p>Natural disasters have caused thousands of deaths per year in Central American countries. </p>
+      <img src="/images/test3.png" style="width: 60%"/>
     </section>
       
     <section> 
-        <h3>Direct Relationship between Disasters and Migration intention</h3>
-        <img src="/images/netmigration.png" style="width: 60%; display:block; margin: 20px"/>
-        The number of disasters has a positive correlation with Central American net migration.
+      <h4>Direct Relationship between Disasters and Migration intention</h4>
+      <img src="/images/netmigration.png" style="width: 60%"/>
+      The number of disasters has a positive correlation with Central American net migration.
       <img src="/images/test5.PNG" style="width: 60%"/>
     </section>   
-    <section> Intermediate Variable - Economy
-        At the same time, natural disasters have resulted in significant economic damages. 
-        
+    <section> 
+      <h4>Intermediate Variable - Economy</h4>
+      At the same time, natural disasters have resulted in significant economic damages. 
       <img src="/images/test4.png" style="width: 60%"/>
-        
-        Disasters affect economic variables such as the consumer and wholesale price index.
-        <img src="/images/test6.png" style="width: 90%"/>
+      Disasters affect economic variables such as the consumer and wholesale price index.
+      <img src="/images/test6.png" style="width: 90%"/>
+      <img src="/images/test8.PNG" style="width:600px"/>
     </section>
     <!-- <section> Migration rates in Central America have peaked in certain years such as 1980.
       <img src="/images/test2.PNG" style="width: 50%"/>
     </section> -->
-     <section style="width: 600px; position: relative; 
+<!--      <section style="width: 600px; position: relative; 
       left: 500px;">
-      <img src="/images/test8.PNG"/>
-    </section>
-      <section> Disasters also worsen food insecurity for residents.
+      <img src="/images/test8.PNG"/> -->
+<!--     </section> -->
+    <section>
+      <h4>Intermediate Variable - Food Security</h4>
+      Disasters also worsen food insecurity for residents.
       <img src="/images/test7.PNG" style="width: 60%"/>
+      <img src="/images/test9.PNG" style="width:600px"/>
     </section>
-    <section style="width: 600px; position: relative; 
+<!--     <section style="width: 600px; position: relative; 
       left: 500px;">
       <img src="/images/test9.PNG"/>
-    </section>
+    </section> -->
     <!-- <section>
       <img src="/images/image.png" class="img2"/>
         <img src="/images/imgtest.PNG" class="img3"/>
@@ -78,6 +81,8 @@
     }
     img {
         display: block;
+        margin-top：20px;
+        margin-bottom:20px;
         margin-left: auto;
         margin-right: auto;
         width: 100%;
