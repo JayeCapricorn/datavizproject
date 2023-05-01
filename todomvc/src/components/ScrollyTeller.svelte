@@ -22,14 +22,16 @@
   </div>
 
   <div class="foreground" slot="foreground" >
-    <section> Influence of Natural Hazard
-        Natural disasters have caused thousands of deaths per year in Central American countries. 
-        
-      <img src="/images/test3.png" style="width: 60%"/>
+    <section> 
+        <h3>Influence of Natural Hazard</h3>
+        <p>Natural disasters have caused thousands of deaths per year in Central American countries. </p>
+      <img src="/images/test3.png" style="width: 60%; display:block; margin: 20px"/>
     </section>
-    <section> Direct Relationship between Disasters and Migration intention
+      
+    <section> 
+        <h3>Direct Relationship between Disasters and Migration intention</h3>
+        <img src="/images/netmigration.png" style="width: 60%; display:block; margin: 20px"/>
         The number of disasters has a positive correlation with Central American net migration.
-        
       <img src="/images/test5.PNG" style="width: 60%"/>
     </section>   
     <section> Intermediate Variable - Economy
