@@ -40,7 +40,7 @@
       <img src="/images/test4.png" style="width: 60%"/>
       Disasters affect economic variables such as the consumer and wholesale price index.
       <img src="/images/test6.png" style="width: 90%"/>
-      <img src="/images/test8.PNG" style="width:600px"/>
+      <img src="/images/test8.PNG" style="width:550px"/>
     </section>
     <!-- <section> Migration rates in Central America have peaked in certain years such as 1980.
       <img src="/images/test2.PNG" style="width: 50%"/>
@@ -53,7 +53,7 @@
       <h4>Intermediate Variable - Food Security</h4>
       Disasters also worsen food insecurity for residents.
       <img src="/images/test7.PNG" style="width: 60%"/>
-      <img src="/images/test9.PNG" style="width:600px"/>
+      <img src="/images/test9.PNG" style="width:550px"/>
     </section>
 <!--     <section style="width: 600px; position: relative; 
       left: 500px;">
@@ -107,7 +107,7 @@
       font-family: "Nunito", sans-serif;
       position: relative; 
       left: 500px;
-      height: 80vh;
+      height: 90vh;
       background-color: rgba(255, 255, 255, 0.2); /* 20% opaque */
       color: white;
 /*       outline: rgb(77, 77, 77) solid 1px; */
