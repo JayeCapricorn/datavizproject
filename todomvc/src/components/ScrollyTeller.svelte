@@ -93,11 +93,11 @@
       font: 20px sans-serif;
       font-family: "Nunito", sans-serif;
       position: relative; 
-      left: 400px;
+      left: 500px;
       height: 80vh;
       background-color: rgba(255, 255, 255, 0.2); /* 20% opaque */
       color: white;
-      outline: rgb(77, 77, 77) solid 3px;
+      outline: rgb(77, 77, 77) solid 1px;
       text-align: center;
       width: 400px;  
       /* max-width: 750px;  */
