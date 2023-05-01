@@ -40,12 +40,14 @@
     <section> Disasters also worsen food insecurity for residents.
       <img src="/images/test7.PNG" style="width: 60%"/>
     </section>
-    <!-- <section>
+    <section style="width: 600px; position: relative; 
+      left: 200px;">
       <img src="/images/test8.PNG"/>
     </section>
-    <section>
+    <section style="width: 600px; position: relative; 
+      left: 200px;">
       <img src="/images/test9.PNG"/>
-    </section> -->
+    </section>
     <!-- <section>
       <img src="/images/image.png" class="img2"/>
         <img src="/images/imgtest.PNG" class="img3"/>
@@ -103,5 +105,6 @@
       padding: 1em;
       margin: 0 0 2em 0;
     }
+    
   </style>
   
