@@ -49,8 +49,8 @@
         top: 80px;
         margin-left: auto;
         margin-right: auto;
-        width: 90%;
-        height: 90%;
+        width: 85%;
+        height: 85%;
         }
     main {
     /* width: 100%;
