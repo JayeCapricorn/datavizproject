@@ -22,21 +22,27 @@
   </div>
 
   <div class="foreground" slot="foreground" >
-    <section>Natural disasters have caused thousands of deaths per year in Central American countries. 
+    <section> Influence of Natural Hazard
+        Natural disasters have caused thousands of deaths per year in Central American countries. 
+        
       <img src="/images/test3.png" style="width: 60%"/>
     </section>
-    <section> At the same time, natural disasters have resulted in significant economic damages. 
+    <section> Direct Relationship between Disasters and Migration intention
+        The number of disasters has a positive correlation with Central American net migration.
+        
+      <img src="/images/test5.PNG" style="width: 60%"/>
+    </section>   
+    <section> Intermediate Variable - Economy
+        At the same time, natural disasters have resulted in significant economic damages. 
+        
       <img src="/images/test4.png" style="width: 60%"/>
+        
+        Disasters affect economic variables such as the consumer and wholesale price index.
+        <img src="/images/test6.png" style="width: 90%"/>
     </section>
     <!-- <section> Migration rates in Central America have peaked in certain years such as 1980.
       <img src="/images/test2.PNG" style="width: 50%"/>
     </section> -->
-    <section> The number of disasters appears to have a correlation with Central American net migration. How could this happen?
-      <img src="/images/test5.PNG" style="width: 60%"/>
-    </section>
-    <section> Disasters affect economic variables such as the consumer and wholesale price index.
-      <img src="/images/test6.png" style="width: 90%"/>
-    </section>
      <section style="width: 600px; position: relative; 
       left: 500px;">
       <img src="/images/test8.PNG"/>
