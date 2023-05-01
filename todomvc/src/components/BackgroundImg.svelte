@@ -22,9 +22,9 @@
     <img src="/images/imgtest.PNG" class="img3"/> -->
     <img src="/images/map_eco loss.jpg" alt="background image" class="center"/>
     {:else if index >= 3}
-    <img src="/images/map_index.jpg" alt="background image" class="center"/>
-    {:else}
     <img src="/images/bgmap.jpg" alt="background image" class="center"/>
+    {:else}
+    <img src="/images/map_index.jpg" alt="background image" class="center"/>
     
     {/if}
 </main>
@@ -46,9 +46,10 @@
 
     .center {
         display: block;
+        top: 80px;
         margin-left: auto;
         margin-right: auto;
-        width: 80%;
+        width: 90%;
         height: 90%;
         }
     main {
