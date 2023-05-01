@@ -18,7 +18,7 @@
   <div class="background" slot="background"
   bind:clientWidth={width}
     bind:clientHeight={height}>
-    <!-- <BackgroundImg {index}/> -->
+    <BackgroundImg {index}/>
   </div>
 
   <div class="foreground" slot="foreground" >
@@ -40,6 +40,12 @@
     <section> Disasters also worsen food insecurity for residents.
       <img src="/images/test7.PNG" style="width: 60%"/>
     </section>
+    <!-- <section>
+      <img src="/images/test8.PNG"/>
+    </section>
+    <section>
+      <img src="/images/test9.PNG"/>
+    </section> -->
     <!-- <section>
       <img src="/images/image.png" class="img2"/>
         <img src="/images/imgtest.PNG" class="img3"/>
@@ -84,15 +90,15 @@
     section {
       font: 20px sans-serif;
       font-family: "Nunito", sans-serif;
-      /* position: relative; 
-      left: 300px; */
+      position: relative; 
+      left: 400px;
       height: 80vh;
       background-color: rgba(255, 255, 255, 0.2); /* 20% opaque */
       color: white;
-      /* outline: magenta solid 3px; */
+      outline: rgb(77, 77, 77) solid 3px;
       text-align: center;
-      /* width: 400px;   */
-      max-width: 750px; 
+      width: 400px;  
+      /* max-width: 750px;  */
       color: black;
       padding: 1em;
       margin: 0 0 2em 0;
