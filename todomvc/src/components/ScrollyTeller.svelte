@@ -41,11 +41,11 @@
       <img src="/images/test7.PNG" style="width: 60%"/>
     </section>
     <section style="width: 600px; position: relative; 
-      left: 200px;">
+      left: 500px;">
       <img src="/images/test8.PNG"/>
     </section>
     <section style="width: 600px; position: relative; 
-      left: 200px;">
+      left: 500px;">
       <img src="/images/test9.PNG"/>
     </section>
     <!-- <section>
@@ -93,13 +93,13 @@
       font: 20px sans-serif;
       font-family: "Nunito", sans-serif;
       position: relative; 
-      left: 500px;
+      left: 600px;
       height: 80vh;
       background-color: rgba(255, 255, 255, 0.2); /* 20% opaque */
       color: white;
-      outline: rgb(77, 77, 77) solid 1px;
+/*       outline: rgb(77, 77, 77) solid 1px; */
       text-align: center;
-      width: 400px;  
+      width: 500px;  
       /* max-width: 750px;  */
       color: black;
       padding: 1em;
