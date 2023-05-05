@@ -2,19 +2,19 @@
     export let index;
     import Barchart from "./barchart.svelte";
     import Scatterplot from "./scatterplot.svelte";
+    import Linechart from "./linechart.svelte";
+
+    import { weddings } from "../data/weddings";
+
+    let weddings_data = [];
+    weddings.forEach((element) =>
+        weddings_data.push({
+            index: element["Year"],
+            size: element["Civil"],
+        })
+    );
 
     let isVisible = true;
-    // let imgurl = "/images/bgimage.PNG";
-    // let imgurl = "/src/assets/bgimage.PNG";
-    // let testurls = {0: "/src/assets/test.PNG", 
-    //                 1: "/src/assets/economic.PNG", 
-    //                 2: "/src/assets/people.PNG", 3: "/src/assets/deaths.PNG"};
-
-    // $: if (index > 2) {
-    //     isVisible = true;
-    // } else {
-    //     isVisible = false;
-    // }
 </script>
 
 <main class:visible={isVisible}>
@@ -26,8 +26,9 @@
     {:else if index == 1}
     <Scatterplot />
     <!-- <img src="/images/bgmap.jpg" alt="background image" class="center"/> -->
-    <!-- {:else}
-    <img src="/images/map_index.jpg" alt="background image" class="center"/> -->
+    {:else}
+    <Linechart bind:data={weddings_data} />
+    <!-- <img src="/images/map_index.jpg" alt="background image" class="center"/> -->
     
     {/if}
 </main>
