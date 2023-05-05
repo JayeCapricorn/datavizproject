@@ -27,8 +27,8 @@
       map = new mapboxgl.Map({
         container,
         style: "mapbox://styles/mapbox/light-v11",
-        center: [-102.5528, 23.6345],
-        zoom: 3,
+        center: [-85.6024, 12.7690],
+        zoom: 4,
         attributionControl: true, // removes attribution from the bottom of the map
       });
   
@@ -1725,7 +1725,7 @@
   <style>
     .map {
       width: 90%;
-      height: 90%; /* check problem when setting width */
+      height: 90%; 
       position: absolute;
       transition: opacity 2s, visibility 2s;
       /* outline: blue solid 3px; */
