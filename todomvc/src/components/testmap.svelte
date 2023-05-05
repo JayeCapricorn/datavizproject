@@ -35,6 +35,31 @@
       window.addEventListener("resize", handleResize);
   
       map.on("load", () => {
+        map.addLayer(
+        {
+          id: 'country-boundaries',
+          source: {
+            type: 'vector',
+            url: 'mapbox://mapbox.country-boundaries-v1',
+          },
+          'source-layer': 'country_boundaries',
+          type: 'fill',
+          paint: {
+            'fill-color': '#6e599f',
+            'fill-opacity': 0.4,
+          },
+        },
+        'country-label'
+      );
+
+      map.setFilter('country-boundaries', [
+        "in",
+        "iso_3166_1_alpha_3",
+        'HND',
+        'GTM',
+        'SLV'
+      ]);
+
         map.addSource('lines1', { // usa
           'type': 'geojson',
           'data': {
