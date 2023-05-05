@@ -1,8 +1,10 @@
 <script>
     export let index;
+    import Barchart from "./barchart.svelte";
+    import Scatterplot from "./scatterplot.svelte";
 
     let isVisible = true;
-    let imgurl = "/images/bgimage.PNG";
+    // let imgurl = "/images/bgimage.PNG";
     // let imgurl = "/src/assets/bgimage.PNG";
     // let testurls = {0: "/src/assets/test.PNG", 
     //                 1: "/src/assets/economic.PNG", 
@@ -17,14 +19,15 @@
 
 <main class:visible={isVisible}>
     <!-- <img src={testurls[index]} alt="background image" class="center"/> -->
-    {#if index >= 1 && index < 3}
+    {#if index == 0}
     <!-- <img src="/images/image.png" class="img2"/>
     <img src="/images/imgtest.PNG" class="img3"/> -->
-    <img src="/images/map_eco loss.jpg" alt="background image" class="center"/>
-    {:else if index >= 3}
-    <img src="/images/bgmap.jpg" alt="background image" class="center"/>
-    {:else}
-    <img src="/images/map_index.jpg" alt="background image" class="center"/>
+    <Barchart />
+    {:else if index == 1}
+    <Scatterplot />
+    <!-- <img src="/images/bgmap.jpg" alt="background image" class="center"/> -->
+    <!-- {:else}
+    <img src="/images/map_index.jpg" alt="background image" class="center"/> -->
     
     {/if}
 </main>

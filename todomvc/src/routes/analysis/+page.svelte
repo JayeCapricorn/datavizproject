@@ -4,11 +4,11 @@
 
 </script>
 
-<Navbar />
+<!-- <Navbar />
 
 <div>
     <ScrollyTeller />
-</div>
+</div> -->
 
 <style>
 

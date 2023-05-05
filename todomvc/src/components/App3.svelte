@@ -94,6 +94,8 @@
 
    .dropdownmenu {
 	font-family: "Nunito", sans-serif;
+  /* position: relative;
+  top: 90px; */
   margin-left: 900px;
 	/* text-align: center; */
    }
@@ -104,10 +106,13 @@
 
 	.graph {
         display: inline-block;
+        /* margin-top: 20px; */
         margin-left: 180px;
     }
 
 	h2 {
+    /* position: relative;
+    top: 80px; */
         font-size: 20px;
         font-weight: 300;
         line-height: 1.5;
@@ -115,6 +120,8 @@
     }
 
     h3 {
+      /* position: relative;
+      top: 80px; */
         font-size: 10px;
 		font-family: "Nunito", sans-serif;
     }
