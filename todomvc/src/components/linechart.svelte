@@ -17,8 +17,7 @@
     };
 
     // set scaling variables
-   // set scaling variables
-   $: xScale = scaleLinear()
+    $: xScale = scaleLinear()
         .domain([
             Math.min(...data.map((d) => d.index)),
             Math.max(...data.map((d) => d.index)),
@@ -110,7 +109,6 @@
             ];
         return data.filter((d) => xScale(d.index) >= value)[0].index - 1;
     }
-
 </script>
 
 <div class="visualization">

@@ -20,32 +20,31 @@
 <main class:visible={isVisible}>
     <!-- <img src={testurls[index]} alt="background image" class="center"/> -->
     {#if index == 0}
-    <!-- <img src="/images/image.png" class="img2"/>
+        <!-- <img src="/images/image.png" class="img2"/>
     <img src="/images/imgtest.PNG" class="img3"/> -->
-    <Barchart />
+        <Barchart />
     {:else if index == 1}
-    <Scatterplot />
-    <!-- <img src="/images/bgmap.jpg" alt="background image" class="center"/> -->
+        <Scatterplot />
+        <!-- <img src="/images/bgmap.jpg" alt="background image" class="center"/> -->
     {:else}
-    <Linechart bind:data={weddings_data} />
-    <!-- <img src="/images/map_index.jpg" alt="background image" class="center"/> -->
-    
+        <Linechart bind:data={weddings_data} />
+        <!-- <img src="/images/map_index.jpg" alt="background image" class="center"/> -->
     {/if}
 </main>
 
 <style>
-     .img2 {
+    .img2 {
         z-index: 3;
-        position: absolute; 
+        position: absolute;
         left: 150px;
-        width: 20%
+        width: 20%;
     }
     .img3 {
         z-index: 3;
-        position: absolute; 
+        position: absolute;
         right: 200px;
         top: 80px;
-        width: 20%
+        width: 20%;
     }
 
     .center {
@@ -55,18 +54,17 @@
         margin-right: auto;
         width: 85%;
         height: 85%;
-        }
+    }
     main {
-    /* width: 100%;
+        /* width: 100%;
     height: 100vh;
     position: absolute; */
-    opacity: 0;
-    visibility: hidden;
-  }
+        opacity: 0;
+        visibility: hidden;
+    }
 
-  main.visible {
-    opacity: 1;
-    visibility: visible;
-  }
-
+    main.visible {
+        opacity: 1;
+        visibility: visible;
+    }
 </style>

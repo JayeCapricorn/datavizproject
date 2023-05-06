@@ -1,71 +1,70 @@
+<script>
+  import mapboxgl from "mapbox-gl";
+  import { onMount } from "svelte";
+  import mapData from "../data/map.json";
+  export let geoJsonToFit;
 
-  <script>
-    import mapboxgl from "mapbox-gl";
-    import { onMount } from "svelte";
-    import mapData from '../data/map.json';
-    export let geoJsonToFit;
-
-    mapboxgl.accessToken =
+  mapboxgl.accessToken =
     "pk.eyJ1IjoicGVpcWljIiwiYSI6ImNsZ2JseW13ZDA0ejUzcG85ZmJhN3RndXUifQ.Tbnw2SnV2zigv50y8sZerQ";
 
-    let container;
-    let map;
+  let container;
+  let map;
 
-    let zoomLevel;
+  let zoomLevel;
 
-    function updateZoomLevel() {
-      const screenWidth = window.innerWidth;
-      zoomLevel = screenWidth <= 600 ? 4 : 5.85; // Adjust these values as needed
-    }
+  function updateZoomLevel() {
+    const screenWidth = window.innerWidth;
+    zoomLevel = screenWidth <= 600 ? 4 : 5.85; // Adjust these values as needed
+  }
 
-    function handleResize() {
-      updateZoomLevel();
-      map.setZoom(zoomLevel);
-    }
+  function handleResize() {
+    updateZoomLevel();
+    map.setZoom(zoomLevel);
+  }
 
-    onMount(() => {
-      updateZoomLevel();
-      map = new mapboxgl.Map({
-        container,
-        style: "mapbox://styles/mapbox/light-v11",
-        center: [-85.6024, 12.7690],
-        zoom: 4,
-        attributionControl: true, // removes attribution from the bottom of the map
-      });
+  onMount(() => {
+    updateZoomLevel();
+    map = new mapboxgl.Map({
+      container,
+      style: "mapbox://styles/mapbox/light-v11",
+      center: [-85.6024, 12.769],
+      zoom: 4,
+      attributionControl: true, // removes attribution from the bottom of the map
+    });
 
-      window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize);
 
-      map.on("load", () => {
-        map.addLayer(
+    map.on("load", () => {
+      map.addLayer(
         {
-          id: 'country-boundaries',
+          id: "country-boundaries",
           source: {
-            type: 'vector',
-            url: 'mapbox://mapbox.country-boundaries-v1',
+            type: "vector",
+            url: "mapbox://mapbox.country-boundaries-v1",
           },
-          'source-layer': 'country_boundaries',
-          type: 'fill',
+          "source-layer": "country_boundaries",
+          type: "fill",
           paint: {
-            'fill-color': '#6e599f',
-            'fill-opacity': 0.4,
+            "fill-color": "#6e599f",
+            "fill-opacity": 0.4,
           },
         },
-        'country-label'
+        "country-label"
       );
 
-      map.setFilter('country-boundaries', [
+      map.setFilter("country-boundaries", [
         "in",
         "iso_3166_1_alpha_3",
-        'HND',
-        'GTM',
-        'SLV'
+        "HND",
+        "GTM",
+        "SLV",
       ]);
 
       // create a dictionary of colors
       const colors = {
-        'Honduras': '#e55e5e',
-        'Guatemala': '#3bb2d0',
-        'El Salvador': '#fbb03b'
+        Honduras: "#e55e5e",
+        Guatemala: "#3bb2d0",
+        "El Salvador": "#fbb03b",
       };
       for (let i = 0; i < mapData.length; i++) {
         map.addSource(`source-${i}`, {
@@ -78,7 +77,7 @@
               coordinates: [
                 [mapData[i].long_from, mapData[i].lat_from],
                 [mapData[i].long_to, mapData[i].lat_to],
-              ]
+              ],
             },
           },
         });
@@ -94,43 +93,41 @@
         });
       }
 
-        updateBounds();
-        map.on("zoom", updateBounds);
-        map.on("drag", updateBounds);
-        map.on("move", updateBounds);
-      });
+      updateBounds();
+      map.on("zoom", updateBounds);
+      map.on("drag", updateBounds);
+      map.on("move", updateBounds);
     });
+  });
 
-    function updateBounds() {
-      const bounds = map.getBounds();
-      geoJsonToFit.features[0].geometry.coordinates = [
-        bounds._ne.lng,
-        bounds._ne.lat,
-      ];
-      geoJsonToFit.features[1].geometry.coordinates = [
-        bounds._sw.lng,
-        bounds._sw.lat,
-      ];
-    }
+  function updateBounds() {
+    const bounds = map.getBounds();
+    geoJsonToFit.features[0].geometry.coordinates = [
+      bounds._ne.lng,
+      bounds._ne.lat,
+    ];
+    geoJsonToFit.features[1].geometry.coordinates = [
+      bounds._sw.lng,
+      bounds._sw.lat,
+    ];
+  }
+</script>
 
-  </script>
+<svelte:head>
+  <link
+    rel="stylesheet"
+    href="https://api.mapbox.com/mapbox-gl-js/v2.14.0/mapbox-gl.css"
+  />
+</svelte:head>
 
-  <svelte:head>
-    <link
-      rel="stylesheet"
-      href="https://api.mapbox.com/mapbox-gl-js/v2.14.0/mapbox-gl.css"
-    />
-  </svelte:head>
+<div class="map" bind:this={container} />
 
-  <div class="map" bind:this={container} />
-
-  <style>
-    .map {
-      width: 90%;
-      height: 90%;
-      position: absolute;
-      transition: opacity 2s, visibility 2s;
-      /* outline: blue solid 3px; */
-    }
-
-  </style>
+<style>
+  .map {
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    transition: opacity 2s, visibility 2s;
+    /* outline: blue solid 3px; */
+  }
+</style>

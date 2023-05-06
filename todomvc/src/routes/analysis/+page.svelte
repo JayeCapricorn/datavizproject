@@ -1,7 +1,6 @@
 <script>
     import Navbar from "../../components/Navbar.svelte";
     import ScrollyTeller from "../../components/ScrollyTeller.svelte";
-
 </script>
 
 <!-- <Navbar />
@@ -11,5 +10,4 @@
 </div> -->
 
 <style>
-
 </style>

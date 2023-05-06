@@ -1,7 +1,7 @@
 <script>
-    import App3 from '../../components/App3.svelte';
-    import Navbar from '../../components/Navbar.svelte';
-    import ScrollyTeller from '../../components/ScrollyTeller.svelte';
+    import App3 from "../../components/App3.svelte";
+    import Navbar from "../../components/Navbar.svelte";
+    import ScrollyTeller from "../../components/ScrollyTeller.svelte";
 </script>
 
 <!-- <main>

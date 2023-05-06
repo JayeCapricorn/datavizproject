@@ -1,7 +1,6 @@
 <script>
     import Navbar from "../components/Navbar.svelte";
     import Testmap from "../components/testmap.svelte";
-
 </script>
 
 <Navbar />
@@ -22,5 +21,4 @@
         position: relative;
         top: 200px;
     } */
-
 </style>
