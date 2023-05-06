@@ -188,6 +188,7 @@
       "Total Deaths": 8000,
       "TotalAffected": 600000,
       "TotalDamages": 3205009,
+      "Imageurl": "/images/fifi.jpg",
       "Description": "Hurricane Fifi killed over 8,000 people in Honduras, 200 in Guatemela, and 10 in El Salvador, leaving over $1.8 billion (1974 USD; $9.89 billion 2023 USD) in damages."
     },
     {
@@ -3803,6 +3804,7 @@
       "Total Deaths": 461,
       "TotalAffected": 1714414,
       "TotalDamages": "",
+      "Imageurl": "/images/volcanopic.jpg",
       "Description": "The 2018 Volcán de Fuego eruption caused the death of officially nearly 200 people. It was the deadliest eruption in Guatemala since 1929."
     },
     {

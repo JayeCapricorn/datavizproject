@@ -67,8 +67,16 @@
 
 </Scroller>
 
+<p> This data visualization was made with data contributed by the United Nations World Food Programme (WFP). 
+</p>
+
 <style>
-    .img2 {
+  p {
+    font: 20px sans-serif;
+    font-family: "Nunito", sans-serif;
+    text-align: center;
+  }
+    /* .img2 {
         position: relative; 
         right: 120px;
         width: 30%
@@ -86,7 +94,7 @@
         margin-left: auto;
         margin-right: auto;
         width: 100%;
-    }
+    } */
     .background {
       width: 100%;
       height: 100vh;

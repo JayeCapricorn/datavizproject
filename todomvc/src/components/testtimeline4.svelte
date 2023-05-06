@@ -1,7 +1,7 @@
 <script>
 	import * as d3 from 'd3';
 	import {onMount} from 'svelte';
-	import Testline from '../components/testline.svelte';
+	import Distributionline from './distributionline.svelte';
 	import Eventline from './eventline.svelte';
 	import Legend from './legend.svelte';
 	import {gt_volcano, gt_earthquakes, gt_drought, gt_floods, gt_landslide, gt_storm,
@@ -87,24 +87,24 @@
 	{/each}
 
 	{#if menu === 1}
-	<Testline data={gt_volcano} margin={margin6} color="#E97451"/>
-	<Testline data={gt_earthquakes} margin={margin5} color="#E3963E"/>
-	<Testline data={gt_landslide} margin={margin4} color="#6F4E37"/>
-	<Testline data={gt_drought} margin={margin3} color="gray"/>
-	<Testline data={gt_storm} margin={margin2} color="teal"/>
-	<Testline data={gt_floods} margin={margin1} color="#3D85C6"/>
+	<Distributionline data={gt_volcano} margin={margin6} color="#E97451"/>
+	<Distributionline data={gt_earthquakes} margin={margin5} color="#E3963E"/>
+	<Distributionline data={gt_landslide} margin={margin4} color="#6F4E37"/>
+	<Distributionline data={gt_drought} margin={margin3} color="gray"/>
+	<Distributionline data={gt_storm} margin={margin2} color="teal"/>
+	<Distributionline data={gt_floods} margin={margin1} color="#3D85C6"/>
 	{:else if menu === 2}
-	<Testline data={hn_earthquakes} margin={margin5} color="#E3963E"/>
-	<Testline data={hn_drought} margin={margin3} color="gray"/>
-	<Testline data={hn_storm} margin={margin2} color="teal"/>
-	<Testline data={hn_floods} margin={margin1} color="#3D85C6"/>
+	<Distributionline data={hn_earthquakes} margin={margin5} color="#E3963E"/>
+	<Distributionline data={hn_drought} margin={margin3} color="gray"/>
+	<Distributionline data={hn_storm} margin={margin2} color="teal"/>
+	<Distributionline data={hn_floods} margin={margin1} color="#3D85C6"/>
 	{:else if menu === 3}
-	<Testline data={elsl_volcano} margin={margin6} color="#E97451"/>
-	<Testline data={elsl_earthquakes} margin={margin5} color="#E3963E"/>
-	<Testline data={elsl_landslide} margin={margin4} color="#6F4E37"/>
-	<Testline data={elsl_drought} margin={margin3} color="gray"/>
-	<Testline data={elsl_storm} margin={margin2} color="teal"/>
-	<Testline data={elsl_floods} margin={margin1} color="#3D85C6"/>
+	<Distributionline data={elsl_volcano} margin={margin6} color="#E97451"/>
+	<Distributionline data={elsl_earthquakes} margin={margin5} color="#E3963E"/>
+	<Distributionline data={elsl_landslide} margin={margin4} color="#6F4E37"/>
+	<Distributionline data={elsl_drought} margin={margin3} color="gray"/>
+	<Distributionline data={elsl_storm} margin={margin2} color="teal"/>
+	<Distributionline data={elsl_floods} margin={margin1} color="#3D85C6"/>
 	{/if}
 	
 	<g transform="translate(0, {margin.bottom-130})"
@@ -135,6 +135,9 @@ style="left: {recorded_mouse_position.x + 40}px; top: {recorded_mouse_position.y
 	class="window"
 	style="left: {90}px; top: {yScale(d.Year) + 90}px"	
 	>
+	{#if d.hasOwnProperty('Imageurl')}
+		<img src={d.Imageurl} style="width: 80%"/>
+	{/if}
 	{d.Description}
 	</div>
 		{/if}

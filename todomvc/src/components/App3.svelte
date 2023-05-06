@@ -2,7 +2,7 @@
     import Testtimeline4 from './testtimeline4.svelte';
 	import item from '../data/timelinedata3.json';
 
-	export let menu = 1;
+	export let menu = 4;
     
     let gt_data = item.filter(function (entry) {
         return entry.Country === 'Guatemala';
@@ -22,6 +22,7 @@
 <label for="countries">Choose country:</label>
 
 <select name="countries" bind:value={menu}>
+  <option value={4}>All</option>
 	<option value={1}>Guatemala</option>
 	<option value={2}>Honduras</option>
 	<option value={3}>El Salvador</option>
@@ -53,8 +54,10 @@
     effects of natural disasters. 
   </h3>
 
-	{#if menu === 1}
-    <Testtimeline4 data={gt_data} menu={menu}/>
+	{#if menu === 4}
+    <Testtimeline4 data={item} menu={menu}/>
+  {:else if menu === 1}
+  <Testtimeline4 data={gt_data} menu={menu}/>
 	{:else if menu === 2}
 	<Testtimeline4 data={hn_data} menu={menu}/>
 	{:else if menu === 3}
