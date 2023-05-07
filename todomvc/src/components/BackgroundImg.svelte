@@ -4,13 +4,13 @@
     import Scatterplot from "./scatterplot.svelte";
     import Linechart from "./linechart.svelte";
 
-    import { weddings } from "../data/weddings";
+    import migration_line_data from "../data/migration_line.json";
 
-    let weddings_data = [];
-    weddings.forEach((element) =>
-        weddings_data.push({
-            index: element["Year"],
-            size: element["Civil"],
+    let migration_line_data_processed = [];
+    migration_line_data.forEach((element) =>
+    migration_line_data_processed.push({
+            index: element["year"],
+            size: element["value"],
         })
     );
 
@@ -22,12 +22,12 @@
     {#if index == 0}
         <!-- <img src="/images/image.png" class="img2"/>
     <img src="/images/imgtest.PNG" class="img3"/> -->
-        <Barchart />
+        <Linechart bind:data={migration_line_data_processed} />
     {:else if index == 1}
         <Scatterplot />
         <!-- <img src="/images/bgmap.jpg" alt="background image" class="center"/> -->
     {:else}
-        <Linechart bind:data={weddings_data} />
+        <Barchart />
         <!-- <img src="/images/map_index.jpg" alt="background image" class="center"/> -->
     {/if}
 </main>
