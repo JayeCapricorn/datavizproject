@@ -7,6 +7,7 @@
 
     import migration_line_data from "../data/migration_line.json";
     import owid_data from "../data/owid.json";
+    import disaster_migration_scatter_data from "../data/disaster_migration_scatter.json";
 
     let migration_line_data_processed = [];
     migration_line_data.forEach((element) =>
@@ -35,6 +36,15 @@
         });
     });
 
+    let disaster_migration_scatter_data_processed = [];
+    disaster_migration_scatter_data["data"].forEach((element) =>
+        disaster_migration_scatter_data_processed.push({
+            x: element["disaster"],
+            y: element["migration"],
+            color: element["country"],
+        })
+    );
+
     let isVisible = true;
 </script>
 
@@ -55,7 +65,11 @@
         <!-- <Scatterplot /> -->
         <!-- <img src="/images/bgmap.jpg" alt="background image" class="center"/> -->
     {:else}
-        <Barchart />
+        <Scatterplot
+            bind:data={disaster_migration_scatter_data_processed}
+            bind:ols={disaster_migration_scatter_data["ols"]}
+        />
+        <!-- <Barchart /> -->
         <!-- <img src="/images/map_index.jpg" alt="background image" class="center"/> -->
     {/if}
 </main>

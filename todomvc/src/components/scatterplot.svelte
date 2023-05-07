@@ -7,28 +7,17 @@
 
 	let margin = { top: 25, right: 10, bottom: 75, left: 20 };
 
-	let data = [];
-	onMount(async function () {
-		data = await d3.csv(
-			"https://vega.github.io/vega-datasets/data/gapminder-health-income.csv",
-			(d) => ({
-				...d,
-				income: +d.income,
-				health: +d.health,
-				population: +d.population,
-			})
-		);
-		console.log(data);
-	});
+	export let data = [];
+	export let ols = {}; // {"x0": x0, "y0": y0, "x1": x1, "y1": y1}
 
 	$: xScale = d3
-		.scaleLog()
-		.domain([d3.min(data, (d) => d.income), d3.max(data, (d) => d.income)])
+		.scaleLinear()
+		.domain([d3.min(data, (d) => d.x), d3.max(data, (d) => d.x)])
 		.range([margin.left, width - margin.right]);
 
 	$: yScale = d3
 		.scaleLinear()
-		.domain([0, d3.max(data, (d) => d.health)])
+		.domain([0, d3.max(data, (d) => d.y)])
 		.range([height - margin.bottom, margin.top]);
 
 	$: sizeScale = d3
@@ -38,7 +27,7 @@
 
 	$: colorScale = d3
 		.scaleOrdinal(d3.schemeTableau10)
-		.domain(data.map((d) => d.region));
+		.domain(data.map((d) => d.color));
 
 	let xAxis;
 	let yAxis;
@@ -60,13 +49,24 @@
 <svg {width} {height}>
 	{#each data as d, i}
 		<circle
-			cx={xScale(d.income)}
-			cy={yScale(d.health)}
-			r={sizeScale(d.population)}
-			height={yScale(0) - yScale(d.health)}
-			fill={colorScale(d.region)}
+			cx={xScale(d.x)}
+			cy={yScale(d.y)}
+			r="5"
+			height={yScale(0) - yScale(d.y)}
+			fill={colorScale(d.color)}
 		/>
 	{/each}
+
+	{#if ols.x0}
+		<line
+			x1={xScale(ols.x0)}
+			y1={yScale(ols.y0)}
+			x2={xScale(ols.x1)}
+			y2={yScale(ols.y1)}
+			stroke="black"
+			stroke-width="2"
+		/>
+	{/if}
 
 	<g transform="translate(0, {height - margin.bottom})" bind:this={xAxis} />
 
