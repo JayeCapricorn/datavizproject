@@ -3,16 +3,37 @@
     import Barchart from "./barchart.svelte";
     import Scatterplot from "./scatterplot.svelte";
     import Linechart from "./linechart.svelte";
+    import Multilinechart from "./multilinechart.svelte";
 
     import migration_line_data from "../data/migration_line.json";
+    import owid_data from "../data/owid.json";
 
     let migration_line_data_processed = [];
     migration_line_data.forEach((element) =>
-    migration_line_data_processed.push({
+        migration_line_data_processed.push({
             index: element["year"],
             size: element["value"],
         })
     );
+
+    let owid_data_processed = {};
+    // do what we did for migration line data, except for each country in a dictionary by iterating over the keys in owid_data
+    Object.entries(owid_data).forEach(([type, type_data]) => {
+        Object.entries(type_data).forEach(([country, country_data]) => {
+            if (country_data.length > 0) {
+                if (!(type in owid_data_processed)) {
+                    owid_data_processed[type] = {};
+                }
+                owid_data_processed[type][country] = [];
+                country_data.forEach((element) =>
+                    owid_data_processed[type][country].push({
+                        index: element["year"],
+                        size: element["value"],
+                    })
+                );
+            }
+        });
+    });
 
     let isVisible = true;
 </script>
@@ -24,7 +45,14 @@
     <img src="/images/imgtest.PNG" class="img3"/> -->
         <Linechart bind:data={migration_line_data_processed} />
     {:else if index == 1}
-        <Scatterplot />
+        <!-- Bind "Number of deaths from disasters" and "Number of people left homeless from disasters" using a for loop -->
+        {#each Object.keys(owid_data_processed) as type}
+            <Multilinechart
+                bind:multipleData={owid_data_processed[type]}
+                bind:title={type}
+            />
+        {/each}
+        <!-- <Scatterplot /> -->
         <!-- <img src="/images/bgmap.jpg" alt="background image" class="center"/> -->
     {:else}
         <Barchart />
