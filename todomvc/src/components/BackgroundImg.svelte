@@ -20,8 +20,10 @@
     );
 
     let owid_data_processed = {};
+    let owid_types = {};
     // do what we did for migration line data, except for each country in a dictionary by iterating over the keys in owid_data
     Object.entries(owid_data).forEach(([type, type_data]) => {
+        owid_types[type] = type;
         Object.entries(type_data).forEach(([country, country_data]) => {
             if (country_data.length > 0) {
                 if (!(type in owid_data_processed)) {
@@ -51,7 +53,8 @@
         "FB.CBK.BRWR.P3": "Borrowers From Commercial Banks",
         "FP.WPI.TOTL": "Wholesale Price Index 3 Years After The Disaster",
         "FP.CPI.TOTL": "Consumer Price Index 3 Years After The Disaster",
-        "SN.ITK.SVFI.ZS": "Prevalence of Severe Food Insecurity In The Population (%) 3 Years After The Disaster",
+        "SN.ITK.SVFI.ZS":
+            "Prevalence of Severe Food Insecurity In The Population (%) 3 Years After The Disaster",
     };
     let disaster_indicator_scatter_data_processed = {};
     Object.entries(disaster_indicator_scatter_data).forEach(
@@ -71,27 +74,36 @@
 </script>
 
 <main class:visible={isVisible}>
-    <!-- <img src={testurls[index]} alt="background image" class="center"/> -->
     {#if index == 0}
-        <!-- <img src="/images/image.png" class="img2"/>
-    <img src="/images/imgtest.PNG" class="img3"/> -->
         <Linechart bind:data={migration_line_data_processed} />
     {:else if index == 1}
-        <!-- Bind "Number of deaths from disasters" and "Number of people left homeless from disasters" using a for loop -->
-        {#each Object.keys(owid_data_processed) as type}
-            <Multilinechart
-                bind:multipleData={owid_data_processed[type]}
-                bind:title={type}
-            />
-        {/each}
-        <!-- <Scatterplot /> -->
-        <!-- <img src="/images/bgmap.jpg" alt="background image" class="center"/> -->
+        <Multilinechart
+            bind:multipleData={owid_data_processed[
+                "Number of deaths from disasters"
+            ]}
+            bind:title={owid_types["Number of deaths from disasters"]}
+        />
+        <Multilinechart
+            bind:multipleData={owid_data_processed[
+                "Number of people left homeless from disasters"
+            ]}
+            bind:title={owid_types[
+                "Number of people left homeless from disasters"
+            ]}
+        />
+        <Multilinechart
+            bind:multipleData={owid_data_processed[
+                "Number of total people affected by disasters"
+            ]}
+            bind:title={owid_types[
+                "Number of total people affected by disasters"
+            ]}
+        />
     {:else if index == 2}
         <Scatterplot
             bind:data={disaster_migration_scatter_data_processed}
             bind:ols={disaster_migration_scatter_data["ols"]}
         />
-        <!-- <img src="/images/map_index.jpg" alt="background image" class="center"/> -->
     {:else if index == 3}
         <Wordcloud />
     {:else if index == 4}
@@ -112,9 +124,19 @@
             bind:ols={disaster_indicator_scatter_data["FP.CPI.TOTL"]["ols"]}
             bind:title={indicator_descs["FP.CPI.TOTL"]}
         />
+        <Multilinechart
+            bind:multipleData={owid_data_processed[
+                "Total economic damages from disasters"
+            ]}
+            bind:title={owid_types["Total economic damages from disasters"]}
+        />
     {:else if index == 5}
+        <Wordcloud />
+    {:else if index == 6}
         <Scatterplot
-            bind:data={disaster_indicator_scatter_data_processed["SN.ITK.SVFI.ZS"]}
+            bind:data={disaster_indicator_scatter_data_processed[
+                "SN.ITK.SVFI.ZS"
+            ]}
             bind:ols={disaster_indicator_scatter_data["SN.ITK.SVFI.ZS"]["ols"]}
             bind:title={indicator_descs["SN.ITK.SVFI.ZS"]}
         />
