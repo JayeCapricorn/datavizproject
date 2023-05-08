@@ -63,18 +63,26 @@
       <!-- <img src="/images/test7.PNG" style="width: 60%"/>
       <img src="/images/test9.PNG" style="width:550px"/> -->
     </section>
-    <!--     <section style="width: 600px; position: relative;
-      left: 500px;">
-      <img src="/images/test9.PNG"/>
-    </section> -->
-    <!-- <section>
-      <img src="/images/image.png" class="img2"/>
-        <img src="/images/imgtest.PNG" class="img3"/>
-    </section> -->
+    <section>
+      <h4>LA LA LA</h4>
+      lalalalalalala
+    </section>
+    <section>
+      <h4>LA LA LA</h4>
+      lalalalalalala
+    </section>
+    <section>
+      <h4>LA LA LA</h4>
+      lalalalalalala
+    </section>
+    <section>
+      <h4>LA LA LA</h4>
+      lalalalalalala
+    </section>
   </div>
 </Scroller>
 
-<p> This data visualization was made with data contributed by the United Nations World Food Programme (WFP). 
+<p> This data visualization was made with data contributed by the United Nations World Food Programme (WFP).
 </p>
 
 <style>
@@ -84,12 +92,12 @@
     text-align: center;
   }
     /* .img2 {
-        position: relative; 
+        position: relative;
         right: 120px;
         width: 30%
     }
     .img3 {
-        position: relative; 
+        position: relative;
         right: 20px;
         top: 80px;
         width: 30%
@@ -108,7 +116,7 @@
       position: relative;
       /* outline: green solid 3px; */
     }
-  
+
     .foreground {
       width: 50%;
       margin: 0 auto;

@@ -1,14 +1,14 @@
 <script>
 	import * as d3 from "d3";
-	import { onMount } from "svelte";
 
-	let width = 500;
-	let height = 400;
+	let width = 300;
+	let height = 200;
 
 	let margin = { top: 25, right: 10, bottom: 75, left: 20 };
 
 	export let data = [];
 	export let ols = {}; // {"x0": x0, "y0": y0, "x1": x1, "y1": y1}
+	export let title = "";
 
 	$: xScale = d3
 		.scaleLinear()
@@ -45,6 +45,8 @@
 			.attr("transform", "rotate(-90)");
 	}
 </script>
+
+<h4>{title}</h4>
 
 <svg {width} {height}>
 	{#each data as d, i}

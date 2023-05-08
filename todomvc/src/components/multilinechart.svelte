@@ -46,8 +46,6 @@
         xTicks = [];
         yTicks = [];
 
-        console.log(multipleData);
-
         if (Object.keys(multipleData).length > 0) {
             let index_extent = [
                 Math.round(
