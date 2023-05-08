@@ -10,6 +10,7 @@
     import owid_data from "../data/owid.json";
     import disaster_migration_scatter_data from "../data/disaster_migration_scatter.json";
     import disaster_indicator_scatter_data from "../data/disaster_indicator_scatter.json";
+    import indicator_migration_scatter_data from "../data/indicator_migration_scatter.json";
 
     let migration_line_data_processed = [];
     migration_line_data.forEach((element) =>
@@ -69,6 +70,21 @@
             );
         }
     );
+
+    let indicator_migration_scatter_data_processed = {};
+    Object.entries(indicator_migration_scatter_data).forEach(
+        ([indicator, indicator_data]) => {
+            indicator_migration_scatter_data_processed[indicator] = [];
+            indicator_data["data"].forEach((element) =>
+                indicator_migration_scatter_data_processed[indicator].push({
+                    x: element["indicator"],
+                    y: element["migration"],
+                    color: element["country"],
+                })
+            );
+        }
+    );
+
 
     let isVisible = true;
 </script>
@@ -131,8 +147,13 @@
             bind:title={owid_types["Total economic damages from disasters"]}
         />
     {:else if index == 5}
-        <Wordcloud />
+        <Scatterplot
+            bind:data={indicator_migration_scatter_data_processed["FP.WPI.TOTL"]}
+            bind:ols={indicator_migration_scatter_data["FP.WPI.TOTL"]["ols"]}
+        />
     {:else if index == 6}
+        <Wordcloud />
+    {:else if index == 7}
         <Scatterplot
             bind:data={disaster_indicator_scatter_data_processed[
                 "SN.ITK.SVFI.ZS"
