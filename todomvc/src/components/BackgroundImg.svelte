@@ -4,6 +4,7 @@
     import Scatterplot from "./scatterplot.svelte";
     import Linechart from "./linechart.svelte";
     import Multilinechart from "./multilinechart.svelte";
+    import Wordcloud from "./wordcloud.svelte";
 
     import migration_line_data from "../data/migration_line.json";
     import owid_data from "../data/owid.json";
@@ -64,13 +65,16 @@
         {/each}
         <!-- <Scatterplot /> -->
         <!-- <img src="/images/bgmap.jpg" alt="background image" class="center"/> -->
-    {:else}
+    {:else if index == 2}
         <Scatterplot
             bind:data={disaster_migration_scatter_data_processed}
             bind:ols={disaster_migration_scatter_data["ols"]}
         />
-        <!-- <Barchart /> -->
         <!-- <img src="/images/map_index.jpg" alt="background image" class="center"/> -->
+    {:else if index == 3}
+        <Wordcloud />
+    {:else}
+        <Barchart />
     {/if}
 </main>
 
