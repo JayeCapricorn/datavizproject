@@ -2,7 +2,6 @@
     export let index;
     import Barchart from "./barchart.svelte";
     import Scatterplot from "./scatterplot.svelte";
-    import Linechart from "./linechart.svelte";
     import Multilinechart from "./multilinechart.svelte";
     import Wordcloud from "./wordcloud.svelte";
 
