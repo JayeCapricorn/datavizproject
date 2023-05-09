@@ -1,0 +1,42 @@
+[
+    {
+        "weight": 0.36,
+        "desc": "Household spending on food in the last 30 days",
+        "highlight": false
+    },
+    {
+        "weight": 0.23,
+        "desc": "Using candle to produce energy",
+        "highlight": false
+    },
+    {
+        "weight": 0.21,
+        "desc": "Household spending on water in the last 30 days",
+        "highlight": false
+    },
+    {
+        "weight": 0.17,
+        "desc": "The home has electricity",
+        "highlight": false
+    },
+    {
+        "weight": 0.17,
+        "desc": "Using neighbor's electrical connection to produce energy",
+        "highlight": false
+    },
+    {
+        "weight": 0.16,
+        "desc": "Mainly using cash assistance for payment of other debts",
+        "highlight": true
+    },
+    {
+        "weight": -0.79,
+        "desc": "Age",
+        "highlight": false
+    },
+    {
+        "weight": -0.36,
+        "desc": "Household monthly expenditure",
+        "highlight": true
+    }
+]

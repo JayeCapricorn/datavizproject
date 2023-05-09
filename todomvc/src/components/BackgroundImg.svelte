@@ -11,6 +11,8 @@
     import disaster_migration_scatter_data from "../data/disaster_migration_scatter.json";
     import disaster_indicator_scatter_data from "../data/disaster_indicator_scatter.json";
     import indicator_migration_scatter_data from "../data/indicator_migration_scatter.json";
+    import ext_mig_factors_data from "../data/ext_mig_factors.json";
+    import int_mig_factors_data from "../data/int_mig_factors.json";
 
     let migration_line_data_processed = [];
     migration_line_data.forEach((element) =>
@@ -85,6 +87,23 @@
         }
     );
 
+    let ext_mig_factors_data_processed = [];
+    ext_mig_factors_data.forEach((element) =>
+        ext_mig_factors_data_processed.push({
+            type: element["desc"],
+            value: element["weight"],
+            highlight: element["highlight"],
+        })
+    );
+
+    let int_mig_factors_data_processed = [];
+    int_mig_factors_data.forEach((element) =>
+        int_mig_factors_data_processed.push({
+            type: element["desc"],
+            value: element["weight"],
+            highlight: element["highlight"],
+        })
+    );
 
     let isVisible = true;
 </script>
@@ -151,6 +170,7 @@
             bind:data={indicator_migration_scatter_data_processed["FP.WPI.TOTL"]}
             bind:ols={indicator_migration_scatter_data["FP.WPI.TOTL"]["ols"]}
         />
+        <Barchart bind:data={ext_mig_factors_data_processed} />
     {:else if index == 6}
         <Wordcloud />
     {:else if index == 7}
@@ -162,7 +182,7 @@
             bind:title={indicator_descs["SN.ITK.SVFI.ZS"]}
         />
     {:else}
-        <Barchart />
+        <Barchart bind:data={int_mig_factors_data_processed} />
     {/if}
 </main>
 

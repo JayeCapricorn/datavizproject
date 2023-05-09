@@ -1,41 +1,22 @@
 <script>
-	// import { fly, draw } from "svelte/transition";
-	// import { cubicOut, cubicInOut } from "svelte/easing";
 	import * as d3 from "d3";
-	import { onMount } from "svelte";
 
-	let width = 500;
-	let height = 400;
+	let width = 400;
+	let height = 300;
 
 	let margin = { top: 10, right: 10, bottom: 20, left: 20 };
 
-	let data = [];
-	onMount(async function () {
-		data = await d3.csv(
-			"https://vega.github.io/vega-datasets/data/gapminder-health-income.csv",
-			(d) => ({
-				...d,
-				income: +d.income,
-				health: +d.health,
-				population: +d.population,
-			})
-		);
-		console.log(data);
-	});
+	export let data = [];
 
 	$: xScale = d3
-		.scaleBand()
-		.domain(data.map((d) => d.country))
+		.scaleLinear()
+		.domain([d3.min(data, (d) => d.value) > 0 ? 0 : d3.min(data, (d) => d.value), d3.max(data, (d) => d.value)])
 		.range([margin.left, width - margin.right]);
 
 	$: yScale = d3
-		.scaleLinear()
-		.domain([0, d3.max(data, (d) => d.health)])
-		.range([height - margin.bottom, margin.top]);
-
-	$: colorScale = d3
-		.scaleOrdinal(d3.schemeTableau10)
-		.domain(data.map((d) => d.region));
+		.scaleBand()
+		.domain(data.map((d) => d.type))
+		.range([margin.top, height - margin.bottom]);
 
 	let xAxis;
 	let yAxis;
@@ -50,11 +31,11 @@
 	{#each data as d, i}
 		<rect
 			class="bar"
-			x={xScale(d.country)}
-			y={yScale(d.health)}
-			width={xScale.bandwidth()}
-			height={yScale(0) - yScale(d.health)}
-			fill={colorScale(d.region)}
+			x={d.value > 0 ? xScale(0) : xScale(d.value)}
+			y={yScale(d.type)}
+			width={d.value > 0 ? xScale(d.value) - xScale(0) : xScale(0) - xScale(d.value)}
+			height={yScale.bandwidth()}
+			fill={d.highlight ? "red" : "blue"}
 		/>
 	{/each}
 
@@ -65,10 +46,6 @@
 </svg>
 
 <style>
-	/* svg {
-		border: 2px dashed goldenrod;
-	} */
-
 	.bar {
 		stroke: white;
 	}
