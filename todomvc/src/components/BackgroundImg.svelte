@@ -3,7 +3,8 @@
     import Barchart from "./barchart.svelte";
     import Scatterplot from "./scatterplot.svelte";
     import Multilinechart from "./multilinechart.svelte";
-    import Wordcloud from "./wordcloud.svelte";
+    import Wordcloudecon from "./wordcloudecon.svelte";
+    import Wordcloudfood from "./wordcloudfood.svelte";
 
     import migration_line_data from "../data/migration_line.json";
     import owid_data from "../data/owid.json";
@@ -142,7 +143,7 @@
             bind:ols={disaster_migration_scatter_data["ols"]}
         />
     {:else if index == 3}
-        <Wordcloud />
+        <Wordcloudecon />
     {:else if index == 4}
         <Multilinechart
             bind:multipleData={owid_data_processed[
@@ -177,7 +178,7 @@
         <br />
         <Barchart bind:data={ext_mig_factors_data_processed} />
     {:else if index == 6}
-        <Wordcloud />
+        <Wordcloudfood />
     {:else if index == 7}
         <Scatterplot
             bind:data={disaster_indicator_scatter_data_processed[
