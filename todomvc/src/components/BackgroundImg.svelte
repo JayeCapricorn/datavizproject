@@ -14,13 +14,16 @@
     import ext_mig_factors_data from "../data/ext_mig_factors.json";
     import int_mig_factors_data from "../data/int_mig_factors.json";
 
-    let migration_line_data_processed = [];
-    migration_line_data.forEach((element) =>
-        migration_line_data_processed.push({
-            index: element["year"],
-            size: element["value"],
-        })
-    );
+    let migration_line_data_processed = {};
+    Object.entries(migration_line_data).forEach(([country, country_data]) => {
+        migration_line_data_processed[country] = [];
+        country_data.forEach((element) =>
+            migration_line_data_processed[country].push({
+                index: element["year"],
+                size: element["value"],
+            })
+        );
+    });
 
     let owid_data_processed = {};
     let owid_types = {};
@@ -110,8 +113,6 @@
 
 <main class:visible={isVisible}>
     {#if index == 0}
-        <Linechart bind:data={migration_line_data_processed} />
-    {:else if index == 1}
         <Multilinechart
             bind:multipleData={owid_data_processed[
                 "Number of deaths from disasters"
@@ -134,6 +135,8 @@
                 "Number of total people affected by disasters"
             ]}
         />
+    {:else if index == 1}
+        <Multilinechart bind:multipleData={migration_line_data_processed} />
     {:else if index == 2}
         <Scatterplot
             bind:data={disaster_migration_scatter_data_processed}
@@ -167,7 +170,9 @@
         />
     {:else if index == 5}
         <Scatterplot
-            bind:data={indicator_migration_scatter_data_processed["FP.WPI.TOTL"]}
+            bind:data={indicator_migration_scatter_data_processed[
+                "FP.WPI.TOTL"
+            ]}
             bind:ols={indicator_migration_scatter_data["FP.WPI.TOTL"]["ols"]}
         />
         <Barchart bind:data={ext_mig_factors_data_processed} />
