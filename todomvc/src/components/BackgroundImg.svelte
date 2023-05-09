@@ -175,6 +175,7 @@
             ]}
             bind:ols={indicator_migration_scatter_data["FP.WPI.TOTL"]["ols"]}
         />
+        <br />
         <Barchart bind:data={ext_mig_factors_data_processed} />
     {:else if index == 6}
         <Wordcloud />

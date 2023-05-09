@@ -6,14 +6,14 @@
     export let title = "";
     export let multipleData = {};
     // set general use variables
-    let chartWidth = 400;
+    let chartWidth = 600;
     let chartHeight = 200;
 
     const paddings = {
-        top: 50,
-        left: 100,
-        right: 50,
-        bottom: 50,
+        top: 30,
+        left: 150,
+        right: 30,
+        bottom: 30,
     };
 
     // set scaling variables

@@ -1,10 +1,10 @@
 <script>
 	import * as d3 from "d3";
 
-	let width = 400;
+	let width = 800;
 	let height = 300;
 
-	let margin = { top: 10, right: 10, bottom: 20, left: 20 };
+	let margin = { top: 10, right: 10, bottom: 20, left: 400 };
 
 	export let data = [];
 
