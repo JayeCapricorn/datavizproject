@@ -145,6 +145,12 @@
     {:else if index == 3}
         <Wordcloud />
     {:else if index == 4}
+        <Multilinechart
+            bind:multipleData={owid_data_processed[
+                "Total economic damages from disasters"
+            ]}
+            bind:title={owid_types["Total economic damages from disasters"]}
+        />
         <Scatterplot
             bind:data={disaster_indicator_scatter_data_processed[
                 "FB.CBK.BRWR.P3"
@@ -161,12 +167,6 @@
             bind:data={disaster_indicator_scatter_data_processed["FP.CPI.TOTL"]}
             bind:ols={disaster_indicator_scatter_data["FP.CPI.TOTL"]["ols"]}
             bind:title={indicator_descs["FP.CPI.TOTL"]}
-        />
-        <Multilinechart
-            bind:multipleData={owid_data_processed[
-                "Total economic damages from disasters"
-            ]}
-            bind:title={owid_types["Total economic damages from disasters"]}
         />
     {:else if index == 5}
         <Scatterplot

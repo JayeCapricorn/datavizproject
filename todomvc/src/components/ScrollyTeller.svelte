@@ -26,67 +26,78 @@
 
   <div class="foreground" slot="foreground">
     <section>
-      <h4>Influence of Natural Hazard</h4>
-      <p>
-        Natural disasters have caused thousands of deaths per year in Central
-        American countries.
-      </p>
-      <!-- <img src="/images/test3.png" style="width: 60%"/> -->
-    </section>
-
-    <section>
-      <h4>Direct Relationship between Disasters and Migration intention</h4>
-      <!-- <img src="/images/netmigration.png" style="width: 60%"/> -->
-      The number of disasters has a positive correlation with Central American net
-      migration.
-      <!-- <img src="/images/test5.PNG" style="width: 60%"/> -->
+      In Honduras, Guatemala, and El Salvador, natural disasters each year cause
+      thousands of death, tens of thousands of people becoming homeless, and
+      generally affecting millions of people. Among its many other devastating
+      effects, in this study, we investigate the impact it has on the migration
+      behavior in these three countries.
     </section>
     <section>
-      <h4>Intermediate Variable - Economy</h4>
-      At the same time, natural disasters have resulted in significant economic damages.
-      <!-- <img src="/images/test4.png" style="width: 60%"/> -->
-      Disasters affect economic variables such as the consumer and wholesale price
-      index.
-      <!-- <img src="/images/test6.png" style="width: 90%"/>
-      <img src="/images/test8.PNG" style="width:550px"/> -->
-    </section>
-    <!-- <section> Migration rates in Central America have peaked in certain years such as 1980.
-      <img src="/images/test2.PNG" style="width: 50%"/>
-    </section> -->
-    <!--      <section style="width: 600px; position: relative;
-      left: 500px;">
-      <img src="/images/test8.PNG"/> -->
-    <!--     </section> -->
-    <section>
-      <h4>Intermediate Variable - Food Security</h4>
-      Disasters also worsen food insecurity for residents.
-      <!-- <img src="/images/test7.PNG" style="width: 60%"/>
-      <img src="/images/test9.PNG" style="width:550px"/> -->
+      Historically, tens of thousdans of peoplpe in these countries emigrate to
+      other countries. We find that the peaks in this emigration tendency
+      usually correlates with significant natural disasters. For example, xxxxxx
     </section>
     <section>
-      <h4>LA LA LA</h4>
-      lalalalalalala
+      Indeed, we find a strong correlation between the frequency of natural
+      disasters and the number of emigrants in each year in these three
+      countries. But this correlation is only the strongest when we consider the
+      emigration <b>three</b> years after the disaster, showing a delayed effect
+      of disasters (R^2=0.32, p=1.4 * 10^-5). This three-year window is a recurring
+      theme in our analysis and will appear below too.
     </section>
     <section>
-      <h4>LA LA LA</h4>
-      lalalalalalala
+      Nevertheless, directly analyzing the relationship between disaster
+      frequency and migration behvaior is noisy, as it is mediated by many other
+      variables. We take inspiration from the responses to the question "How has
+      the situation of COVID-19 and / or natural hazards impacted your life and
+      that of your home?" from the World Food Program's survey. A very common
+      theme in the responpses relates to the economy and employment, and thus we
+      study how it could be affected by natural disasters and in turn affect
+      emigration.
     </section>
     <section>
-      <h4>LA LA LA</h4>
-      lalalalalalala
+      In general, natural disasters result in hundreds of millions of economic
+      damage each year in these countries. Taking a more microscopic look, we
+      can see that borrowing from commercial banks usually surges in the same
+      year as the disaster happens (R^2=0.8, p=2.4 * 10^-7), and three years
+      later, we observe an increase in the wholesale price index (R^2=0.86,
+      p=6.9 * 10^-17) and the consumer price index (R^2=0.84, p=1.9 * 10^-48)
+      (TODO: what are these?).
     </section>
     <section>
-      <h4>LA LA LA</h4>
-      lalalalalalala
+      This economic impact, in turn, affects the emigration behavior. For
+      example, the wholesale price index strongly correlates with the number of
+      emigrants in a year (R^2=0.75, p=6.5 * 10^-11). We also use the World Food
+      Program data for an individual-level analysis. Inspecting the features
+      with the largest magnitude from a ridge regression analysis, we find that
+      the respondants' intention to emigrate outside their countries is strongly
+      affected by their indebtedness and inversely affected by their
+      expenditure.
     </section>
     <section>
-      <h4>LA LA LA</h4>
-      lalalalalalala
+      Stepping back to what respondants to the survey perceive as the main
+      impact of natural disasters, we find food as another commong theme. Hence,
+      we now turn to studying how food insecurity could act as a mediator
+      between natural disasters and emigration.
+    </section>
+    <section>
+      As before, three years after a natural disaster, we find a substantial
+      increase in the prevalance of food insecurity in these populations, up to
+      20% when there are X disasters in a year (R^2=0.88, p=1.5 * 10^-6).
+    </section>
+    <section>
+      And in turn, while food insecurity does not strongly affect emigration
+      intention, we discover that they drive people to internally migrate to
+      other parts of their countries. Among the top factors that contribute to
+      people's intention to internally migrate, we find many that are related to
+      food insecurity.
     </section>
   </div>
 </Scroller>
 
-<p> This data visualization was made with data contributed by the United Nations World Food Programme (WFP).
+<p>
+  This data visualization was made with data contributed by the United Nations
+  World Food Programme (WFP).
 </p>
 
 <style>
@@ -95,7 +106,7 @@
     font-family: "Nunito", sans-serif;
     text-align: center;
   }
-    /* .img2 {
+  /* .img2 {
         position: relative;
         right: 120px;
         width: 30%
@@ -114,20 +125,20 @@
         margin-right: auto;
         width: 100%;
     } */
-    .background {
-      width: 100%;
-      height: 100vh;
-      position: relative;
-      /* outline: green solid 3px; */
-    }
+  .background {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    /* outline: green solid 3px; */
+  }
 
-    .foreground {
-      width: 50%;
-      margin: 0 auto;
-      height: auto;
-      position: relative;
-      /* outline: red solid 3px; */
-    }
+  .foreground {
+    width: 50%;
+    margin: 0 auto;
+    height: auto;
+    position: relative;
+    /* outline: red solid 3px; */
+  }
 
   section {
     font: 20px sans-serif;
