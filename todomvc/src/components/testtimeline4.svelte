@@ -1,12 +1,12 @@
 <script>
 	import * as d3 from 'd3';
-	import {onMount} from 'svelte';
 	import Distributionline from './distributionline.svelte';
 	import Eventline from './eventline.svelte';
 	import Legend from './legend.svelte';
 	import {gt_volcano, gt_earthquakes, gt_drought, gt_floods, gt_landslide, gt_storm,
-	        hn_drought, hn_earthquakes, hn_floods, hn_storm, 
-		elsl_drought, elsl_earthquakes, elsl_floods, elsl_landslide, elsl_storm, elsl_volcano} from '../data/distributiondata.js';
+	        hn_drought, hn_earthquakes, hn_floods, hn_storm,
+		elsl_drought, elsl_earthquakes, elsl_floods, elsl_landslide, elsl_storm, elsl_volcano,
+		all_volcano, all_earthquakes, all_drought, all_floods, all_landslide, all_storm} from '../data/distributiondata.js';
 	export let data;
 	export let menu;
 
@@ -138,6 +138,13 @@
 	<Distributionline data={elsl_drought} margin={margin3} color="gray"/>
 	<Distributionline data={elsl_storm} margin={margin2} color="teal"/>
 	<Distributionline data={elsl_floods} margin={margin1} color="#3D85C6"/>
+	{:else if menu === 4}
+	<Distributionline data={all_volcano} margin={margin6} color="#E97451"/>
+	<Distributionline data={all_earthquakes} margin={margin5} color="#E3963E"/>
+	<Distributionline data={all_landslide} margin={margin4} color="#6F4E37"/>
+	<Distributionline data={all_drought} margin={margin3} color="gray"/>
+	<Distributionline data={all_storm} margin={margin2} color="teal"/>
+	<Distributionline data={all_floods} margin={margin1} color="#3D85C6"/>
 	{/if}
 
 	<g transform="translate(0, {margin.bottom - 130})" bind:this={xAxis} />
@@ -168,7 +175,7 @@
     {#if d.hasOwnProperty('Description')}
 	<div
 	class="window"
-	style="left: {90}px; top: {yScale(d.Year) + 90}px"	
+	style="left: {90}px; top: {yScale(d.Year) + 90}px"
 	>
 	{#if d.hasOwnProperty('Imageurl')}
 		<img src={d.Imageurl} style="width: 80%"/>
