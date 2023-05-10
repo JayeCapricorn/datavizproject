@@ -78,7 +78,7 @@
 </script>
 
 <svg
-	width="500"
+	width="200"
 	height="90"
 	font-family="Nunito"
 	font-size="10px"
@@ -86,6 +86,8 @@
 >
 	<Legend {margin} />
 </svg>
+
+<br />
 
 <svg {width} {height}>
 	{#each data as d, i}
@@ -175,7 +177,7 @@
     {#if d.hasOwnProperty('Description')}
 	<div
 	class="window"
-	style="left: {90}px; top: {yScale(d.Year) + 90}px"
+	style="left: calc(50% - 600px); top: {yScale(d.Year) + 90}px"
 	>
 	{#if d.hasOwnProperty('Imageurl')}
 		<img src={d.Imageurl} style="width: 80%"/>

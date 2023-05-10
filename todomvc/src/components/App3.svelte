@@ -17,17 +17,6 @@
   });
 </script>
 
-<div class="dropdownmenu">
-  <label for="countries">Choose country:</label>
-
-<select name="countries" bind:value={menu}>
-  <option value={4}>All</option>
-	<option value={1}>Guatemala</option>
-	<option value={2}>Honduras</option>
-	<option value={3}>El Salvador</option>
-</select>
-</div>
-
 <!-- <div class="flex justify-center items-center">
 <ul class="flex">
 	<li class="mr-6">
@@ -43,9 +32,19 @@
 </div> -->
 
 <section class="graph">
-  <h2 style="margin-top: 10px; margin-left: 290px;">
+  <h2 style="margin-top: 10px;">
     Natural Hazards Timeline
   </h2>
+  <div class="dropdownmenu">
+    <label for="countries">Choose country:</label>
+
+  <select name="countries" bind:value={menu}>
+    <option value={4}>All</option>
+    <option value={1}>Guatemala</option>
+    <option value={2}>Honduras</option>
+    <option value={3}>El Salvador</option>
+  </select>
+  </div>
   <h3>
     In 2017, Guatemala ranked fourth in the world for risk of being seriously
     impacted by a natural disaster. Residents of El Salvador are also no
@@ -103,7 +102,7 @@
     font-family: "Nunito", sans-serif;
     /* position: relative;
   top: 90px; */
-    margin-left: 900px;
+    /* margin-left: 900px; */
     /* text-align: center; */
   }
 
@@ -112,9 +111,8 @@
   }
 
   .graph {
-    display: inline-block;
-    /* margin-top: 20px; */
-    margin-left: 180px;
+    margin: auto;
+    text-align: center;
   }
 
   h2 {
