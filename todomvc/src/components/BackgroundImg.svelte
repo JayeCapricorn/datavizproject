@@ -47,10 +47,10 @@
     });
 
     let disaster_migration_scatter_data_processed = [];
-    disaster_migration_scatter_data["data"].forEach((element) =>
+    disaster_migration_scatter_data["SM.POP.NETM"]["data"].forEach((element) =>
         disaster_migration_scatter_data_processed.push({
             x: element["disaster"],
-            y: element["migration"],
+            y: element["indicator"],
             color: element["country"],
         })
     );
@@ -140,7 +140,7 @@
     {:else if index == 2}
         <Scatterplot
             bind:data={disaster_migration_scatter_data_processed}
-            bind:ols={disaster_migration_scatter_data["ols"]}
+            bind:ols={disaster_migration_scatter_data["SM.POP.NETM"]["ols"]}
         />
     {:else if index == 3}
         <Wordcloudecon />
