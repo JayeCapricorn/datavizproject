@@ -124,10 +124,11 @@
 
 <style>
   .map {
-    width: 90%;
-    height: 90%;
-    position: absolute;
+    width: 60vw;
+    height: 80vh;
+    position: relative;
     transition: opacity 2s, visibility 2s;
     /* outline: blue solid 3px; */
+    margin: auto;
   }
 </style>

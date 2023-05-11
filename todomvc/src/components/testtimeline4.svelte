@@ -1,12 +1,32 @@
 <script>
-	import * as d3 from 'd3';
-	import Distributionline from './distributionline.svelte';
-	import Eventline from './eventline.svelte';
-	import Legend from './legend.svelte';
-	import {gt_volcano, gt_earthquakes, gt_drought, gt_floods, gt_landslide, gt_storm,
-	        hn_drought, hn_earthquakes, hn_floods, hn_storm,
-		elsl_drought, elsl_earthquakes, elsl_floods, elsl_landslide, elsl_storm, elsl_volcano,
-		all_volcano, all_earthquakes, all_drought, all_floods, all_landslide, all_storm} from '../data/distributiondata.js';
+	import * as d3 from "d3";
+	import Distributionline from "./distributionline.svelte";
+	import Eventline from "./eventline.svelte";
+	import Legend from "./legend.svelte";
+	import {
+		gt_volcano,
+		gt_earthquakes,
+		gt_drought,
+		gt_floods,
+		gt_landslide,
+		gt_storm,
+		hn_drought,
+		hn_earthquakes,
+		hn_floods,
+		hn_storm,
+		elsl_drought,
+		elsl_earthquakes,
+		elsl_floods,
+		elsl_landslide,
+		elsl_storm,
+		elsl_volcano,
+		all_volcano,
+		all_earthquakes,
+		all_drought,
+		all_floods,
+		all_landslide,
+		all_storm,
+	} from "../data/distributiondata.js";
 	export let data;
 	export let menu;
 
@@ -89,104 +109,172 @@
 
 <br />
 
-<div>
-<svg {width} {height}>
-	{#each data as d, i}
-		<circle
-			cx={xScale(d.DisasterType) + 80}
-			r={d.TotalAffected === "" ? 5 : sizeScale(d.TotalAffected)}
-			cy={yScale(d.Year)}
-			height={yScale(1900) - yScale(d.Year)}
-			fill={i === hovered
-				? "purple"
-				: d3.color(coloroptions[d.DisasterType])}
-			on:mouseover={(event) => {
-				hovered = i;
-				recorded_mouse_position = {
-					x: event.pageX,
-					y: event.pageY,
-				};
-			}}
-			on:mouseout={(event) => {
-				hovered = -1;
-			}}
-		/>
+<div style="position: relative;">
+	<svg {width} {height}>
+		{#each data as d, i}
+			<circle
+				cx={xScale(d.DisasterType) + 80}
+				r={d.TotalAffected === "" ? 5 : sizeScale(d.TotalAffected)}
+				cy={yScale(d.Year)}
+				height={yScale(1900) - yScale(d.Year)}
+				fill={i === hovered
+					? "purple"
+					: d3.color(coloroptions[d.DisasterType])}
+				on:mouseover={(event) => {
+					hovered = i;
+					recorded_mouse_position = {
+						x: event.pageX,
+						y: event.pageY,
+					};
+				}}
+				on:mouseout={(event) => {
+					hovered = -1;
+				}}
+			/>
 
-		{#if d.hasOwnProperty("Description")}
-			<Eventline
-				x1={0}
-				x2={xScale(d.DisasterType) + 80}
-				y1={yScale(d.Year)}
-				y2={yScale(d.Year)}
+			{#if d.hasOwnProperty("Description")}
+				<Eventline
+					x1={0}
+					x2={xScale(d.DisasterType) + 80}
+					y1={yScale(d.Year)}
+					y2={yScale(d.Year)}
+				/>
+			{/if}
+		{/each}
+
+		{#if menu === 1}
+			<Distributionline
+				data={gt_volcano}
+				margin={margin6}
+				color="#E97451"
+			/>
+			<Distributionline
+				data={gt_earthquakes}
+				margin={margin5}
+				color="#E3963E"
+			/>
+			<Distributionline
+				data={gt_landslide}
+				margin={margin4}
+				color="#6F4E37"
+			/>
+			<Distributionline data={gt_drought} margin={margin3} color="gray" />
+			<Distributionline data={gt_storm} margin={margin2} color="teal" />
+			<Distributionline
+				data={gt_floods}
+				margin={margin1}
+				color="#3D85C6"
+			/>
+		{:else if menu === 2}
+			<Distributionline
+				data={hn_earthquakes}
+				margin={margin5}
+				color="#E3963E"
+			/>
+			<Distributionline data={hn_drought} margin={margin3} color="gray" />
+			<Distributionline data={hn_storm} margin={margin2} color="teal" />
+			<Distributionline
+				data={hn_floods}
+				margin={margin1}
+				color="#3D85C6"
+			/>
+		{:else if menu === 3}
+			<Distributionline
+				data={elsl_volcano}
+				margin={margin6}
+				color="#E97451"
+			/>
+			<Distributionline
+				data={elsl_earthquakes}
+				margin={margin5}
+				color="#E3963E"
+			/>
+			<Distributionline
+				data={elsl_landslide}
+				margin={margin4}
+				color="#6F4E37"
+			/>
+			<Distributionline
+				data={elsl_drought}
+				margin={margin3}
+				color="gray"
+			/>
+			<Distributionline data={elsl_storm} margin={margin2} color="teal" />
+			<Distributionline
+				data={elsl_floods}
+				margin={margin1}
+				color="#3D85C6"
+			/>
+		{:else if menu === 4}
+			<Distributionline
+				data={all_volcano}
+				margin={margin6}
+				color="#E97451"
+			/>
+			<Distributionline
+				data={all_earthquakes}
+				margin={margin5}
+				color="#E3963E"
+			/>
+			<Distributionline
+				data={all_landslide}
+				margin={margin4}
+				color="#6F4E37"
+			/>
+			<Distributionline
+				data={all_drought}
+				margin={margin3}
+				color="gray"
+			/>
+			<Distributionline data={all_storm} margin={margin2} color="teal" />
+			<Distributionline
+				data={all_floods}
+				margin={margin1}
+				color="#3D85C6"
 			/>
 		{/if}
-	{/each}
 
-	{#if menu === 1}
-	<Distributionline data={gt_volcano} margin={margin6} color="#E97451"/>
-	<Distributionline data={gt_earthquakes} margin={margin5} color="#E3963E"/>
-	<Distributionline data={gt_landslide} margin={margin4} color="#6F4E37"/>
-	<Distributionline data={gt_drought} margin={margin3} color="gray"/>
-	<Distributionline data={gt_storm} margin={margin2} color="teal"/>
-	<Distributionline data={gt_floods} margin={margin1} color="#3D85C6"/>
-	{:else if menu === 2}
-	<Distributionline data={hn_earthquakes} margin={margin5} color="#E3963E"/>
-	<Distributionline data={hn_drought} margin={margin3} color="gray"/>
-	<Distributionline data={hn_storm} margin={margin2} color="teal"/>
-	<Distributionline data={hn_floods} margin={margin1} color="#3D85C6"/>
-	{:else if menu === 3}
-	<Distributionline data={elsl_volcano} margin={margin6} color="#E97451"/>
-	<Distributionline data={elsl_earthquakes} margin={margin5} color="#E3963E"/>
-	<Distributionline data={elsl_landslide} margin={margin4} color="#6F4E37"/>
-	<Distributionline data={elsl_drought} margin={margin3} color="gray"/>
-	<Distributionline data={elsl_storm} margin={margin2} color="teal"/>
-	<Distributionline data={elsl_floods} margin={margin1} color="#3D85C6"/>
-	{:else if menu === 4}
-	<Distributionline data={all_volcano} margin={margin6} color="#E97451"/>
-	<Distributionline data={all_earthquakes} margin={margin5} color="#E3963E"/>
-	<Distributionline data={all_landslide} margin={margin4} color="#6F4E37"/>
-	<Distributionline data={all_drought} margin={margin3} color="gray"/>
-	<Distributionline data={all_storm} margin={margin2} color="teal"/>
-	<Distributionline data={all_floods} margin={margin1} color="#3D85C6"/>
-	{/if}
+		<g transform="translate(0, {margin.bottom - 130})" bind:this={xAxis} />
 
-	<g transform="translate(0, {margin.bottom - 130})" bind:this={xAxis} />
-
-	<g transform="translate({margin.left - 10}, 0)" bind:this={yAxis} />
-</svg>
-<div
-	class={hovered === -1 ? "tooltip-hidden" : "tooltip-visible"}
-	style="left: {recorded_mouse_position.x +
-		40}px; top: {recorded_mouse_position.y + 40}px"
->
-	{#if hovered !== -1}
-		<p>
-			{data[hovered].DisasterType} in {data[hovered].Year}. <br />
-			{#if data[hovered].TotalAffected !== ""}
-				Total Affected: {data[
-					hovered
-				].TotalAffected.toLocaleString()}<br />
-			{/if}
-			{#if data[hovered].TotalDamages !== ""}
-				Total Damages: ${data[hovered].TotalDamages.toLocaleString()}
-			{/if}
-		</p>
-	{/if}
-</div>
-
-{#each data as d, i}
-    {#if d.hasOwnProperty('Description')}
+		<g transform="translate({margin.left - 10}, 0)" bind:this={yAxis} />
+	</svg>
 	<div
-	class="window"
-	style="left: calc(50% - 620px); top: {yScale(d.Year) + 275}px; transform: translateY(-50%)"
+		class={hovered === -1 ? "tooltip-hidden" : "tooltip-visible"}
+		style="left: {recorded_mouse_position.x +
+			40}px; top: {recorded_mouse_position.y + 40}px"
 	>
-	{#if d.hasOwnProperty('Imageurl')}
-		<img src={d.Imageurl} style="width: 80%"/>
-	{/if}
-	{d.Description}
-	</div>
+		{#if hovered !== -1}
+			<p>
+				{data[hovered].DisasterType} in {data[hovered].Year}. <br />
+				{#if data[hovered].TotalAffected !== ""}
+					Total Affected: {data[
+						hovered
+					].TotalAffected.toLocaleString()}<br />
+				{/if}
+				{#if data[hovered].TotalDamages !== ""}
+					Total Damages: ${data[
+						hovered
+					].TotalDamages.toLocaleString()}
+				{/if}
+			</p>
 		{/if}
-{/each}
+	</div>
+
+	{#each data as d, i}
+		{#if d.hasOwnProperty("Description")}
+			<div
+				class="window"
+				style="left: calc(50% - 620px); top: {yScale(
+					d.Year
+				)}px; transform: translateY(-50%)"
+			>
+				{#if d.hasOwnProperty("Imageurl")}
+					<img src={d.Imageurl} style="width: 80%" />
+				{/if}
+				{d.Description}
+			</div>
+		{/if}
+	{/each}
 </div>
 
 <style>

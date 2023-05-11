@@ -33,10 +33,6 @@
 
 	$: colorScale = (country) => countryColors[country];
 
-	// $: colorScale = d3
-	// 	.scaleOrdinal(d3.schemeTableau10)
-	// 	.domain(data.map((d) => d.country));
-
 	let xAxis;
 	let yAxis;
 
@@ -52,13 +48,6 @@
 			.attr("text-anchor", "end")
 			.attr("transform", "rotate(-90)");
 	}
-
-	// function uniqueCountries(data) {
-	// 	return Array.from(new Set(data.map((d) => d.country))).map((country) => ({
-	// 		country,
-	// 		color: colorScale(country),
-	// 	}));
-	// }
 
 	let legendItemWidth = 100;
 	let legend = {
