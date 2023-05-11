@@ -124,7 +124,7 @@
 					hovered = i;
 					recorded_mouse_position = {
 						x: event.pageX,
-						y: event.pageY,
+						y: event.pageY - 800,
 					};
 				}}
 				on:mouseout={(event) => {
