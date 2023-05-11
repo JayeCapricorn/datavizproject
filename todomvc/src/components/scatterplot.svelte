@@ -25,9 +25,17 @@
 		.domain(d3.extent(data, (d) => d.population))
 		.range([5, 50]);
 
-	$: colorScale = d3
-		.scaleOrdinal(d3.schemeTableau10)
-		.domain(data.map((d) => d.color));
+	const countryColors = {
+		Honduras: "red",
+		"El Salvador": "green",
+		Guatemala: "blue",
+	};
+
+	$: colorScale = (country) => countryColors[country];
+
+	// $: colorScale = d3
+	// 	.scaleOrdinal(d3.schemeTableau10)
+	// 	.domain(data.map((d) => d.country));
 
 	let xAxis;
 	let yAxis;
@@ -44,6 +52,19 @@
 			.attr("text-anchor", "end")
 			.attr("transform", "rotate(-90)");
 	}
+
+	// function uniqueCountries(data) {
+	// 	return Array.from(new Set(data.map((d) => d.country))).map((country) => ({
+	// 		country,
+	// 		color: colorScale(country),
+	// 	}));
+	// }
+
+	let legendItemWidth = 100;
+	let legend = {
+		x: width / 2 - (3 * legendItemWidth) / 2 + 40,
+		y: height - margin.bottom + 40,
+	};
 </script>
 
 <h4>{title}</h4>
@@ -55,7 +76,7 @@
 			cy={yScale(d.y)}
 			r="5"
 			height={yScale(0) - yScale(d.y)}
-			fill={colorScale(d.color)}
+			fill={colorScale(d.country)}
 		/>
 	{/each}
 
@@ -73,6 +94,16 @@
 	<g transform="translate(0, {height - margin.bottom})" bind:this={xAxis} />
 
 	<g transform="translate({margin.left}, 0)" bind:this={yAxis} />
+
+	<g transform="translate({legend.x}, {legend.y})" class="legend">
+		{#each Object.entries(countryColors) as [country, color], i}
+			<!-- if there is no data from this country, skip -->
+			{#if data.filter((d) => d.country === country).length > 0}
+				<circle cx={i * legendItemWidth} cy="5" r="5" fill={color} />
+				<text x={i * legendItemWidth + 15} y="10" font-size="12">{country}</text>
+			{/if}
+		{/each}
+	</g>
 </svg>
 
 <style>

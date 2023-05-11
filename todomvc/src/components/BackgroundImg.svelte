@@ -51,7 +51,7 @@
         disaster_migration_scatter_data_processed.push({
             x: element["disaster"],
             y: element["indicator"],
-            color: element["country"],
+            country: element["country"],
         })
     );
 
@@ -70,7 +70,7 @@
                 disaster_indicator_scatter_data_processed[indicator].push({
                     x: element["disaster"],
                     y: element["indicator"],
-                    color: element["country"],
+                    country: element["country"],
                 })
             );
         }
@@ -84,7 +84,7 @@
                 indicator_migration_scatter_data_processed[indicator].push({
                     x: element["indicator"],
                     y: element["migration"],
-                    color: element["country"],
+                    country: element["country"],
                 })
             );
         }
