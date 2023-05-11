@@ -6,6 +6,7 @@
   let width, height;
 </script>
 
+<div>
 <Scroller
   top={0.0}
   bottom={0.9}
@@ -25,7 +26,7 @@
   </div>
 
   <div class="foreground" slot="foreground">
-    <section>
+    <section style="padding-top: 50%;">
       In Honduras, Guatemala, and El Salvador, natural disasters each year cause
       thousands of death, tens of thousands of people becoming homeless, and
       generally affecting millions of people. Among its many other devastating
@@ -94,6 +95,7 @@
     </section>
   </div>
 </Scroller>
+</div>
 
 <p>
   This data visualization was made with data contributed by the United Nations
@@ -106,37 +108,21 @@
     font-family: "Nunito", sans-serif;
     text-align: center;
   }
-  /* .img2 {
-        position: relative;
-        right: 120px;
-        width: 30%
-    }
-    .img3 {
-        position: relative;
-        right: 20px;
-        top: 80px;
-        width: 30%
-    }
-    img {
-        display: block;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-    } */
   .background {
-    width: 100%;
+    width: 50%;
     height: 100vh;
-    position: relative;
+    position: fixed;
+    left: 0;
+    top: 0;
     /* outline: green solid 3px; */
+    text-align: center;
   }
 
   .foreground {
     width: 50%;
-    margin: 0 auto;
     height: auto;
     position: relative;
+    left: 50%;
     /* outline: red solid 3px; */
   }
 
@@ -144,16 +130,13 @@
     font: 20px sans-serif;
     font-family: "Nunito", sans-serif;
     position: relative;
-    left: 500px;
     height: 90vh;
     background-color: rgba(255, 255, 255, 0.2); /* 20% opaque */
     color: white;
-    /*       outline: rgb(77, 77, 77) solid 1px; */
     text-align: center;
-    width: 600px;
-    /* max-width: 750px;  */
+    width: 100%;
     color: black;
-    padding: 1em;
+    /* padding: 1em; */
     margin: 0 0 2em 0;
   }
 </style>

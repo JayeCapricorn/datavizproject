@@ -89,6 +89,7 @@
 
 <br />
 
+<div>
 <svg {width} {height}>
 	{#each data as d, i}
 		<circle
@@ -113,7 +114,7 @@
 
 		{#if d.hasOwnProperty("Description")}
 			<Eventline
-				x1={margin.left - 40}
+				x1={0}
 				x2={xScale(d.DisasterType) + 80}
 				y1={yScale(d.Year)}
 				y2={yScale(d.Year)}
@@ -177,7 +178,7 @@
     {#if d.hasOwnProperty('Description')}
 	<div
 	class="window"
-	style="left: calc(50% - 600px); top: {yScale(d.Year) + 90}px"
+	style="left: calc(50% - 620px); top: {yScale(d.Year) + 275}px; transform: translateY(-50%)"
 	>
 	{#if d.hasOwnProperty('Imageurl')}
 		<img src={d.Imageurl} style="width: 80%"/>
@@ -186,6 +187,7 @@
 	</div>
 		{/if}
 {/each}
+</div>
 
 <style>
 	circle {

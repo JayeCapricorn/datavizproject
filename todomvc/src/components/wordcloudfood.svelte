@@ -1,6 +1,6 @@
 <!-- https://www.freewordcloudgenerator.com/generatewordcloud -->
 <svg width="1100" height="600"
-    ><g transform="translate(550,300)"
+><g transform="translate(425,300)"
         ><text
             class="wc-word wc-word-1"
             text-anchor="middle"

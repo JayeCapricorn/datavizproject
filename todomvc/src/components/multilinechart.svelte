@@ -16,6 +16,9 @@
         bottom: 30,
     };
 
+    const centerX = chartWidth / 2;
+    const centerY = chartHeight / 2;
+
     // set scaling variables
     $: xScale = scaleLinear()
         .domain([
@@ -156,25 +159,30 @@
     <svg
         width={chartWidth}
         height={chartHeight}
+        viewBox={`0 0 ${chartWidth} ${chartHeight}`}
         on:mousemove={followMouse}
         on:mouseleave={removePointer}
         id={idContainer}
     >
         <g>
             <line
-                x1={paddings.left}
-                x2={chartWidth - paddings.right}
-                y1={chartHeight - paddings.bottom}
-                y2={chartHeight - paddings.bottom}
+                x1={centerX - (chartWidth - paddings.left - paddings.right) / 2}
+                x2={centerX + (chartWidth - paddings.left - paddings.right) / 2}
+                y1={centerY +
+                    (chartHeight - paddings.top - paddings.bottom) / 2}
+                y2={centerY +
+                    (chartHeight - paddings.top - paddings.bottom) / 2}
                 stroke="#6e3003"
                 stroke-width="2"
                 class="axis"
             />
             <line
-                x1={paddings.left}
-                x2={paddings.left}
-                y1={chartHeight - paddings.bottom}
-                y2={paddings.top}
+                x1={centerX - (chartWidth - paddings.left - paddings.right) / 2}
+                x2={centerX - (chartWidth - paddings.left - paddings.right) / 2}
+                y1={centerY +
+                    (chartHeight - paddings.top - paddings.bottom) / 2}
+                y2={centerY -
+                    (chartHeight - paddings.top - paddings.bottom) / 2}
                 stroke="#6e3003"
                 stroke-width="2"
                 class="axis"
@@ -186,10 +194,26 @@
                 {#each multipleData[key] as d, i}
                     {#if i != multipleData[key].length - 1}
                         <line
-                            x1={xScale(multipleData[key][i].index)}
-                            x2={xScale(multipleData[key][i + 1].index)}
-                            y1={yScale(multipleData[key][i].size)}
-                            y2={yScale(multipleData[key][i + 1].size)}
+                            x1={centerX -
+                                (chartWidth - paddings.left - paddings.right) /
+                                    2 +
+                                xScale(multipleData[key][i].index) -
+                                paddings.left}
+                            x2={centerX -
+                                (chartWidth - paddings.left - paddings.right) /
+                                    2 +
+                                xScale(multipleData[key][i + 1].index) -
+                                paddings.left}
+                            y1={centerY -
+                                (chartHeight - paddings.top - paddings.bottom) /
+                                    2 +
+                                yScale(multipleData[key][i].size) -
+                                paddings.top}
+                            y2={centerY -
+                                (chartHeight - paddings.top - paddings.bottom) /
+                                    2 +
+                                yScale(multipleData[key][i + 1].size) -
+                                paddings.top}
                             stroke="#b86a04"
                             stroke-width="2"
                         />
@@ -198,17 +222,26 @@
             </g>
         {/each}
 
-        <g transform="translate(0, {chartHeight - paddings.bottom})">
+        <g
+            transform={`translate(0, ${
+                centerY + (chartHeight - paddings.top - paddings.bottom) / 2
+            })`}
+        >
             {#each xTicks as x}
                 <g
                     class="tick"
                     opacity="1"
-                    transform="translate({xScale(x)},0)"
+                    transform={`translate(${
+                        centerX -
+                        (chartWidth - paddings.left - paddings.right) / 2 +
+                        xScale(x) -
+                        paddings.left
+                    },0)`}
                 >
                     <line stroke="#6e3003" y2="6" />
                     <text
+                        class="tick-label"
                         dy="0.71em"
-                        fill="#6e3003"
                         y="10"
                         x="-5"
                         text-anchor="middle"
@@ -218,17 +251,26 @@
                 </g>
             {/each}
         </g>
-        <g transform="translate({paddings.left}, 0)">
+        <g
+            transform={`translate(${
+                centerX - (chartWidth - paddings.left - paddings.right) / 2
+            }, 0)`}
+        >
             {#each yTicks as y}
                 <g
                     class="tick"
                     opacity="1"
-                    transform="translate(0,{yScale(y)})"
+                    transform={`translate(0,${
+                        centerY -
+                        (chartHeight - paddings.top - paddings.bottom) / 2 +
+                        yScale(y) -
+                        paddings.top
+                    })`}
                 >
                     <line stroke="#6e3003" x2="-5" />
                     <text
+                        class="tick-label"
                         dy="0.32em"
-                        fill="#6e3003"
                         x="-{10}"
                         text-anchor="end"
                     >
@@ -296,7 +338,7 @@
         font: 25px sans-serif;
         margin: auto;
         margin-top: 1px;
-        text-align: middle;
+        text-align: center;
     }
 
     /* dynamic classes for the tooltip */
@@ -326,10 +368,16 @@
         /* animation: draw 8.5s ease; */
     }
 
+    .tick-label {
+        font-size: 12px;
+        fill: #6e3003;
+    }
+
     .legend {
         display: flex;
         flex-wrap: wrap;
         margin-top: 10px;
+        justify-content: center;
     }
 
     .legend-item {

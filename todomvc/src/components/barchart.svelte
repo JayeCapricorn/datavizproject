@@ -1,16 +1,19 @@
 <script>
 	import * as d3 from "d3";
 
-	let width = 800;
+	let width = 1200;
 	let height = 300;
 
-	let margin = { top: 10, right: 10, bottom: 20, left: 400 };
+	let margin = { top: 10, right: 0, bottom: 20, left: 800 };
 
 	export let data = [];
 
 	$: xScale = d3
 		.scaleLinear()
-		.domain([d3.min(data, (d) => d.value) > 0 ? 0 : d3.min(data, (d) => d.value), d3.max(data, (d) => d.value)])
+		.domain([
+			d3.min(data, (d) => d.value) > 0 ? 0 : d3.min(data, (d) => d.value),
+			d3.max(data, (d) => d.value),
+		])
 		.range([margin.left, width - margin.right]);
 
 	$: yScale = d3
@@ -25,24 +28,43 @@
 		d3.select(xAxis).call(d3.axisBottom(xScale));
 		d3.select(yAxis).call(d3.axisLeft(yScale));
 	}
+
+	const centerX = width / 2;
+	const centerY = height / 2;
 </script>
 
-<svg {width} {height}>
+<svg {width} {height} viewBox={`0 0 ${width} ${height}`}>
 	{#each data as d, i}
 		<rect
 			class="bar"
-			x={d.value > 0 ? xScale(0) : xScale(d.value)}
-			y={yScale(d.type)}
-			width={d.value > 0 ? xScale(d.value) - xScale(0) : xScale(0) - xScale(d.value)}
+			x={d.value > 0
+				? centerX -
+				  (width - margin.left - margin.right) / 2 +
+				  xScale(0) -
+				  margin.left
+				: centerX -
+				  (width - margin.left - margin.right) / 2 +
+				  xScale(d.value) -
+				  margin.left}
+			y={centerY -
+				(height - margin.top - margin.bottom) / 2 +
+				yScale(d.type) -
+				margin.top}
+			width={d.value > 0
+				? xScale(d.value) - xScale(0)
+				: xScale(0) - xScale(d.value)}
 			height={yScale.bandwidth()}
 			fill={d.highlight ? "red" : "blue"}
 		/>
 	{/each}
-
-	<!-- <g transform="translate(0, {height - margin.bottom})"
+	<!-- <g transform={`translate(0, ${centerY + (height - margin.top - margin.bottom) / 2})`}
 		 bind:this={xAxis} /> -->
-
-	<g transform="translate({margin.left}, 0)" bind:this={yAxis} />
+	<g
+		transform={`translate(${
+			centerX - (width - margin.left - margin.right) / 2
+		}, 0)`}
+		bind:this={yAxis}
+	/>
 </svg>
 
 <style>
