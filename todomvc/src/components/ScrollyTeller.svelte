@@ -51,7 +51,7 @@
       frequency and migration behvaior is noisy, as it is mediated by many other
       variables. We take inspiration from the responses to the question "How has
       the situation of COVID-19 and / or natural hazards impacted your life and
-      that of your home?" from the World Food Program's survey. A very common
+      that of your home?" from the World Food Programme's survey. A very common
       theme in the responpses relates to the economy and employment, and thus we
       study how it could be affected by natural disasters and in turn affect
       emigration.
@@ -69,7 +69,7 @@
       This economic impact, in turn, affects the emigration behavior. For
       example, the wholesale price index strongly correlates with the number of
       emigrants in a year (R^2=0.86, p=3.6 * 10^-6). We also use the World Food
-      Program data for an individual-level analysis. Inspecting the features
+      Programme data for an individual-level analysis. Inspecting the features
       with the largest magnitude from a ridge regression analysis, we find that
       the respondants' intention to emigrate outside their countries is strongly
       affected by their indebtedness and inversely affected by their
