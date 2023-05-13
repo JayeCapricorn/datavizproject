@@ -124,7 +124,7 @@
 					hovered = i;
 					recorded_mouse_position = {
 						x: event.pageX,
-						y: event.pageY - 800,
+						y: yScale(d.Year),
 					};
 				}}
 				on:mouseout={(event) => {
@@ -241,7 +241,7 @@
 	<div
 		class={hovered === -1 ? "tooltip-hidden" : "tooltip-visible"}
 		style="left: {recorded_mouse_position.x +
-			40}px; top: {recorded_mouse_position.y + 40}px"
+			10}px; top: {recorded_mouse_position.y + 10}px"
 	>
 		{#if hovered !== -1}
 			<p>
