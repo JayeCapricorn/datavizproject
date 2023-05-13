@@ -125,8 +125,8 @@
 
 <style>
   .map {
-    width: window.innerWidth;
-    height: window.innerHeight;
+    width: 100vw;
+    height: 100vh;
     position: absolute;
     transition: opacity 2s, visibility 2s;
     /* outline: blue solid 3px; */
