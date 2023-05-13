@@ -33,7 +33,7 @@
     });
 
     window.addEventListener("resize", handleResize);
-    map.addControl(new mapboxgl.FullscreenControl());
+//     map.addControl(new mapboxgl.FullscreenControl());
 
     map.on("load", () => {
       map.addLayer(
@@ -125,8 +125,8 @@
 
 <style>
   .map {
-    width: 100%;
-    height: 100%;
+    width: window.innerWidth;
+    height: window.innerHeight;
     position: absolute;
     transition: opacity 2s, visibility 2s;
     /* outline: blue solid 3px; */
