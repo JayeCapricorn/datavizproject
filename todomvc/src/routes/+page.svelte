@@ -9,7 +9,7 @@
 
 <Testmap />
 
-<Navbar />
+<!-- <Navbar /> -->
 
 <App3 />
 <ScrollyTeller />
