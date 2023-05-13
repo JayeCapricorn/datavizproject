@@ -127,9 +127,9 @@
   .map {
     width: 100%;
     height: 100%;
-    position: relative;
+    position: absolute;
     transition: opacity 2s, visibility 2s;
     /* outline: blue solid 3px; */
-    margin: auto;
+    margin: 0;
   }
 </style>
