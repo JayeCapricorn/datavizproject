@@ -28,11 +28,12 @@
       container,
       style: "mapbox://styles/mapbox/light-v11",
       center: [-85.6024, 12.769],
-      zoom: 4,
+      zoom: 6,
       attributionControl: true, // removes attribution from the bottom of the map
     });
 
     window.addEventListener("resize", handleResize);
+    map.addControl(new mapboxgl.FullscreenControl());
 
     map.on("load", () => {
       map.addLayer(
@@ -63,8 +64,8 @@
       // create a dictionary of colors
       const colors = {
         Honduras: "#e55e5e",
-        Guatemala: "#3bb2d0",
-        "El Salvador": "#fbb03b",
+        Guatemala: "#e55e5e",
+        "El Salvador": "e55e5e",
       };
       for (let i = 0; i < mapData.length; i++) {
         map.addSource(`source-${i}`, {
@@ -127,8 +128,8 @@
     width: 100%;
     height: 100%;
     position: relative;
-    transition: opacity 1s, visibility 1s;
+    transition: opacity 2s, visibility 2s;
     /* outline: blue solid 3px; */
-    margin: 0;
+    margin: auto;
   }
 </style>
