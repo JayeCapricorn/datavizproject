@@ -112,17 +112,17 @@
     width: 50%;
     height: 100vh;
     position: fixed;
-    left: 0;
+    left: 2%;
     top: 0;
     /* outline: green solid 3px; */
     text-align: center;
   }
 
   .foreground {
-    width: 50%;
+    width: 35%;
     height: auto;
     position: relative;
-    left: 50%;
+    left: 60%;
     /* outline: red solid 3px; */
   }
 
@@ -136,7 +136,7 @@
     text-align: center;
     width: 100%;
     color: black;
-    /* padding: 1em; */
-    margin: 0 0 2em 0;
+    /* padding:  0; */
+    margin: 0 0 2em 0x;
   }
 </style>

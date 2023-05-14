@@ -27,13 +27,13 @@
     map = new mapboxgl.Map({
       container,
       style: "mapbox://styles/mapbox/light-v11",
-      center: [-85.6024, 12.769],
-      zoom: 6,
+      center: [-87.6024, 14.769],
+      zoom: 5.7,
       attributionControl: true, // removes attribution from the bottom of the map
     });
 
     window.addEventListener("resize", handleResize);
-//     map.addControl(new mapboxgl.FullscreenControl());
+    map.addControl(new mapboxgl.FullscreenControl());
 
     map.on("load", () => {
       map.addLayer(
@@ -46,7 +46,7 @@
           "source-layer": "country_boundaries",
           type: "fill",
           paint: {
-            "fill-color": "#6e599f",
+            "fill-color": "#F6AC6C",
             "fill-opacity": 0.4,
           },
         },
@@ -89,7 +89,7 @@
           paint: {
             "line-width": Math.pow(Math.log(mapData[i].popluation) / 2, 2),
             "line-color": colors[mapData[i].from],
-            "line-opacity": 0.7,
+            "line-opacity": 0.4,
           },
         });
       }
@@ -126,10 +126,9 @@
 <style>
   .map {
     width: 100vw;
-    height: 100vh;
-    position: absolute;
+    height: 96vh;
+    position: fixed;
     transition: opacity 2s, visibility 2s;
-    /* outline: blue solid 3px; */
-    margin: 0;
+    margin-left: -9px;
   }
 </style>

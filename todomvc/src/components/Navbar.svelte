@@ -2,42 +2,59 @@
 </script>
 
 <main>
-  <ul>
-    <li>
+  <nav>
+  <div class="navbar">
+    <ul>
       <a href="/">Frontpage</a>
-    </li>
-    <li>
       <a href="/timeline">Timeline</a>
-    </li>
-    <!-- <li>
+    </ul>
+  </div>
+  <!-- <ul>
           <a href="/analysis">Analysis</a>
         </li>  -->
-  </ul>
+  <!-- </ul> -->
+</nav>
 </main>
 
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap");
   :root {
     --color-bg: #ffffff;
-    --color-outline: #c2c2c2;
-    --color-shadow: hsl(0, 0%, 0%, 0.1);
-    --color-text: #3f4252;
-    --color-bg-1: hsla(0, 0%, 0%, 0.2);
-    --color-shadow-1: hsl(0, 0%, 96%);
+    /* --color-outline: #c2c2c2; */
+    /* --color-shadow: hsl(0, 0%, 0%, 0.1); */
+    --color-text: #949494;
+    /* --color-bg-1: hsla(0, 0%, 0%, 0.2); */
+    /* --color-shadow-1: hsl(0, 0%, 96%); */
   }
   *,
   *::before,
   *::after {
-    margin: 0;
+    /* margin: 4px; */
     padding: 0;
     box-sizing: border-box;
+  }
+  a:link{
+    text-decoration: none;
   }
 
   a:visited {
     text-decoration: none;
-    color: grey;
+    color: rgb(87, 87, 87);
   }
 
+  .navbar a:hover{
+    color:black
+  }
+  
+  .navbar {
+  background-color: rgba(255,255,255,0.5);
+  overflow: hidden;
+  padding:5px 20px;
+  }
+
+  .navbar ul{
+    display:inline-block
+  }
   /* main {
         height: 100%;
         display: grid;
@@ -50,18 +67,17 @@
         color: var(--color-text);
     } */
 
-  main {
+  .navbar a {
     text-align: left;
     font-family: "Nunito", sans-serif;
-    font-weight: 300;
-    line-height: 2;
-    font-size: 15px;
-    color: var(--color-text);
-    margin-top: 10px;
-    margin-left: 100px;
+    font-weight: 400;
+    line-height: 1;
+    font-size: 17px;
+    color:grey;
+    margin-left: 10px; 
   }
 
-  li {
+  /* li {
     display: inline;
-  }
+  } */
 </style>

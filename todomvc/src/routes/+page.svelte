@@ -6,9 +6,7 @@
 </script>
 
 <Navbar />
-
 <Testmap />
-
 <!-- <Navbar /> -->
 
 <!-- <App3 />
