@@ -32,7 +32,7 @@
 </div> -->
 
 <section class="graph">
-  <h2 style="margin-top: 10px;">
+  <h2 style="margin-top: 35px;">
     Natural Hazards Timeline
   </h2>
   <div class="dropdownmenu">
@@ -46,15 +46,24 @@
   </select>
   </div>
   <h3>
-    In 2017, Guatemala ranked fourth in the world for risk of being seriously
-    impacted by a natural disaster. Residents of El Salvador are also no
-    strangers to hurricanes, tropical storms, and earthquakes-
-    <br /> 88% of El Salvador is at risk of severe impact from natural
-    disasters, with 95% of El Salvador's population at some risk of being
-    affected by these damaging weather events. Due to a large majority of
-    <br /> the country being impoverished, in 2021, the Inter-American Development
-    Bank approved a continent loan of $400 million to aid the country in dealing
-    with the effects of natural disasters.
+    <b>Natural Hazard:</b> Environmental phenomena that is potiantial to have impact on human societies and environment. 
+    <br /> Natural disasters do not occur monolithically; they often cause secondary hazard events and thus form a chain reaction.
+    These life-threatening and property-damaging events have been frequently happening in Central America. 
+    A significant number of casualities and economic loss are reported in these regions every year.
+    This timelines illustrates the hazards that happened from 1960 to 2022 chronologically compound with the number of people affected and economic damage. 
+    The curve of each disaster indicates its frequency.
+    <br /> 
+    <br /> <b>Guatemala:</b> Flooding, earthquakes, landslides, tsunamis are most common hazards in Guatemala. 
+    In 2017, Guatemala ranked <strong style='color:brown;font-size:18px'>Fourth </strong>in the world for risk of being seriously
+    impacted by a natural disaster. 
+    <br /> <b>Honduras:</b> Earthquakes, floods, hurricanes, and droughts affect the people of Honduras.
+    Due to a large majority of the country being impoverished.
+    In 2021, the Inter-American Development Bank approved a continent loan of $400 million to aid the country in dealing with the effects of natural disasters.
+    <br /> <b>El Salvador:</b> 
+    Residents of El Salvador are no strangers to hurricanes, tropical storms, and earthquakes—
+    88% of El Salvador is at risk of severe impact from natural disasters, 
+    with <strong style='color:brown;font-size:18px'>95%</strong> of El Salvador’s population at some risk of being affected by these damaging weather events.
+    <!-- Although the financial impact of natural hazards are widely valued, the human movement associated with these hazards and compound events are easily underestimated. -->
   </h3>
 
 	{#if menu === 4}
@@ -78,6 +87,7 @@
 
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
   /* :root {
         --color-bg: #ffffff;
         --color-outline: #c2c2c2;
@@ -118,8 +128,8 @@
   h2 {
     /* position: relative;
     top: 80px; */
-    font-size: 30px;
-    font-weight: 300;
+    font-size: 28px;
+    /* font-weight: 300; */
     line-height: 1.5;
     font-family: "Nunito", sans-serif;
   }
@@ -127,8 +137,11 @@
   h3 {
     /* position: relative;
       top: 80px; */
-    font-size: 10px;
-    font-family: "Nunito", sans-serif;
+    font-weight:400;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: justify;
+    padding:10px 120px ;
   }
 
   /* li {

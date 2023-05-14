@@ -127,7 +127,7 @@
   }
 
   section {
-    font: 20px sans-serif;
+    font: 17px sans-serif;
     font-family: "Nunito", sans-serif;
     position: relative;
     height: 90vh;

@@ -5,8 +5,8 @@
   <nav>
   <div class="navbar">
     <ul>
-      <a href="/">Frontpage</a>
-      <a href="/timeline">Timeline</a>
+      <a href="/">FRONTPAGE</a>
+      <a href="/timeline">TIMELINE</a>
     </ul>
   </div>
   <!-- <ul>
@@ -17,7 +17,9 @@
 </main>
 
 <style>
-  @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap");
+  /* @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap"); */
+
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
   :root {
     --color-bg: #ffffff;
     /* --color-outline: #c2c2c2; */
@@ -69,12 +71,12 @@
 
   .navbar a {
     text-align: left;
-    font-family: "Nunito", sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     line-height: 1;
     font-size: 17px;
     color:grey;
-    margin-left: 10px; 
+    margin-left: 15px; 
   }
 
   /* li {
