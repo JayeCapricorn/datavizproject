@@ -93,6 +93,7 @@
 			.attr("text-anchor", "end")
 			.attr("transform", "rotate(-360)");
 	}
+	
 
 	// .tickFormat(d3.format("d"))
 </script>
@@ -279,7 +280,7 @@
 
 <style>
 	circle {
-		fill-opacity: 0.75;
+		fill-opacity: 0.7;
 		stroke: white;
 	}
 
@@ -295,7 +296,7 @@
 		font: 14px sans-serif;
 		font-family: "Nunito", sans-serif;
 		visibility: visible;
-		background-color: #f0dba8;
+		background-color: #ededed;
 		border-radius: 10px;
 		width: 140px;
 		color: black;
@@ -308,11 +309,13 @@
 		font: 10px sans-serif;
 		font-family: "Nunito", sans-serif;
 		visibility: visible;
-		background-color: #f0c4a8;
-		border-radius: 10px;
+		background-color: #ffffff;
+		outline: rgb(197, 197, 197) dashed 0.5px;
 		width: 80px;
 		color: black;
 		position: absolute;
 		padding: 10px;
 	}
+
+
 </style>

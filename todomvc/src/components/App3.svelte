@@ -118,7 +118,7 @@
   h2 {
     /* position: relative;
     top: 80px; */
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 300;
     line-height: 1.5;
     font-family: "Nunito", sans-serif;

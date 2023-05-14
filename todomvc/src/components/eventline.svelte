@@ -9,7 +9,7 @@
 
 <style>
   .tooltip-lines line {
-    stroke: #666;
-    stroke-dasharray: 4;
+    stroke: #939393;
+    stroke-dasharray: 3;
   }
 </style>
