@@ -1,10 +1,22 @@
 <script>
 	import * as d3 from "d3";
+	$: innerWidth = 1920;
+    $: chartWidth = innerWidth * 0.65;
+    $: chartHeight = innerWidth * 0.25;
+	$: centerX = chartWidth / 2;
+    $: centerY = chartHeight / 2;
+	
+	// let width = 1200;
+	// let height = 300;
 
-	let width = 1200;
-	let height = 300;
+	const paddings = {
+        top: 30,
+        left: 750,
+        right: 0,
+        bottom: 30,
+    };
 
-	let margin = { top: 10, right: 0, bottom: 20, left: 800 };
+	// let margin = { top: 10, right: 0, bottom: 20, left: 800 };
 
 	export let data = [];
 
@@ -14,12 +26,12 @@
 			d3.min(data, (d) => d.value) > 0 ? 0 : d3.min(data, (d) => d.value),
 			d3.max(data, (d) => d.value),
 		])
-		.range([margin.left, width - margin.right]);
+		.range([paddings.left, chartWidth  - paddings.right]);
 
 	$: yScale = d3
 		.scaleBand()
 		.domain(data.map((d) => d.type))
-		.range([margin.top, height - margin.bottom])
+		.range([paddings.top, chartHeight - paddings.bottom])
 		.padding(0.5);
 
 	let xAxis;
@@ -33,8 +45,8 @@
 			.style("stroke", "none");
 	}
 
-	const centerX = width / 2;
-	const centerY = height / 2;
+	// const centerX = chartWidth / 2;
+	// const centerY = height / 2;
 	let has_negative = false;
 	data.forEach((d) => {
 		if (d.value < 0) {
@@ -43,61 +55,61 @@
 	});
 	let right_shift = has_negative ? 40 : 0;
 </script>
-
-<svg {width} {height} viewBox={`0 0 ${width} ${height}`}>
+<svelte:window bind:innerWidth/>
+<svg width={chartWidth} height={chartHeight} >
 	{#each data as d, i}
 		<rect
 			class="bar"
 			x={d.value > 0
 				? centerX -
-				  (width - margin.left - margin.right) / 2 +
+				  (chartWidth - paddings.left - paddings.right) / 2 +
 				  xScale(0) -
-				  margin.left +
+				  paddings.left +
 				  right_shift
 				: centerX -
-				  (width - margin.left - margin.right) / 2 +
+				  (chartWidth - paddings.left - paddings.right) / 2 +
 				  xScale(d.value) -
-				  margin.left +
+				  paddings.left +
 				  right_shift}
 			y={centerY -
-				(height - margin.top - margin.bottom) / 2 +
+				(chartHeight - paddings.top - paddings.bottom) / 2 +
 				yScale(d.type) -
-				margin.top}
+				paddings.top}
 			width={d.value > 0
 				? xScale(d.value) - xScale(0)
 				: xScale(0) - xScale(d.value)}
 			height={yScale.bandwidth()}
-			fill={d.highlight ? "red" : "blue"}
+			fill={d.highlight ? "#CA4825" : "#176695"}
 		/>
 		<text
 			x={d.value > 0
 				? centerX -
-				  (width - margin.left - margin.right) / 2 -
-				  margin.left +
+				  (chartWidth - paddings.left - paddings.right) / 2 -
+				  paddings.left +
 				  xScale(d.value) +
 				  right_shift +
 				  10
 				: centerX -
-				  (width - margin.left - margin.right) / 2 +
+				  (chartWidth - paddings.left - paddings.right) / 2 +
 				  xScale(d.value) -
-				  margin.left -
+				  paddings.left -
 				  (d.value + "").length * 10 +
 				  right_shift +
 				  10}
 			y={centerY -
-				(height - margin.top - margin.bottom) / 2 +
+				(chartHeight - paddings.top - paddings.bottom) / 2 +
 				yScale(d.type) -
-				margin.top +
+				paddings.top +
 				yScale.bandwidth() / 2 +
 				5}
-			fill={d.highlight ? "red" : "blue"}>{d.value}</text
+			fill={d.highlight ? "#CA4825" : "#176695"}>{d.value}</text
 		>
 	{/each}
 	<!-- <g transform={`translate(0, ${centerY + (height - margin.top - margin.bottom) / 2})`}
 		 bind:this={xAxis} /> -->
 	<g
 		transform={`translate(${
-			centerX - (width - margin.left - margin.right) / 2
+			centerX - (chartWidth - paddings.left - paddings.right) / 2
 		}, 5)`}
 		bind:this={yAxis}
 	/>
@@ -105,6 +117,7 @@
 
 <style>
 	.bar {
-		stroke: white;
+		/* stroke: white; */
+		opacity: 0.8;
 	}
 </style>

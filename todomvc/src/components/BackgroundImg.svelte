@@ -155,6 +155,7 @@
             ]}
             bind:title={owid_types["Total economic damages from disasters"]}
         />
+    {:else if index == 5}
         <Scatterplot
             bind:data={disaster_indicator_scatter_data_processed[
                 "FB.CBK.BRWR.P3"
@@ -162,6 +163,7 @@
             bind:ols={disaster_indicator_scatter_data["FB.CBK.BRWR.P3"]["ols"]}
             bind:title={indicator_descs["FB.CBK.BRWR.P3"]}
         />
+    {:else if index == 6}
         <Scatterplot
             bind:data={disaster_indicator_scatter_data_processed["FP.WPI.TOTL"]}
             bind:ols={disaster_indicator_scatter_data["FP.WPI.TOTL"]["ols"]}
@@ -172,18 +174,17 @@
             bind:ols={disaster_indicator_scatter_data["FP.CPI.TOTL"]["ols"]}
             bind:title={indicator_descs["FP.CPI.TOTL"]}
         />
-    {:else if index == 5}
+    {:else if index == 7}
         <Scatterplot
             bind:data={indicator_migration_scatter_data_processed[
                 "FP.WPI.TOTL"
             ]}
             bind:ols={indicator_migration_scatter_data["FP.WPI.TOTL"]["ols"]}
         />
-        <br />
         <Barchart bind:data={ext_mig_factors_data_processed} />
-    {:else if index == 6}
+    {:else if index == 8}
         <Wordcloudfood />
-    {:else if index == 7}
+    {:else if index == 9}
         <Scatterplot
             bind:data={disaster_indicator_scatter_data_processed[
                 "SN.ITK.SVFI.ZS"

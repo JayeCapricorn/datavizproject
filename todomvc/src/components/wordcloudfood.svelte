@@ -605,32 +605,32 @@
         user-select: none;
         cursor: default;
         font-family: "Nunito";
-        opacity: 0.4;
+        opacity: 0.45;
     }
 
     .wc-word-1 {
-        fill: rgb(166, 65, 130);
+        fill: #9a0a00;
     }
 
     .wc-word-2 {
-        fill: rgb(59, 50, 115);
+        fill: #02346d;
     }
 
     .wc-word-3 {
-        fill: rgb(242, 236, 145);
+        fill: #efa614;
     }
 
     .wc-word-4 {
-        fill: rgb(242, 158, 109);
+        fill: #e35b00;
     }
 
     .wc-word-5 {
-        fill: rgb(242, 125, 114);
+        fill: #7a7a7a;
     }
 
     .wc-word-highlight {
         opacity: 1;
-        fill: #1f77b4;
+        fill: #870200;
         font-weight: bold;
         text-decoration: underline;
     }

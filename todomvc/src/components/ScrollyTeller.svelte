@@ -92,7 +92,20 @@
       other parts of their countries. Among the top factors that contribute to
       people's intention to internally migrate, we find many that are related to
       food insecurity.
-      
+    </section>
+    <section>
+      And in turn, while food insecurity does not strongly affect emigration
+      intention, we discover that they drive people to internally migrate to
+      other parts of their countries. Among the top factors that contribute to
+      people's intention to internally migrate, we find many that are related to
+      food insecurity.
+    </section>
+    <section>
+      And in turn, while food insecurity does not strongly affect emigration
+      intention, we discover that they drive people to internally migrate to
+      other parts of their countries. Among the top factors that contribute to
+      people's intention to internally migrate, we find many that are related to
+      food insecurity.
     </section>
     
   </div>
@@ -126,6 +139,7 @@
     top: 0;
     /* outline: green solid 3px; */
     text-align: center;
+
   }
 
   .foreground {

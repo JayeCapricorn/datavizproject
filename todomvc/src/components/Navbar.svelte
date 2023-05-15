@@ -4,9 +4,15 @@
 <main>
   <nav>
   <div class="navbar">
+    <ul style="display:flex; justify-content:space-between;">
+      <div>
+        <a href="/">FRONTPAGE</a>
+        <a href="/timeline">TIMELINE</a>
+      </div>
+      <p style="width=100px;">Risks to the Urban</p>
+    </ul>
     <ul>
-      <a href="/">FRONTPAGE</a>
-      <a href="/timeline">TIMELINE</a>
+      
     </ul>
   </div>
   <!-- <ul>
@@ -51,7 +57,7 @@
   .navbar {
   background-color: rgba(255,255,255,0.4);
   overflow: hidden;
-  padding:10px 25px;
+  padding:30px 25px 0 25px;
   }
 
   .navbar ul{
@@ -79,6 +85,18 @@
     margin-left: 25px; 
   }
 
+  p{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1;
+    font-size: 15px;
+    color:rgb(183, 183, 183);
+    margin:0;
+    margin-left: 5px;
+  }
+  ul{
+    margin:0;
+  }
   main{
     z-index: 1;
   }

@@ -129,7 +129,7 @@
     /* position: relative;
     top: 80px; */
     font-size: 28px;
-    padding:90px 0 20px 0;
+    padding:110px 0 20px 0;
     margin:0;
     margin-top: -70px;
     /* font-weight: 300; */

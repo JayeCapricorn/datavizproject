@@ -3,8 +3,8 @@
 
 	 // set general use variables
 	$: innerWidth = 1920;
-    $: chartWidth = innerWidth * 0.4;
-    $: chartHeight = innerWidth * 0.25;
+    $: chartWidth = innerWidth * 0.42;
+    $: chartHeight = innerWidth * 0.22;
 
 	// let width = 400;
 	// let height = 300;
