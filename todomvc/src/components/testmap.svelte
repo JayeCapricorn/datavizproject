@@ -124,7 +124,7 @@
 
 <div class="map" bind:this={container} />
 
-<h2 class="title">The Amount of Emigrants from Guatemala, Honduras, and El Salvador</h2>
+<h2 class="title">The Amount of Emigrants from Central America</h2>
 
 <a class="learn_more" href="/timeline">How do natural hazards influence this pattern? →</a>
 

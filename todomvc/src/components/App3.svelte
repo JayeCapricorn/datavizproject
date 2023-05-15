@@ -33,7 +33,7 @@
 
 <section class="graph">
   <h2>
-    Natural Hazards Timeline
+    Natural Hazards in Central America
   </h2>
   <div class="dropdownmenu">
     <label for="countries">Choose country:</label>
@@ -46,8 +46,8 @@
   </select>
   </div>
   <h3>
-    <b>Natural Hazard:</b> Environmental phenomena that is potiantial to have impact on human societies and environment.
-    <br /> Natural disasters do not occur monolithically; they often cause secondary hazard events and thus form a chain reaction.
+    <b>Natural Hazard:</b> Environmental phenomena potiantially impactful on human societies and environment.
+    <br /> <br /> Natural disasters do not occur monolithically; they often cause secondary hazard events and thus form a chain reaction.
     These life-threatening and property-damaging events have been frequently happening in Central America.
     A significant number of casualities and economic loss are reported in these regions every year.
     This timelines illustrates the hazards that happened from 1960 to 2022 chronologically compound with the number of people affected and economic damage.
@@ -79,6 +79,10 @@
 		Page Not Found
 	</h1>
 	{/if}
+
+  <h2 class="question">
+    How do these frequent natural hazards affect migration?
+  </h2>
 </section>
 
 <!-- <svelte:head>
@@ -154,6 +158,11 @@
   :global(body) {
     margin: 0;
     background-color: #efe9dd;
+  }
+
+  .question {
+    padding-top: 40vh;
+    padding-bottom: 50vh;
   }
 
   /* li {
