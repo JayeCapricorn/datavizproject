@@ -144,6 +144,10 @@
     padding:10px 120px ;
   }
 
+  :global(body) {
+    margin: 0;
+  }
+
   /* li {
     	display: inline;
   	} */

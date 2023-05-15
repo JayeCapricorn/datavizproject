@@ -137,7 +137,10 @@
             ]}
         />
     {:else if index == 1}
-        <Multilinechart bind:multipleData={migration_line_data_processed} />
+        <Multilinechart 
+        bind:multipleData={migration_line_data_processed} 
+
+        />
     {:else if index == 2}
         <Scatterplot
             bind:data={disaster_migration_scatter_data_processed}

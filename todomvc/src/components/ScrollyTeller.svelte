@@ -131,7 +131,7 @@
     font-family: "Nunito", sans-serif;
     position: relative;
     height: 90vh;
-    background-color: rgba(255, 255, 255, 0.2); /* 20% opaque */
+    background-color: rgba(255, 255, 255, 0); /* 20% opaque */
     color: white;
     text-align: center;
     width: 100%;
@@ -139,4 +139,9 @@
     /* padding:  0; */
     margin: 0 0 2em 0x;
   }
+
+  div{
+    background-color:#efe9dd;
+  }
+
 </style>

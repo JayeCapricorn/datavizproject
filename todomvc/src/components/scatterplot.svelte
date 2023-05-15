@@ -38,9 +38,9 @@
 		.range([5, 50]);
 
 	const countryColors = {
-		Honduras: "#CD3A1A",
-		'El Salvador': "#FEC12A",
-		Guatemala: '#3B7999',
+		Honduras: "#c15133",
+		'El Salvador': "#F39600",
+		Guatemala: '#107486',
 	};
 
 	$: colorScale = (country) => countryColors[country];

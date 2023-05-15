@@ -216,7 +216,7 @@
                                     2 +
                                 yScale(multipleData[key][i + 1].size) -
                                 paddings.top}
-                            stroke=red
+                            stroke={key === "Honduras" ? "#c15133" : key === "El Salvador" ? "#F39600": key==="Guatemala" ? "#107486": "#FFFFFF"}
                             stroke-width="2"
                         />
                     {/if}
@@ -327,7 +327,7 @@
             <div class="legend-item">
                 <span
                     class="legend-color"
-                    style="background-color: {i === 0 ? '#b86a04' : '#6e3003'}"
+                    style="background-color: {key === "Honduras" ? "#c15133" : key === "El Salvador" ? "#F39600": key==="Guatemala" ? "#107486": "#FFFFFF"}"
                 />
                 <span class="legend-text">{key}</span>
             </div>

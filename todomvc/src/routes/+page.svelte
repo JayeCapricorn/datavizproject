@@ -4,7 +4,6 @@
     import App3 from "../components/App3.svelte";
     import ScrollyTeller from "../components/ScrollyTeller.svelte";
 </script>
-
 <Navbar />
 <Testmap />
 <!-- <Navbar /> -->
@@ -24,4 +23,5 @@
         position: relative;
         top: 200px;
     } */
+    /* set the color of background of the page*/
 </style>
