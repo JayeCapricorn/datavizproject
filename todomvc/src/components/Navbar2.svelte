@@ -6,8 +6,8 @@
   <div class="navbar">
     <ul style="display:flex; justify-content:space-between;">
       <div>
-        <!-- <a href="/">FRONTPAGE</a>
-        <a href="/timeline">TIMELINE</a> -->
+        <a href="/">FRONTPAGE</a>
+        <a href="/timeline"><b>TIMELINE</b></a>
       </div>
       <p style="width=100px;">Risks to the Urban</p>
     </ul>

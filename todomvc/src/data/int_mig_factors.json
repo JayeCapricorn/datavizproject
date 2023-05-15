@@ -1,12 +1,12 @@
 [
     {
         "weight": 0.33,
-        "desc": "Number of months that receiving financial aid from abroad",
+        "desc": "# of months receiving financial aid from abroad",
         "highlight": false
     },
     {
         "weight": 0.29,
-        "desc": "Mainly using cash assistance for food purchase",
+        "desc": "Household mainly uses cash assistance for food purchase",
         "highlight": true
     },
     {
@@ -21,7 +21,7 @@
     },
     {
         "weight": 0.19,
-        "desc": "Number of people in the household who internally migrated in the last 5 years",
+        "desc": "# people in the household who internally migrated",
         "highlight": false
     },
     {
@@ -31,7 +31,7 @@
     },
     {
         "weight": 0.17,
-        "desc": "Number of times in the past 7 days that the household reduced the size of food portions",
+        "desc": "# times that the household reduced the size of food portions",
         "highlight": true
     }
 ]

@@ -51,8 +51,8 @@
         {#each data as d, i}
             {#if i != data.length - 1}
                 <line
-                    x1={xScale(data[i][1])}
-                    x2={xScale(data[i + 1][1])}
+                    x1={xScale(data[i][1]) + 20}
+                    x2={xScale(data[i + 1][1]) + 20}
                     y1={yScale(data[i][0])}
                     y2={yScale(data[i + 1][0])}
                     stroke={color}

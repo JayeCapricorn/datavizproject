@@ -2,6 +2,7 @@
     export let index;
     import Barchart from "./barchart.svelte";
     import Scatterplot from "./scatterplot.svelte";
+    import Scatterplotsmall from "./scatterplotsmall.svelte";
     import Multilinechart from "./multilinechart.svelte";
     import Wordcloudecon from "./wordcloudecon.svelte";
     import Wordcloudfood from "./wordcloudfood.svelte";
@@ -109,6 +110,10 @@
     );
 
     let isVisible = true;
+    let migration_disaster_title = "Relationship between the number of emigrants and the frequency of natural disasters";
+    let migration_wholesale_title = "Relationship between the number of emigrants and the wholesale price index";
+    let ext_mig_factors_title = "Most important factors for external migration intention";
+    let int_mig_factors_title = "Most important factors for internal migration intention";
 
 </script>
 
@@ -136,55 +141,56 @@
                 "Number of total people affected by disasters"
             ]}
         />
-    {:else if index == 1}
-        <Multilinechart 
-        bind:multipleData={migration_line_data_processed} 
+    <!-- {:else if index == 1}
+        <Multilinechart
+        bind:multipleData={migration_line_data_processed}
         title="Net Migration"
-        />
-    {:else if index == 2}
+        /> -->
+    {:else if index == 1}
         <Scatterplot
             bind:data={disaster_migration_scatter_data_processed}
             bind:ols={disaster_migration_scatter_data["SM.POP.NETM"]["ols"]}
+            bind:title={migration_disaster_title}
         />
-    {:else if index == 3}
+    {:else if index == 2}
         <Wordcloudecon />
-    {:else if index == 4}
+    {:else if index == 3}
         <Multilinechart
             bind:multipleData={owid_data_processed[
                 "Total economic damages from disasters"
             ]}
             bind:title={owid_types["Total economic damages from disasters"]}
         />
-    {:else if index == 5}
-        <Scatterplot
+    {:else if index == 4}
+        <Scatterplotsmall
             bind:data={disaster_indicator_scatter_data_processed[
                 "FB.CBK.BRWR.P3"
             ]}
             bind:ols={disaster_indicator_scatter_data["FB.CBK.BRWR.P3"]["ols"]}
             bind:title={indicator_descs["FB.CBK.BRWR.P3"]}
         />
-    {:else if index == 6}
-        <Scatterplot
+        <Scatterplotsmall
             bind:data={disaster_indicator_scatter_data_processed["FP.WPI.TOTL"]}
             bind:ols={disaster_indicator_scatter_data["FP.WPI.TOTL"]["ols"]}
             bind:title={indicator_descs["FP.WPI.TOTL"]}
         />
-        <Scatterplot
+        <Scatterplotsmall
             bind:data={disaster_indicator_scatter_data_processed["FP.CPI.TOTL"]}
             bind:ols={disaster_indicator_scatter_data["FP.CPI.TOTL"]["ols"]}
             bind:title={indicator_descs["FP.CPI.TOTL"]}
         />
-    {:else if index == 7}
+    {:else if index == 5}
         <Scatterplot
             bind:data={indicator_migration_scatter_data_processed[
                 "FP.WPI.TOTL"
             ]}
             bind:ols={indicator_migration_scatter_data["FP.WPI.TOTL"]["ols"]}
+            bind:title={migration_wholesale_title}
         />
-        <Barchart bind:data={ext_mig_factors_data_processed} />
-    {:else if index == 8}
+        <Barchart bind:data={ext_mig_factors_data_processed} bind:title={ext_mig_factors_title} />
+    {:else if index == 6}
         <Wordcloudfood />
-    {:else if index == 9}
+    {:else if index == 7}
         <Scatterplot
             bind:data={disaster_indicator_scatter_data_processed[
                 "SN.ITK.SVFI.ZS"
@@ -193,7 +199,7 @@
             bind:title={indicator_descs["SN.ITK.SVFI.ZS"]}
         />
     {:else}
-        <Barchart bind:data={int_mig_factors_data_processed} />
+        <Barchart bind:data={int_mig_factors_data_processed} bind:title={int_mig_factors_title} />
     {/if}
 </main>
 

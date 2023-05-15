@@ -3,9 +3,9 @@
 	$: innerWidth = 1920;
     $: chartWidth = innerWidth * 0.65;
     $: chartHeight = innerWidth * 0.25;
-	$: centerX = chartWidth / 2;
+	$: centerX = chartWidth / 2 + 40;
     $: centerY = chartHeight / 2;
-	
+
 	// let width = 1200;
 	// let height = 300;
 
@@ -19,6 +19,7 @@
 	// let margin = { top: 10, right: 0, bottom: 20, left: 800 };
 
 	export let data = [];
+	export let title = "";
 
 	$: xScale = d3
 		.scaleLinear()
@@ -43,6 +44,7 @@
 			.call(d3.axisLeft(yScale).tickSize(0).tickPadding(10))
 			.selectAll(".domain, .tick line")
 			.style("stroke", "none");
+		d3.select(yAxis).selectAll(".tick > text").style("font-size", "15px");
 	}
 
 	// const centerX = chartWidth / 2;
@@ -56,6 +58,7 @@
 	let right_shift = has_negative ? 40 : 0;
 </script>
 <svelte:window bind:innerWidth/>
+<h4 class="title">{title}</h4>
 <svg width={chartWidth} height={chartHeight} >
 	{#each data as d, i}
 		<rect
@@ -74,7 +77,7 @@
 			y={centerY -
 				(chartHeight - paddings.top - paddings.bottom) / 2 +
 				yScale(d.type) -
-				paddings.top}
+				paddings.top + 5}
 			width={d.value > 0
 				? xScale(d.value) - xScale(0)
 				: xScale(0) - xScale(d.value)}
@@ -101,7 +104,7 @@
 				yScale(d.type) -
 				paddings.top +
 				yScale.bandwidth() / 2 +
-				5}
+				10}
 			fill={d.highlight ? "#CA4825" : "#176695"}>{d.value}</text
 		>
 	{/each}
@@ -119,5 +122,12 @@
 	.bar {
 		/* stroke: white; */
 		opacity: 0.8;
+	}
+
+	.title {
+		font: 20px 'Open Sans', sans-serif;
+		font-weight: 900;
+		margin-bottom: -20px;
+		margin-top: -0px;
 	}
 </style>

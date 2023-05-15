@@ -82,29 +82,23 @@
 	let yAxis;
 
 	$: {
-		d3.select(yAxis).call(d3.axisLeft(yScale));
+		d3.select(yAxis)
+			.call(d3.axisLeft(yScale))
+			.selectAll(".tick > text")
+			// .attr("dx", "0.6em")
+			.attr("font-size", "13px");
 
 		d3.select(xAxis)
 			.call(d3.axisBottom(xScale))
 			.selectAll(".tick > text")
 			.attr("y", 0)
-			.attr("dy", "-1em")
-			.attr("dx", "-1em")
-			.attr("text-anchor", "end")
-			.attr("font-size", "11px")
+			.attr("dy", "-0.6em")
+			.attr("text-anchor", "center")
+			.attr("font-size", "15px")
 			.attr("transform", "rotate(-360)");
-		d3.select(xAxis)
-			.selectAll(".tick > text")
-			.attr("transform", "translate(25, 0)");
-		d3.select(xAxis)
-			.selectAll(".domain")
-			.style("stroke-width", "0px");
-		d3.select(yAxis)
-		.selectAll(".domain")
-		.style("stroke-width", "0px");
-
-		}
-	
+		d3.select(xAxis).selectAll(".domain").style("stroke-width", "0px");
+		d3.select(yAxis).selectAll(".domain").style("stroke-width", "0px");
+	}
 
 	// .tickFormat(d3.format("d"))
 </script>
@@ -276,7 +270,7 @@
 		{#if d.hasOwnProperty("Description")}
 			<div
 				class="window"
-				style="left: calc(50% - 620px); top: {yScale(
+				style="left: calc(50% - 700px); top: {yScale(
 					d.Year
 				)}px; transform: translateY(-50%)"
 			>
@@ -317,16 +311,14 @@
 	}
 
 	.window {
-		font: 10px sans-serif;
+		font: 15px sans-serif;
 		font-family: "Nunito", sans-serif;
 		visibility: visible;
 		background-color: #ffffff;
 		outline: rgb(197, 197, 197) dashed 0.5px;
-		width: 80px;
+		width: 140px;
 		color: black;
 		position: absolute;
 		padding: 10px;
 	}
-
-
 </style>

@@ -4,7 +4,7 @@
 <style>
 img#bgphoto{
     position:absolute;
-    opacity: 0.5;
+    opacity: 0.2;
 }
 
 </style>

@@ -3,8 +3,8 @@
 
 	 // set general use variables
 	$: innerWidth = 1920;
-    $: chartWidth = innerWidth * 0.42;
-    $: chartHeight = innerWidth * 0.22;
+    $: chartWidth = innerWidth * 0.40;
+    $: chartHeight = innerWidth * 0.13;
 
 	// let width = 400;
 	// let height = 300;
@@ -61,12 +61,13 @@
 
 	let legendItemWidth = 90;
 	let legend = {
-		x: chartWidth / 2 - (3 * legendItemWidth) / 2 + 80,
-		y: chartHeight - paddings.bottom + 40,
+		// x: chartWidth / 2 - (3 * legendItemWidth) / 2 + 80,
+		// y: chartHeight - paddings.bottom + 40,
 	};
 </script>
 
 <svelte:window bind:innerWidth/>
+
 
 <h4 class="title">{title}</h4>
 
@@ -110,6 +111,7 @@
 	</g>
 </svg>
 
+
 <style>
 	@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
 	/* svg {
@@ -128,7 +130,7 @@
 	.title {
 		font: 20px 'Open Sans', sans-serif;
 		font-weight: 900;
-		margin-bottom: 0px;
+		margin-bottom: -10px;
 	}
 
 </style>
