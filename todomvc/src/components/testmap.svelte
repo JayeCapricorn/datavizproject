@@ -47,7 +47,7 @@
           "source-layer": "country_boundaries",
           type: "fill",
           paint: {
-            "fill-color": "#F6AC6C",
+            "fill-color": "#EB5D11",
             "fill-opacity": 0.4,
           },
         },
@@ -58,15 +58,59 @@
         "in",
         "iso_3166_1_alpha_3",
         "HND",
+      ]);
+
+      map.addLayer(
+        {
+          id: "country-boundaries-2",
+          source: {
+            type: "vector",
+            url: "mapbox://mapbox.country-boundaries-v1",
+          },
+          "source-layer": "country_boundaries",
+          type: "fill",
+          paint: {
+            "fill-color": "#107486",
+            "fill-opacity": 0.4,
+          },
+        },
+        "country-label"
+      );
+
+      map.setFilter("country-boundaries-2", [
+        "in",
+        "iso_3166_1_alpha_3",
         "GTM",
+      ]);
+
+      map.addLayer(
+        {
+          id: "country-boundaries-3",
+          source: {
+            type: "vector",
+            url: "mapbox://mapbox.country-boundaries-v1",
+          },
+          "source-layer": "country_boundaries",
+          type: "fill",
+          paint: {
+            "fill-color": "#F39600",
+            "fill-opacity": 0.4,
+          },
+        },
+        "country-label"
+      );
+
+      map.setFilter("country-boundaries-3", [
+        "in",
+        "iso_3166_1_alpha_3",
         "SLV",
       ]);
 
       // create a dictionary of colors
       const colors = {
-        Honduras: "#e55e5e",
-        Guatemala: "#e55e5e",
-        "El Salvador": "e55e5e",
+        Honduras: "#CA543D",
+        Guatemala: "#CA543D",
+        "El Salvador": "#CA543D",
       };
       for (let i = 0; i < mapData.length; i++) {
         map.addSource(`source-${i}`, {
