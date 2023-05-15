@@ -102,6 +102,7 @@
 </div>
 
 <p >
+  By Peiqi Chen, Jie Fan, and Zhaofeng Wu.
   This data visualization was made with data contributed by the United Nations
   World Food Programme (WFP). We also used data from the World Bank and the International Disasters Database.
 </p>
