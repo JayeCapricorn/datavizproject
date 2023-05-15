@@ -1,5 +1,6 @@
 <script>
     // imports
+    import * as d3 from "d3";
     import { scaleLinear } from "d3-scale";
 
     // exports
@@ -46,7 +47,11 @@
     let xTicks = [];
     let yTicks = [];
     let numTicks = 5;
+    let xAxis;
+    let yAxis;
     $: {
+        d3.select(xAxis).call(d3.axisBottom(xScale));
+        d3.select(yAxis).call(d3.axisLeft(yScale));
         xTicks = [];
         yTicks = [];
 
@@ -224,7 +229,7 @@
             </g>
         {/each}
 
-        <g
+        <!-- <g
             transform={`translate(0, ${
                 centerY + (chartHeight - paddings.top - paddings.bottom) / 2
             })`}
@@ -252,8 +257,8 @@
                     </text>
                 </g>
             {/each}
-        </g>
-        <g
+        </g> -->
+        <!-- <g
             transform={`translate(${
                 centerX - (chartWidth - paddings.left - paddings.right) / 2
             }, 0)`}
@@ -280,7 +285,12 @@
                     </text>
                 </g>
             {/each}
-        </g>
+        </g> -->
+        <g transform="translate({centerX - (chartWidth - paddings.left - paddings.right) / 2 - paddings.left}, {centerY + (chartHeight - paddings.top - paddings.bottom) / 2})" bind:this={xAxis} />
+        <g transform="translate({centerX - (chartWidth - paddings.left - paddings.right) / 2}, 0)" bind:this={yAxis} />
+        <!-- <g transform="translate(0, {chartHeight - paddings.bottom})" bind:this={xAxis} />
+
+	<g transform="translate({paddings.left}, 0)" bind:this={yAxis} /> -->
 
         {#if mousePosition.x !== null}
             <g
