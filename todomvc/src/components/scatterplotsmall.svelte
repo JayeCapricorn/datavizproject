@@ -55,10 +55,8 @@
 			.call(d3.axisBottom(xScale))
 			.selectAll(".tick > text")
 			.attr("y", 0)
-			.attr("dy", "0.35em")
-			.attr("dx", "-1em")
-			.attr("text-anchor", "end")
-			.attr("transform", "rotate(-90)");
+			.attr("dy", "2em")
+			.attr("text-anchor", "center");
 	}
 
 	let legendItemWidth = 90;
