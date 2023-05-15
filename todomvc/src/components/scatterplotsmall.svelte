@@ -3,8 +3,8 @@
 
 	 // set general use variables
 	$: innerWidth = 1920;
-    $: chartWidth = innerWidth * 0.42;
-    $: chartHeight = innerWidth * 0.22;
+    $: chartWidth = innerWidth * 0.40;
+    $: chartHeight = innerWidth * 0.13;
 
 	// let width = 400;
 	// let height = 300;
@@ -70,6 +70,7 @@
 
 <svelte:window bind:innerWidth/>
 
+
 <h4 class="title">{title}</h4>
 
 <svg
@@ -111,6 +112,7 @@
 		{/each}
 	</g>
 </svg>
+
 
 <style>
 	@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
