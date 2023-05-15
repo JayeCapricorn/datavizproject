@@ -33,11 +33,11 @@
       effects, in this study, we investigate the impact it has on the migration
       behavior in these three countries.
     </section>
-    <section>
+    <!-- <section>
       Historically, tens of thousdans of peoplpe in these countries emigrate to
       other countries. We find that the peaks in this emigration tendency
       usually correlates with significant natural disasters. For example, xxxxxx
-    </section>
+    </section> -->
     <section>
       Indeed, we find a <b>strong correlation between the frequency of natural
       disasters and the number of emigrants</b> in each year in these three
@@ -103,7 +103,7 @@
 
 <p >
   This data visualization was made with data contributed by the United Nations
-  World Food Programme (WFP).
+  World Food Programme (WFP). We also used data from the World Bank and the International Disasters Database.
 </p>
 
 <style>
