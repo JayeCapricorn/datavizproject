@@ -347,6 +347,7 @@
 
     h4 {
         height: 0;
+        font-size: 20px;
     }
 
     /* dynamic classes for the tooltip */

@@ -128,7 +128,7 @@
 	}
 
 	.title {
-		font: 12px 'Open Sans', sans-serif;
+		font: 20px 'Open Sans', sans-serif;
 		font-weight: 900;
 	}
 

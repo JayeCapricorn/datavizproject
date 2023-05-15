@@ -3,7 +3,7 @@
 	$: innerWidth = 1920;
     $: chartWidth = innerWidth * 0.65;
     $: chartHeight = innerWidth * 0.25;
-	$: centerX = chartWidth / 2 + 50;
+	$: centerX = chartWidth / 2 + 20;
     $: centerY = chartHeight / 2;
 
 	// let width = 1200;
@@ -124,7 +124,7 @@
 	}
 
 	.title {
-		font: 12px 'Open Sans', sans-serif;
+		font: 20px 'Open Sans', sans-serif;
 		font-weight: 900;
 		margin-bottom: -20px;
 	}

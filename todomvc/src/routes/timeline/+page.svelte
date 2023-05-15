@@ -1,6 +1,6 @@
 <script>
     import App3 from "../../components/App3.svelte";
-    import Navbar from "../../components/Navbar.svelte";
+    import Navbar from "../../components/Navbar2.svelte";
     import ScrollyTeller from "../../components/ScrollyTeller.svelte";
     import Bg from "../../components/Bg.svelte";
 </script>

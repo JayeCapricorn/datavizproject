@@ -31,7 +31,7 @@
     },
     {
         "weight": 0.17,
-        "desc": "Number of times in the past 7 days that the household reduced the size of food portions",
+        "desc": "Number of times that the household reduced the size of food portions",
         "highlight": true
     }
 ]
