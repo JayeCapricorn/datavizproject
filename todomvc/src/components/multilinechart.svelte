@@ -6,8 +6,12 @@
     export let title = "";
     export let multipleData = {};
     // set general use variables
-    let chartWidth = 600;
-    let chartHeight = 200;
+    $: innerWidth = 1920;
+    $: chartWidth = innerWidth * 0.4;
+    $: chartHeight = innerWidth * 0.16;
+    $: centerX = chartWidth / 2;
+    $: centerY = chartHeight / 2;
+
 
     const paddings = {
         top: 30,
@@ -15,9 +19,6 @@
         right: 30,
         bottom: 30,
     };
-
-    const centerX = chartWidth / 2;
-    const centerY = chartHeight / 2;
 
     // set scaling variables
     $: xScale = scaleLinear()
@@ -154,12 +155,13 @@
     }
 </script>
 
+<svelte:window bind:innerWidth/>
+
 <div class="visualization">
     <h4>{title}</h4>
     <svg
         width={chartWidth}
         height={chartHeight}
-        viewBox={`0 0 ${chartWidth} ${chartHeight}`}
         on:mousemove={followMouse}
         on:mouseleave={removePointer}
         id={idContainer}
@@ -172,8 +174,8 @@
                     (chartHeight - paddings.top - paddings.bottom) / 2}
                 y2={centerY +
                     (chartHeight - paddings.top - paddings.bottom) / 2}
-                stroke="#6e3003"
-                stroke-width="2"
+                stroke="#767676"
+                stroke-width="0.5"
                 class="axis"
             />
             <line
@@ -183,8 +185,8 @@
                     (chartHeight - paddings.top - paddings.bottom) / 2}
                 y2={centerY -
                     (chartHeight - paddings.top - paddings.bottom) / 2}
-                stroke="#6e3003"
-                stroke-width="2"
+                stroke="#767676"
+                stroke-width="0"
                 class="axis"
             />
         </g>
@@ -214,7 +216,7 @@
                                     2 +
                                 yScale(multipleData[key][i + 1].size) -
                                 paddings.top}
-                            stroke="#b86a04"
+                            stroke=red
                             stroke-width="2"
                         />
                     {/if}
@@ -334,11 +336,17 @@
 </div>
 
 <style>
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+
     .visualization {
-        font: 25px sans-serif;
+        font: 12px 'Open Sans', sans-serif;
         margin: auto;
-        margin-top: 1px;
+        margin-top: 40px;
         text-align: center;
+    }
+
+    h4 {
+        height: 0;
     }
 
     /* dynamic classes for the tooltip */
@@ -350,7 +358,7 @@
     }
 
     .tooltip-visible {
-        font: 25px sans-serif;
+        font: 15px sans-serif;
         font-family: "Nunito", sans-serif;
         visibility: visible;
         background-color: #f0dba8;
@@ -370,13 +378,14 @@
 
     .tick-label {
         font-size: 12px;
-        fill: #6e3003;
+        fill: #2e2e2e;
     }
 
     .legend {
         display: flex;
         flex-wrap: wrap;
-        margin-top: 10px;
+        margin-top: -5px;
+        height: 1vh;
         justify-content: center;
     }
 
@@ -388,8 +397,8 @@
 
     .legend-color {
         display: inline-block;
-        width: 20px;
-        height: 20px;
+        width: 10px;
+        height: 10px;
         margin-right: 5px;
     }
 </style>

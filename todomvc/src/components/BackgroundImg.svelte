@@ -109,6 +109,7 @@
     );
 
     let isVisible = true;
+
 </script>
 
 <main class:visible={isVisible}>
@@ -119,14 +120,14 @@
             ]}
             bind:title={owid_types["Number of deaths from disasters"]}
         />
-        <Multilinechart
+        <!-- <Multilinechart
             bind:multipleData={owid_data_processed[
                 "Number of people left homeless from disasters"
             ]}
             bind:title={owid_types[
                 "Number of people left homeless from disasters"
             ]}
-        />
+        /> -->
         <Multilinechart
             bind:multipleData={owid_data_processed[
                 "Number of total people affected by disasters"
@@ -193,7 +194,7 @@
 </main>
 
 <style>
-    .img2 {
+    /* .img2 {
         z-index: 3;
         position: absolute;
         left: 150px;
@@ -214,7 +215,7 @@
         margin-right: auto;
         width: 85%;
         height: 85%;
-    }
+    } */
     main {
         /* width: 100%;
     height: 100vh;
@@ -226,5 +227,9 @@
     main.visible {
         opacity: 1;
         visibility: visible;
+        position:relative;
+        /* border:5px solid; */
+        top: 45%;
+        transform: translate(0, -50%);
     }
 </style>

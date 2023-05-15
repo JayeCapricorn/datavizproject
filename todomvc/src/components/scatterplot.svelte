@@ -1,10 +1,22 @@
 <script>
 	import * as d3 from "d3";
 
-	let width = 400;
-	let height = 300;
+	 // set general use variables
+	$: innerWidth = 1920;
+    $: chartWidth = innerWidth * 0.4;
+    $: chartHeight = innerWidth * 0.25;
 
-	let margin = { top: 25, right: 10, bottom: 75, left: 50 };
+	// let width = 400;
+	// let height = 300;
+
+	const paddings = {
+        top: 30,
+        left: 100,
+        right: 80,
+        bottom: 30,
+    };
+
+	// let margin = { top: 25, right: 10, bottom: 75, left: 50 };
 
 	export let data = [];
 	export let ols = {}; // {"x0": x0, "y0": y0, "x1": x1, "y1": y1}
@@ -13,12 +25,12 @@
 	$: xScale = d3
 		.scaleLinear()
 		.domain([d3.min(data, (d) => d.x), d3.max(data, (d) => d.x)])
-		.range([margin.left, width - margin.right]);
+		.range([paddings.left, chartWidth - paddings.right]);
 
 	$: yScale = d3
 		.scaleLinear()
 		.domain([0, d3.max(data, (d) => d.y)])
-		.range([height - margin.bottom, margin.top]);
+		.range([chartHeight - paddings.bottom, paddings.top]);
 
 	$: sizeScale = d3
 		.scaleSqrt()
@@ -26,9 +38,9 @@
 		.range([5, 50]);
 
 	const countryColors = {
-		Honduras: "red",
-		"El Salvador": "green",
-		Guatemala: "blue",
+		Honduras: "#CD3A1A",
+		'El Salvador': "#FEC12A",
+		Guatemala: '#3B7999',
 	};
 
 	$: colorScale = (country) => countryColors[country];
@@ -49,21 +61,26 @@
 			.attr("transform", "rotate(-90)");
 	}
 
-	let legendItemWidth = 100;
+	let legendItemWidth = 90;
 	let legend = {
-		x: width / 2 - (3 * legendItemWidth) / 2 + 40,
-		y: height - margin.bottom + 40,
+		// x: chartWidth / 2 - (3 * legendItemWidth) / 2 + 80,
+		// y: chartHeight - paddings.bottom + 40,
 	};
 </script>
 
+<svelte:window bind:innerWidth/>
+
 <h4>{title}</h4>
 
-<svg {width} {height}>
+<svg 
+	width={chartWidth}
+	height={chartHeight}
+>
 	{#each data as d, i}
 		<circle
 			cx={xScale(d.x)}
 			cy={yScale(d.y)}
-			r="5"
+			r="7"
 			height={yScale(0) - yScale(d.y)}
 			fill={colorScale(d.country)}
 		/>
@@ -80,28 +97,34 @@
 		/>
 	{/if}
 
-	<g transform="translate(0, {height - margin.bottom})" bind:this={xAxis} />
+	<g transform="translate(0, {chartHeight - paddings.bottom})" bind:this={xAxis} />
 
-	<g transform="translate({margin.left}, 0)" bind:this={yAxis} />
+	<g transform="translate({paddings.left}, 0)" bind:this={yAxis} />
 
 	<g transform="translate({legend.x}, {legend.y})" class="legend">
 		{#each Object.entries(countryColors) as [country, color], i}
 			<!-- if there is no data from this country, skip -->
 			{#if data.filter((d) => d.country === country).length > 0}
-				<circle cx={i * legendItemWidth} cy="5" r="5" fill={color} />
-				<text x={i * legendItemWidth + 15} y="10" font-size="12">{country}</text>
+				<circle cx={i * legendItemWidth+72} cy="5" r="5" fill={color} />
+				<text x={i * legendItemWidth + 85} y="10" >{country}</text>
 			{/if}
 		{/each}
 	</g>
 </svg>
 
 <style>
-	svg {
-		/* border: 2px dashed goldenrod;	 */
-	}
+	@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+	/* svg {
+		border: 2px dashed goldenrod;	
+	} */
 
 	circle {
-		fill-opacity: 0.75;
-		stroke: white;
+		fill-opacity: 0.55;
+		/* stroke: white; */
 	}
+
+	.legend{
+		font: 12px 'Open Sans', sans-serif;
+	}
+
 </style>
