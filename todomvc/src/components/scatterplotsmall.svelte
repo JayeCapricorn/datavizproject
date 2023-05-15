@@ -130,8 +130,8 @@
 	}
 
 	.title {
-		/* font-weight: 100; */
 		font: 12px 'Open Sans', sans-serif;
+		font-weight: 900;
 	}
 
 </style>

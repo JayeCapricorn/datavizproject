@@ -110,6 +110,10 @@
     );
 
     let isVisible = true;
+    let migration_disaster_title = "Relationship between the number of emigrants and the frequency of natural disasters";
+    let migration_wholesale_title = "Relationship between the number of emigrants and the wholesale price index";
+    let ext_mig_factors_title = "Most important factors for external migration intention";
+    let int_mig_factors_title = "Most important factors for internal migration intention";
 
 </script>
 
@@ -146,6 +150,7 @@
         <Scatterplot
             bind:data={disaster_migration_scatter_data_processed}
             bind:ols={disaster_migration_scatter_data["SM.POP.NETM"]["ols"]}
+            bind:title={migration_disaster_title}
         />
     {:else if index == 2}
         <Wordcloudecon />
@@ -182,8 +187,10 @@
                 "FP.WPI.TOTL"
             ]}
             bind:ols={indicator_migration_scatter_data["FP.WPI.TOTL"]["ols"]}
+            bind:title={migration_wholesale_title}
         />
-        <Barchart bind:data={ext_mig_factors_data_processed} />
+        <br /><br />
+        <Barchart bind:data={ext_mig_factors_data_processed} bind:title={ext_mig_factors_title} />
     {:else if index == 6}
         <Wordcloudfood />
     {:else if index == 7}
@@ -195,7 +202,7 @@
             bind:title={indicator_descs["SN.ITK.SVFI.ZS"]}
         />
     {:else}
-        <Barchart bind:data={int_mig_factors_data_processed} />
+        <Barchart bind:data={int_mig_factors_data_processed} bind:title={int_mig_factors_title} />
     {/if}
 </main>
 
