@@ -80,9 +80,11 @@
 	</h1>
 	{/if}
 
+  <div class="question-div">
   <h2 class="question">
     How do these frequent natural hazards affect migration?
   </h2>
+  </div>
 </section>
 
 <!-- <svelte:head>
@@ -160,9 +162,17 @@
     background-color: #efe9dd;
   }
 
+  .question-div {
+    height: 100vh;
+    background-image: url("/images/hazard.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+  }
+
   .question {
-    padding-top: 40vh;
-    padding-bottom: 50vh;
+    padding-top: 50vh;
+    color: #fff;
+    /* padding-bottom: 50vh; */
   }
 
   /* li {
