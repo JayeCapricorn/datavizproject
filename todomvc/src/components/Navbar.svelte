@@ -6,13 +6,13 @@
   <div class="navbar">
     <ul style="display:flex; justify-content:space-between;">
       <div>
-        <a href="/">FRONTPAGE</a>
-        <a href="/timeline">TIMELINE</a>
+        <!-- <a href="/">FRONTPAGE</a>
+        <a href="/timeline">TIMELINE</a> -->
       </div>
       <p style="width=100px;">Risks to the Urban</p>
     </ul>
     <ul>
-      
+
     </ul>
   </div>
   <!-- <ul>
@@ -53,7 +53,7 @@
   .navbar a:hover{
     color:black
   }
-  
+
   .navbar {
   background-color: rgba(255,255,255,0.4);
   overflow: hidden;
@@ -82,7 +82,7 @@
     line-height: 1;
     font-size: 17px;
     color:grey;
-    margin-left: 25px; 
+    margin-left: 25px;
   }
 
   p{

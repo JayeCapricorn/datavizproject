@@ -124,6 +124,10 @@
 
 <div class="map" bind:this={container} />
 
+<h2 class="title">The Amount of Emigrants from Guatemala, Honduras, and El Salvador</h2>
+
+<a class="learn_more" href="/timeline">How do natural hazards influence this pattern? →</a>
+
 <style>
   .map {
     width: 100vw;
@@ -133,5 +137,27 @@
     margin-left: 0px;
     margin-top:-70px;
     z-index: -1;
+  }
+
+  .title {
+    margin-top: calc(100vh - 220px);
+    color: #444;
+    margin-left: 100px;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .learn_more {
+    font-size: 20px;
+    margin-left: 100px;
+    text-decoration: none;
+    color: #444;
+  }
+
+  .learn_more:hover {
+    text-decoration: underline;
+  }
+
+  .learn_more:visited {
+    color: #444;
   }
 </style>
