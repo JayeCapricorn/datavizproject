@@ -83,7 +83,7 @@
 
 	$: {
 		d3.select(yAxis)
-			.call(d3.axisLeft(yScale))
+			.call(d3.axisLeft(yScale).tickFormat(d3.format("d")))
 			.selectAll(".tick > text")
 			// .attr("dx", "0.6em")
 			.attr("font-size", "13px");
@@ -99,8 +99,6 @@
 		d3.select(xAxis).selectAll(".domain").style("stroke-width", "0px");
 		d3.select(yAxis).selectAll(".domain").style("stroke-width", "0px");
 	}
-
-	// .tickFormat(d3.format("d"))
 </script>
 
 <svg

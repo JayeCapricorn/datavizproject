@@ -164,14 +164,14 @@
 
   .question-div {
     height: 100vh;
-    background-image: url("/images/hazard.jpg");
+    background-image: url("/images/hazard0.5.png");
     background-repeat:no-repeat;
     background-size:cover;
   }
 
   .question {
     padding-top: 50vh;
-    color: #fff;
+    color: #222;
     /* padding-bottom: 50vh; */
   }
 
