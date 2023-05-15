@@ -3,7 +3,7 @@
 	$: innerWidth = 1920;
     $: chartWidth = innerWidth * 0.65;
     $: chartHeight = innerWidth * 0.25;
-	$: centerX = chartWidth / 2 + 20;
+	$: centerX = chartWidth / 2 + 40;
     $: centerY = chartHeight / 2;
 
 	// let width = 1200;
@@ -44,6 +44,7 @@
 			.call(d3.axisLeft(yScale).tickSize(0).tickPadding(10))
 			.selectAll(".domain, .tick line")
 			.style("stroke", "none");
+		d3.select(yAxis).selectAll(".tick > text").style("font-size", "15px");
 	}
 
 	// const centerX = chartWidth / 2;
@@ -127,5 +128,6 @@
 		font: 20px 'Open Sans', sans-serif;
 		font-weight: 900;
 		margin-bottom: -20px;
+		margin-top: -0px;
 	}
 </style>

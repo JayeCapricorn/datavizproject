@@ -169,13 +169,11 @@
             bind:ols={disaster_indicator_scatter_data["FB.CBK.BRWR.P3"]["ols"]}
             bind:title={indicator_descs["FB.CBK.BRWR.P3"]}
         />
-        <br /><br />
         <Scatterplotsmall
             bind:data={disaster_indicator_scatter_data_processed["FP.WPI.TOTL"]}
             bind:ols={disaster_indicator_scatter_data["FP.WPI.TOTL"]["ols"]}
             bind:title={indicator_descs["FP.WPI.TOTL"]}
         />
-        <br /><br />
         <Scatterplotsmall
             bind:data={disaster_indicator_scatter_data_processed["FP.CPI.TOTL"]}
             bind:ols={disaster_indicator_scatter_data["FP.CPI.TOTL"]["ols"]}
@@ -189,7 +187,6 @@
             bind:ols={indicator_migration_scatter_data["FP.WPI.TOTL"]["ols"]}
             bind:title={migration_wholesale_title}
         />
-        <br /><br />
         <Barchart bind:data={ext_mig_factors_data_processed} bind:title={ext_mig_factors_title} />
     {:else if index == 6}
         <Wordcloudfood />

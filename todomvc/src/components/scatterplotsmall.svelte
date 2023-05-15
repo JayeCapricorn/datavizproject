@@ -75,7 +75,7 @@
 
 <svg
 	width={chartWidth}
-	height={chartHeight}
+	height={chartHeight + 50}
 >
 	{#each data as d, i}
 		<circle
@@ -102,7 +102,7 @@
 
 	<g transform="translate({paddings.left}, 0)" bind:this={yAxis} />
 
-	<g transform="translate({legend.x}, {legend.y})" class="legend">
+	<g transform="translate({chartWidth / 2 - (3 * legendItemWidth) / 2 - 50}, {chartHeight - paddings.bottom + 50})" class="legend">
 		{#each Object.entries(countryColors) as [country, color], i}
 			<!-- if there is no data from this country, skip -->
 			{#if data.filter((d) => d.country === country).length > 0}
@@ -132,6 +132,7 @@
 	.title {
 		font: 20px 'Open Sans', sans-serif;
 		font-weight: 900;
+		margin-bottom: -10px;
 	}
 
 </style>
