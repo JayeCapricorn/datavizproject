@@ -33,7 +33,8 @@
     });
 
     window.addEventListener("resize", handleResize);
-    map.addControl(new mapboxgl.FullscreenControl());
+
+    map.addControl(new mapboxgl.FullscreenControl(),'bottom-left');
 
     map.on("load", () => {
       map.addLayer(
@@ -129,6 +130,8 @@
     height: 96vw;
     position: fixed;
     transition: opacity 2s, visibility 2s;
-    margin-left: -9px;
+    margin-left: 0px;
+    margin-top:-70px;
+    z-index: -1;
   }
 </style>

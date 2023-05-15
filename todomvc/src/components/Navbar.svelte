@@ -49,9 +49,9 @@
   }
   
   .navbar {
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255,255,255,0.4);
   overflow: hidden;
-  padding:5px 20px;
+  padding:10px 25px;
   }
 
   .navbar ul{
@@ -76,7 +76,11 @@
     line-height: 1;
     font-size: 17px;
     color:grey;
-    margin-left: 15px; 
+    margin-left: 25px; 
+  }
+
+  main{
+    z-index: 1;
   }
 
   /* li {

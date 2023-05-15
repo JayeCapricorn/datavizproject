@@ -7,8 +7,8 @@
     export let multipleData = {};
     // set general use variables
     $: innerWidth = 1920;
-    $: chartWidth = innerWidth * 0.4;
-    $: chartHeight = innerWidth * 0.16;
+    $: chartWidth = innerWidth * 0.45;
+    $: chartHeight = innerWidth * 0.2;
     $: centerX = chartWidth / 2;
     $: centerY = chartHeight / 2;
 
@@ -240,7 +240,7 @@
                         paddings.left
                     },0)`}
                 >
-                    <line stroke="#6e3003" y2="6" />
+                    <line stroke="#767676" stroke-width="0.5" y2="6" />
                     <text
                         class="tick-label"
                         dy="0.71em"
@@ -269,7 +269,7 @@
                         paddings.top
                     })`}
                 >
-                    <line stroke="#6e3003" x2="-5" />
+                    <line stroke="#767676" stroke-width="0.5" x2="-5" />
                     <text
                         class="tick-label"
                         dy="0.32em"

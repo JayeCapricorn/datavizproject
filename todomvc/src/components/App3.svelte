@@ -32,7 +32,7 @@
 </div> -->
 
 <section class="graph">
-  <h2 style="margin-top: 35px;">
+  <h2>
     Natural Hazards Timeline
   </h2>
   <div class="dropdownmenu">
@@ -129,6 +129,9 @@
     /* position: relative;
     top: 80px; */
     font-size: 28px;
+    padding:90px 0 20px 0;
+    margin:0;
+    margin-top: -70px;
     /* font-weight: 300; */
     line-height: 1.5;
     font-family: "Nunito", sans-serif;
@@ -143,9 +146,14 @@
     text-align: justify;
     padding:10px 120px ;
   }
+  
+  section{
+    background-color: #ffffff;
+  }
 
   :global(body) {
     margin: 0;
+    background-color: #efe9dd;
   }
 
   /* li {

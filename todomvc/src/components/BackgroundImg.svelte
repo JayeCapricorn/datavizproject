@@ -139,7 +139,7 @@
     {:else if index == 1}
         <Multilinechart 
         bind:multipleData={migration_line_data_processed} 
-
+        title="Net Migration"
         />
     {:else if index == 2}
         <Scatterplot

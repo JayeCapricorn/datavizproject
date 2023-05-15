@@ -13,6 +13,7 @@
 <App3 />
 <ScrollyTeller />
 </main>
+
 <!-- <App3 /> -->
 
 <!-- <h1>Welcome to SvelteKit</h1>

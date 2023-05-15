@@ -91,8 +91,19 @@
 			.attr("dy", "-1em")
 			.attr("dx", "-1em")
 			.attr("text-anchor", "end")
+			.attr("font-size", "11px")
 			.attr("transform", "rotate(-360)");
-	}
+		d3.select(xAxis)
+			.selectAll(".tick > text")
+			.attr("transform", "translate(25, 0)");
+		d3.select(xAxis)
+			.selectAll(".domain")
+			.style("stroke-width", "0px");
+		d3.select(yAxis)
+		.selectAll(".domain")
+		.style("stroke-width", "0px");
+
+		}
 	
 
 	// .tickFormat(d3.format("d"))

@@ -92,24 +92,34 @@
       other parts of their countries. Among the top factors that contribute to
       people's intention to internally migrate, we find many that are related to
       food insecurity.
+      
     </section>
+    
   </div>
+  
 </Scroller>
 </div>
 
-<p>
+<p >
   This data visualization was made with data contributed by the United Nations
   World Food Programme (WFP).
 </p>
 
 <style>
+    @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+  
   p {
-    font: 20px sans-serif;
+    z-index: 10;
+    position: relative;
+    background: #efe9dd;
+    margin: 0;
+    padding: 10px;
+    font: 10px sans-serif;
     font-family: "Nunito", sans-serif;
     text-align: center;
   }
   .background {
-    width: 50%;
+    width: 55%;
     height: 100vh;
     position: fixed;
     left: 2%;
@@ -127,13 +137,12 @@
   }
 
   section {
-    font: 17px sans-serif;
-    font-family: "Nunito", sans-serif;
+    font-size: 14px ;
+    font-family: 'Open Sans', sans-serif;
     position: relative;
     height: 90vh;
     background-color: rgba(255, 255, 255, 0); /* 20% opaque */
-    color: white;
-    text-align: center;
+    text-align: justify;
     width: 100%;
     color: black;
     /* padding:  0; */
@@ -141,7 +150,7 @@
   }
 
   div{
-    background-color:#efe9dd;
+    /* background-color:#efe9dd; */
   }
 
 </style>
