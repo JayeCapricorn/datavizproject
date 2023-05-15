@@ -140,15 +140,18 @@
   }
 
   .title {
-    margin-top: calc(100vh - 220px);
+    position: absolute;
+    bottom: 160px;
+    left: 100px;
     color: #444;
-    margin-left: 100px;
     font-family: 'Open Sans', sans-serif;
   }
 
   .learn_more {
     font-size: 20px;
-    margin-left: 100px;
+    position: absolute;
+    bottom: 140px;
+    left: 100px;
     text-decoration: none;
     color: #444;
   }
