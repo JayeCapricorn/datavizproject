@@ -126,8 +126,8 @@
 	}
 
 	.title {
-		font: 20px 'Open Sans', sans-serif;
-		font-weight: 900;
+		font: 18px 'Open Sans', sans-serif;
+		font-weight: 750;
 		margin-bottom: 0px;
 	}
 

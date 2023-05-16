@@ -239,7 +239,7 @@
         visibility: visible;
         position:relative;
         /* border:5px solid; */
-        top: 45%;
+        top: 47%;
         transform: translate(0, -50%);
     }
 </style>

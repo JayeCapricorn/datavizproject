@@ -27,6 +27,9 @@
 
   <div class="foreground" slot="foreground">
     <section style="padding-top: 50%;">
+      <b style="font-size: 22px; color:brown">Direct Impact of Natural Hazard</b>
+      <br />
+      <br />
       In Honduras, Guatemala, and El Salvador, natural disasters each year cause
       <b>thousands of death, tens of thousands of people becoming homeless</b>, and
       generally affecting millions of people. Among its many other devastating
@@ -39,20 +42,24 @@
       usually correlates with significant natural disasters. For example, xxxxxx
     </section> -->
     <section>
-      Indeed, we find a <b>strong correlation between the frequency of natural
+      Indeed, we find a <b>positve correlation between the frequency of natural
       disasters and the number of emigrants</b> in each year in these three
-      countries. But this correlation is only the strongest when we consider the
-      emigration <b>three</b> years after the disaster, showing a delayed effect
+      countries. 
+      <br />But this correlation is only the strongest when we consider the
+      emigration <b style="font-size: 22px; color:brown"> three</b> years after the disaster, showing a delayed effect
       of disasters (R^2=0.32, p=1.6 * 10^-3). This three-year window is a recurring
       theme in our analysis and will appear below too.
     </section>
     <section>
+      <b style="font-size: 25px; color:brown">"How has the situation of COVID-19 and / or natural hazards impacted your life and
+        that of your home?"</b>
+      <br />
+      <br /><b>Intermediate Index?</b>
+      <br />
       Nevertheless, directly analyzing the relationship between disaster
       frequency and migration behvaior is noisy, as it is mediated by many other
-      variables. We take inspiration from the responses to the question "How has
-      the situation of COVID-19 and / or natural hazards impacted your life and
-      that of your home?" from the World Food Programme's survey. A very common
-      theme in the responpses relates to the <b>economy and employment</b>, and thus we
+      variables. Referring the responses to this question associated with natural hazards from the World Food Programme's survey, a common
+      theme in the responpses relates to the <b style="font-size: 22px; color:brown">economy and employment</b>, and thus we
       study how it could be affected by natural disasters and in turn affect
       emigration.
     </section>
@@ -61,6 +68,8 @@
       damage each year</b> in these countries.
     </section>
     <section>
+      <b>Economy - Natural Hazard </b>
+      <br />
       Taking a more microscopic look, we
       can see that borrowing from commercial banks usually surges in the same
       year as the disaster happens (R^2=0.73, p=8.4 * 10^-6), and three years
@@ -68,6 +77,8 @@
       p=6.9 * 10^-17) and the consumer price index (R^2=0.83, p=1.5 * 10^-46).
     </section>
     <section>
+      <b>Economy - Migration Intention </b>
+      <br />
       <b>This economic impact, in turn, affects the emigration behavior.</b> For
       example, the wholesale price index strongly correlates with the number of
       emigrants in a year (R^2=0.86, p=3.6 * 10^-6). We also use the World Food
@@ -78,17 +89,26 @@
       expenditure.
     </section>
     <section>
+      <b style="font-size: 25px; color:brown">"How has the situation of COVID-19 and / or natural hazards impacted your life and
+        that of your home?"</b>
+      <br />
+      <br /><b>Intermediate Index?</b>
+      <br />
       Stepping back to what respondants to the survey perceive as the main
-      impact of natural disasters, we find <b>food</b> as another commong theme. Hence,
+      impact of natural disasters, we find <b style="font-size: 22px; color:brown">food</b> as another commong theme. Hence,
       we now turn to studying how food insecurity could act as a mediator
       between natural disasters and emigration.
     </section>
     <section>
+      <b>Food - Natural Hazard </b>
+      <br />
       As before, three years after a natural disaster, we find <b>a substantial
       increase in the prevalance of food insecurity</b> in these populations, up to
       20% when there are 5 disasters in a year (R^2=0.88, p=1.5 * 10^-6).
     </section>
     <section>
+      <b>Food - Migration Intention </b>
+      <br />
       And in turn, while food insecurity does not strongly affect emigration
       intention, we discover that <b>they drive people to internally migrate</b> to
       other parts of their countries. Among the top factors that contribute to
@@ -140,7 +160,7 @@
   }
 
   section {
-    font-size: 22px ;
+    font-size: 19px ;
     font-family: 'Open Sans', sans-serif;
     position: relative;
     height: 90vh;

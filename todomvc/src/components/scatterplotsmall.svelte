@@ -3,17 +3,17 @@
 
 	 // set general use variables
 	$: innerWidth = 1920;
-    $: chartWidth = innerWidth * 0.40;
-    $: chartHeight = innerWidth * 0.13;
+    $: chartWidth = innerWidth * 0.37;
+    $: chartHeight = innerWidth * 0.12;
 
 	// let width = 400;
 	// let height = 300;
 
 	const paddings = {
-        top: 30,
+        top: 10,
         left: 100,
         right: 80,
-        bottom: 30,
+        bottom: -10,
     };
 
 	// let margin = { top: 25, right: 10, bottom: 75, left: 50 };
@@ -104,8 +104,8 @@
 		{#each Object.entries(countryColors) as [country, color], i}
 			<!-- if there is no data from this country, skip -->
 			{#if data.filter((d) => d.country === country).length > 0}
-				<circle cx={i * legendItemWidth+72} cy="5" r="5" fill={color} />
-				<text x={i * legendItemWidth + 85} y="10" >{country}</text>
+				<circle cx={i * legendItemWidth+72} cy="-15" r="5" fill={color} />
+				<text x={i * legendItemWidth + 85} y="-10" >{country}</text>
 			{/if}
 		{/each}
 	</g>
@@ -123,14 +123,15 @@
 		/* stroke: white; */
 	}
 
+
 	.legend{
 		font: 12px 'Open Sans', sans-serif;
 	}
 
 	.title {
-		font: 20px 'Open Sans', sans-serif;
-		font-weight: 900;
-		margin-bottom: -10px;
+		font: 18px 'Open Sans', sans-serif;
+		font-weight: 700;
+		margin-bottom: 5px;
 	}
 
 </style>
