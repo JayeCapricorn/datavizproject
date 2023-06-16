@@ -1,0 +1,37 @@
+[
+    {
+        "weight": 0.33,
+        "desc": "# of months receiving financial aid from abroad",
+        "highlight": false
+    },
+    {
+        "weight": 0.29,
+        "desc": "Household mainly uses cash assistance for food purchase",
+        "highlight": true
+    },
+    {
+        "weight": 0.21,
+        "desc": "Receiving in-kind food support from the government",
+        "highlight": true
+    },
+    {
+        "weight": 0.21,
+        "desc": "Rainwater harvesting as the main source of drinking water",
+        "highlight": true
+    },
+    {
+        "weight": 0.19,
+        "desc": "# people in the household who internally migrated",
+        "highlight": false
+    },
+    {
+        "weight": 0.18,
+        "desc": "The home doesn't have electricity",
+        "highlight": false
+    },
+    {
+        "weight": 0.17,
+        "desc": "# times that the household reduced the size of food portions",
+        "highlight": true
+    }
+]

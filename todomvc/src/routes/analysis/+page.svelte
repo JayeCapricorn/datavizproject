@@ -1,15 +1,13 @@
 <script>
     import Navbar from "../../components/Navbar.svelte";
     import ScrollyTeller from "../../components/ScrollyTeller.svelte";
-
 </script>
 
-<Navbar />
+<!-- <Navbar />
 
 <div>
     <ScrollyTeller />
-</div>
+</div> -->
 
 <style>
-
 </style>
